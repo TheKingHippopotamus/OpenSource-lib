@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Immich בבית</title>
+<meta name="description" content="Immich בבית: גלריית תמונות פרטית על Ubuntu Server. מדריך DIY להקמת שרת תמונות באירוח עצמי על מחשב נייח ישן, עם Docker Compose, גיבוי אוטומטי מהאייפון ברשת המקומית ומשיכה אופציונלית של הספרייה המלאה מ-iCloud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Secular+One&family=IBM+Plex+Sans+Hebrew:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f3f5f1; --surface:#ffffff; --surface-2:#e9ede6;
+  --text:#17201b; --muted:#56625b; --border:#d8dfd6;
+  --accent:#1f6b52; --accent-soft:#dcebe3;
+  --warn:#9a620f; --warn-soft:#f6ead3;
+  --bad:#a4372a; --bad-soft:#f5e1dd;
+  --code-bg:#1b2420; --code-text:#e3ece6; --code-dim:#8fa399;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#101512; --surface:#171e1a; --surface-2:#1e2722;
+    --text:#e6ede8; --muted:#9aa89f; --border:#2b3630;
+    --accent:#62c59c; --accent-soft:#1c3129;
+    --warn:#e0ab55; --warn-soft:#33281a;
+    --bad:#e8826f; --bad-soft:#3a211d;
+    --code-bg:#0b0f0d; --code-text:#dfe9e2; --code-dim:#7f928a;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#101512; --surface:#171e1a; --surface-2:#1e2722;
+  --text:#e6ede8; --muted:#9aa89f; --border:#2b3630;
+  --accent:#62c59c; --accent-soft:#1c3129;
+  --warn:#e0ab55; --warn-soft:#33281a;
+  --bad:#e8826f; --bad-soft:#3a211d;
+  --code-bg:#0b0f0d; --code-text:#dfe9e2; --code-dim:#7f928a;
+}
+
+*{box-sizing:border-box}
+html{direction:rtl; overflow-x:hidden; scroll-padding-top:56px}
+body{
+  margin:0; background:var(--bg); color:var(--text);
+  font-family:"IBM Plex Sans Hebrew","Segoe UI",Arial,sans-serif;
+  font-size:17px; line-height:1.75; font-weight:400;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%}
+.wrap{max-width:780px; margin:0 auto; padding-inline:16px; padding-block:0 96px}
+.wrap, header.doc, section, .phase, ol.steps, ol.steps>li, .card, .faults, .fault, ul.limits, .spec>div, .code, .tbl, .metrics>div{min-width:0; max-width:100%}
+ol.steps, .faults, ul.limits{grid-template-columns:minmax(0,1fr)}
+
+h1,h2,h3{font-family:"Secular One","IBM Plex Sans Hebrew",Arial,sans-serif; font-weight:400; text-wrap:balance; letter-spacing:0}
+h1{font-size:clamp(30px,7vw,48px); line-height:1.15; margin:.2em 0 .3em}
+h2{font-size:clamp(23px,5vw,31px); line-height:1.2; margin:0}
+h3{font-size:20px; line-height:1.3; margin:0}
+p{margin:0}
+.flow>*+*{margin-top:14px}
+a{color:var(--accent); text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+strong{font-weight:600}
+code{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace; font-size:.86em; background:var(--surface-2); padding:.1em .38em; border-radius:4px; direction:ltr; unicode-bidi:isolate; overflow-wrap:anywhere}
+
+/* top bar */
+.topbar{position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--bg) 92%, transparent); border-bottom:1px solid var(--border); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px)}
+.topbar-in{max-width:780px; margin:0 auto; padding:0 16px; min-height:42px; display:flex; align-items:center}
+.topbar a{font-size:14.5px; font-weight:500; color:var(--accent); text-decoration:none; padding:8px 0; line-height:1.4}
+.topbar a:hover{text-decoration:underline}
+.topbar a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+
+/* header */
+header.doc{padding-block:44px 24px}
+.kicker{font-family:"IBM Plex Mono",monospace; font-size:13px; letter-spacing:.08em; color:var(--accent); direction:ltr; unicode-bidi:isolate; display:inline-block}
+.lede{font-size:19px; color:var(--muted); font-weight:300; max-width:64ch}
+
+.spec{margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(170px,100%),1fr)); border:1.5px solid var(--text); border-radius:6px; overflow:hidden; background:var(--surface)}
+.spec>div{padding:12px 14px; border-inline-start:1px solid var(--border); border-top:1px solid var(--border); margin-top:-1px}
+.spec>div:first-child{border-inline-start:none}
+.spec dt{font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted)}
+.spec dd{margin:2px 0 0; font-weight:500; font-size:15.5px; line-height:1.5}
+
+/* catalog chips */
+.parts-chips{margin:26px 0 0}
+.chips-label{font-size:13px; letter-spacing:.06em; color:var(--muted); font-weight:500; margin:0 0 8px}
+ul.chips{list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0}
+ul.chips li{margin:0}
+.chip{display:inline-flex; align-items:baseline; gap:7px; padding:5px 13px; border:1px solid var(--border); border-radius:999px; background:var(--surface); color:var(--text); text-decoration:none; font-size:15px; line-height:1.45; font-weight:500}
+.chip small{font-size:12.5px; font-weight:400; color:var(--muted)}
+.chip:hover{border-color:var(--accent); color:var(--accent)}
+.chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+/* sections */
+section{padding-top:58px}
+.sec-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:18px; border-bottom:1.5px solid var(--text); padding-bottom:8px}
+.sec-head .tag{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--accent); direction:ltr; unicode-bidi:isolate; white-space:nowrap}
+
+/* checklist and roadmap */
+ul.need{list-style:none; margin:0; padding:0; display:grid; gap:8px}
+ul.need li{position:relative; padding-inline-start:22px; font-size:16px; line-height:1.65}
+ul.need li::before{content:""; position:absolute; inset-inline-start:0; top:.7em; width:7px; height:7px; border-radius:2px; background:var(--accent)}
+ol.map{margin:14px 0 0; padding-inline-start:22px; display:grid; gap:4px; font-size:15.5px}
+ol.map li::marker{color:var(--accent); font-family:"IBM Plex Mono",monospace}
+
+/* build metrics */
+.metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr)); gap:10px}
+.metrics>div{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:12px 14px}
+.metrics .v{font-family:"IBM Plex Mono",monospace; font-size:22px; font-weight:500; direction:ltr; unicode-bidi:isolate; font-variant-numeric:tabular-nums; display:block; text-align:start}
+.metrics .l{font-size:13.5px; color:var(--muted); line-height:1.45; display:block; margin-top:2px}
+.bar{height:6px; border-radius:3px; background:var(--surface-2); margin-top:8px; overflow:hidden}
+.bar i{display:block; height:100%; background:var(--accent)}
+.src{font-size:13px; color:var(--muted); margin-top:8px}
+
+/* stack definition list */
+dl.stack{margin:18px 0 0; display:grid; grid-template-columns:minmax(0,1fr); border-top:1px solid var(--border)}
+dl.stack>div{display:grid; grid-template-columns:150px minmax(0,1fr); gap:4px 18px; padding:12px 0; border-bottom:1px solid var(--border)}
+dl.stack dt{font-family:"IBM Plex Mono",monospace; font-size:13.5px; font-weight:500; color:var(--accent); direction:ltr; text-align:right; unicode-bidi:isolate}
+dl.stack dd{margin:0; font-size:15.5px; line-height:1.6}
+@media (max-width:560px){ dl.stack>div{grid-template-columns:minmax(0,1fr)} }
+
+/* diagram */
+figure.dia{margin:22px 0 0; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:16px 10px 12px}
+figure.dia svg{display:block; width:100%; max-width:440px; height:auto; margin:0 auto; direction:ltr}
+figure.dia figcaption{font-size:14px; color:var(--muted); margin-top:10px; padding-inline:6px}
+svg text{font-family:"IBM Plex Sans Hebrew",Arial,sans-serif}
+svg .he{direction:rtl; unicode-bidi:embed}
+svg .box{fill:var(--surface); stroke:var(--border); stroke-width:1.5}
+svg .box.key{stroke:var(--accent); stroke-width:2}
+svg .box.ext{fill:var(--surface-2); stroke:var(--border); stroke-dasharray:5 4}
+svg .frame{fill:none; stroke:var(--muted); stroke-width:1.2; stroke-dasharray:6 5}
+svg .t1{fill:var(--text); font-size:14px; font-weight:600}
+svg .t1s{fill:var(--text); font-size:12.5px; font-weight:600}
+svg .t2{fill:var(--muted); font-size:11.5px}
+svg .t3{fill:var(--muted); font-size:10.5px}
+svg .mono{font-family:"IBM Plex Mono",monospace; font-size:11px; fill:var(--accent)}
+svg .lbl{font-family:"IBM Plex Mono",monospace; font-size:10.5px; fill:var(--muted)}
+svg .edge{stroke:var(--muted); stroke-width:1.5; fill:none}
+svg .edge.dash{stroke-dasharray:4 4}
+svg .arrowhead{fill:var(--muted)}
+
+/* under the hood */
+.hood{margin-top:16px; background:var(--surface); border:1px solid var(--border); border-inline-start:3px solid var(--accent); border-radius:6px; padding:12px 16px; font-size:15.5px; line-height:1.65}
+.hood .h{font-family:"IBM Plex Mono",monospace; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); display:block; margin-bottom:2px}
+
+/* phases and steps */
+.phase{margin-top:30px}
+.phase-head{display:flex; gap:10px; align-items:baseline; flex-wrap:wrap}
+.phase-head .when{font-size:14px; color:var(--muted)}
+ol.steps{list-style:none; counter-reset:s; margin:14px 0 0; padding:0; display:grid; gap:22px}
+ol.steps>li{counter-increment:s; position:relative; padding-inline-start:46px}
+ol.steps>li::before{
+  content:counter(s); position:absolute; inset-inline-start:0; top:1px;
+  width:30px; height:30px; border-radius:50%; border:1.5px solid var(--accent); color:var(--accent);
+  font-family:"IBM Plex Mono",monospace; font-size:14px; font-weight:500;
+  display:flex; align-items:center; justify-content:center; background:var(--bg);
+}
+ol.steps h4{margin:0 0 4px; font-size:17px; font-weight:600}
+ol.steps li>p+p{margin-top:10px}
+.check{margin-top:10px; font-size:14.5px; color:var(--muted); position:relative; padding-inline-start:22px}
+.check::before{content:"✓"; color:var(--accent); font-weight:700; position:absolute; inset-inline-start:0; top:0}
+
+/* code */
+.code{position:relative; margin-top:12px; background:var(--code-bg); border-radius:8px; overflow:hidden}
+.code .cbar{display:flex; justify-content:space-between; align-items:center; padding:6px 10px 0 14px; direction:ltr}
+.code .lang{font-family:"IBM Plex Mono",monospace; font-size:11.5px; color:var(--code-dim); letter-spacing:.06em}
+.code button{font:500 12px "IBM Plex Mono",monospace; color:var(--code-text); background:transparent; border:1px solid color-mix(in srgb,var(--code-dim) 60%,transparent); border-radius:5px; padding:3px 9px; cursor:pointer}
+.code button:hover{border-color:var(--code-text)}
+.code pre{margin:0; padding:8px 14px 14px; overflow-x:auto; direction:ltr; text-align:left}
+.code pre code{background:none; padding:0; color:var(--code-text); font-size:13px; line-height:1.65; white-space:pre; overflow-wrap:normal}
+.code .c{color:var(--code-dim)}
+
+/* notes */
+.note{margin-top:14px; padding:12px 16px; border-radius:6px; font-size:15.5px; line-height:1.65; background:var(--warn-soft); border-inline-start:3px solid var(--warn)}
+.note b{color:var(--warn)}
+.note.bad{background:var(--bad-soft); border-inline-start-color:var(--bad)}
+.note.bad b{color:var(--bad)}
+
+/* comparison table */
+.tbl{margin-top:16px; overflow-x:auto; border:1px solid var(--border); border-radius:8px; background:var(--surface)}
+.tbl table{border-collapse:collapse; width:100%; min-width:520px; font-size:14.5px; line-height:1.5}
+.tbl th,.tbl td{padding:10px 12px; text-align:right; vertical-align:top; border-bottom:1px solid var(--border)}
+.tbl tr:last-child td,.tbl tr:last-child th{border-bottom:none}
+.tbl thead th{font-family:"IBM Plex Mono",monospace; font-size:12px; letter-spacing:.06em; color:var(--muted); font-weight:500; background:var(--surface-2)}
+.tbl tbody th{font-weight:600; width:26%}
+
+/* troubleshooting */
+.faults{display:grid; border-top:1px solid var(--border)}
+.fault{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.4fr); gap:6px 22px; padding:14px 0; border-bottom:1px solid var(--border)}
+.fault .sym{font-weight:600; font-size:16px; line-height:1.5}
+.fault .fix{font-size:15.5px; line-height:1.6}
+.fault .fix small{display:block; color:var(--muted); font-size:14px; margin-top:4px}
+@media (max-width:600px){ .fault{grid-template-columns:minmax(0,1fr)} }
+
+ul.limits{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+ul.limits li{background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:14px 16px; font-size:15.5px; line-height:1.65}
+ul.limits li strong{display:block; font-size:16.5px; margin-bottom:2px}
+
+footer.doc{margin-top:70px; padding-top:18px; border-top:1.5px solid var(--text); font-size:14px; color:var(--muted)}
+footer.doc ul{margin:8px 0 0; padding-inline-start:18px; display:grid; gap:4px}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  header.doc{padding-block:30px 20px}
+  .lede{font-size:17px}
+  section{padding-top:44px}
+  ol.steps>li{padding-inline-start:38px}
+  ol.steps>li::before{width:26px; height:26px; font-size:13px}
+  .code pre code{font-size:12px}
+  .spec{grid-template-columns:1fr 1fr}
+  .spec>div:nth-child(odd){border-inline-start:none}
+  .metrics{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion: reduce){ *{transition:none!important; animation:none!important} }
+</style>
+</head>
+<body>
+
+<nav class="topbar" aria-label="ניווט">
+  <div class="topbar-in"><a href="../index.html#diy">→ חזרה לארגז הכלים</a></div>
+</nav>
+
+<div class="wrap">
+
+<header class="doc">
+  <span class="kicker">DIY · SELF-HOSTING · DOCKER · LINUX</span>
+  <h1>Immich בבית: גלריית תמונות פרטית על Ubuntu Server</h1>
+  <p class="lede">מדריך להקמת שרת תמונות באירוח עצמי על מחשב נייח ישן: Ubuntu Server LTS, ‏Docker Compose ו-Immich, עם גיבוי אוטומטי מהאייפון ברשת המקומית ומשיכה אופציונלית של הספרייה המלאה מ-iCloud. לצד כל שלב מוסבר מה קורה מתחת למכסה, כדי שאפשר יהיה לתחזק את המערכת ולא רק להרים אותה.</p>
+
+  <dl class="spec">
+    <div><dt>Stack</dt><dd>Ubuntu Server 26.04 · Docker Engine · Immich v3</dd></div>
+    <div><dt>חומרה</dt><dd>מחשב נייח ישן · 16GB RAM · HDD SATA ‏500GB</dd></div>
+    <div><dt>זמן הקמה</dt><dd>כמה שעות, כולל התקנה וקונפיגורציה</dd></div>
+    <div><dt>רמה</dt><dd>היכרות עם Linux CLI, SSH ו-YAML</dd></div>
+  </dl>
+
+  <div class="parts-chips">
+    <p class="chips-label">רכיבים מהקטלוג</p>
+    <ul class="chips">
+      <li><a class="chip" href="../index.html#t-immich">Immich <small>גלריית התמונות</small></a></li>
+      <li><a class="chip" href="../index.html#t-docker">Docker <small>מנוע הקונטיינרים</small></a></li>
+      <li><a class="chip" href="../index.html#t-docker-compose">Docker Compose <small>תצורת ארבעת השירותים</small></a></li>
+      <li><a class="chip" href="../index.html#t-wireguard">WireGuard <small>אופציונלי: גישה מחוץ לבית</small></a></li>
+    </ul>
+  </div>
+</header>
+
+<section id="need">
+  <div class="sec-head"><h2>מה צריך לפני שמתחילים</h2><span class="tag">PREREQUISITES</span></div>
+  <ul class="need">
+    <li>מחשב נייח ישן שישמש שרת, ובו דיסק בנפח מספק לספריית התמונות. הבנייה המתוארת כאן רצה על 16GB RAM ועל HDD SATA בנפח 500GB.</li>
+    <li>דיסק און קי להתקנה, ו-balenaEtcher לצריבת ה-ISO של Ubuntu Server LTS.</li>
+    <li>גישה לראוטר, כדי להגדיר DHCP Reservation לשרת.</li>
+    <li>אייפון עם אפליקציית Immich, באותה רשת מקומית כמו השרת.</li>
+    <li>לערוץ האופציונלי של iCloud: Apple ID, והיכולת לכבות Advanced Data Protection.</li>
+  </ul>
+  <p style="margin-top:16px"><strong>סדר העבודה:</strong> כל שלב נשען על הקודם.</p>
+  <ol class="map">
+    <li><a href="#arch">ארכיטקטורה</a>: מה רץ ולמה.</li>
+    <li><a href="#host">שכבת החומרה וה-OS</a>: התקנת Ubuntu, הדיסק וכתובת ה-IP.</li>
+    <li>התקנת <a href="#docker">Docker Engine</a> מהמאגר הרשמי.</li>
+    <li><a href="#immich">הרמת Immich</a> עם Docker Compose.</li>
+    <li><a href="#ingest">קליטת התמונות</a>: מהאפליקציה, ובאופן אופציונלי מ-iCloud.</li>
+    <li><a href="#numbers">מספרים וביצועים</a>.</li>
+    <li><a href="#backup">גיבוי ושחזור</a> ו<a href="#space">פינוי מקום בטלפון</a>.</li>
+    <li><a href="#faults">תקלות ופתרונות</a> ו<a href="#next">השלבים הבאים</a>.</li>
+  </ol>
+</section>
+
+<section id="arch">
+  <div class="sec-head"><h2>ארכיטקטורה</h2><span class="tag">4 CONTAINERS</span></div>
+  <div class="flow">
+    <p>Immich הוא לא תהליך אחד אלא ארבעה קונטיינרים שמתואמים ב-Docker Compose. הטלפון מדבר רק עם <code>immich-server</code> דרך HTTP. השרת כותב את הקבצים המקוריים לדיסק, את המטא-דאטה ל-Postgres, ומעביר עבודות רקע דרך תור ב-Valkey.</p>
+  </div>
+
+  <figure class="dia">
+    <svg viewBox="0 0 360 512" role="img" aria-label="תרשים ארכיטקטורה: אייפון, immich-server, Postgres, Valkey, Machine Learning, אחסון על הדיסק, icloudpd">
+      <defs>
+        <marker id="ah" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="arrowhead"/></marker>
+      </defs>
+      <rect x="20" y="8" width="320" height="54" rx="8" class="box ext"/>
+      <text x="180" y="31" text-anchor="middle" class="he t1">אייפון · אפליקציית Immich</text>
+      <text x="180" y="50" text-anchor="middle" class="he t2">מחשבת SHA-1 לכל קובץ לפני העלאה</text>
+      <path d="M180 62 V98" class="edge" marker-end="url(#ah)"/>
+      <text x="190" y="85" class="lbl">HTTP · LAN :2283</text>
+
+      <rect x="10" y="102" width="340" height="190" rx="10" class="frame"/>
+      <text x="340" y="120" text-anchor="end" class="lbl">docker compose</text>
+      <rect x="30" y="128" width="300" height="56" rx="8" class="box key"/>
+      <text x="180" y="151" text-anchor="middle" class="t1">immich-server</text>
+      <text x="180" y="170" text-anchor="middle" class="t2">Node.js / NestJS · REST API · Workers</text>
+      <path d="M75 184 V214 M180 184 V214 M285 184 V214" class="edge"/>
+      <rect x="30" y="214" width="90" height="62" rx="8" class="box"/>
+      <text x="75" y="238" text-anchor="middle" class="t1s">Postgres 14</text>
+      <text x="75" y="256" text-anchor="middle" class="t3">VectorChord</text>
+      <rect x="135" y="214" width="90" height="62" rx="8" class="box"/>
+      <text x="180" y="238" text-anchor="middle" class="t1s">Valkey</text>
+      <text x="180" y="256" text-anchor="middle" class="he t3">תור BullMQ</text>
+      <rect x="240" y="214" width="90" height="62" rx="8" class="box"/>
+      <text x="285" y="238" text-anchor="middle" class="t1s">ML</text>
+      <text x="285" y="256" text-anchor="middle" class="he t3">CLIP · פנים</text>
+
+      <path d="M97 292 V328" class="edge" marker-end="url(#ah)"/>
+      <path d="M263 292 V328" class="edge dash" marker-end="url(#ah)"/>
+      <text x="107" y="315" class="lbl">rw</text>
+      <text x="273" y="315" class="lbl">ro</text>
+      <rect x="20" y="332" width="155" height="62" rx="8" class="box key"/>
+      <text x="97" y="356" text-anchor="middle" class="t1s">UPLOAD_LOCATION</text>
+      <text x="97" y="376" text-anchor="middle" class="he t3">מקוריים · thumbs · backups</text>
+      <rect x="185" y="332" width="155" height="62" rx="8" class="box"/>
+      <text x="263" y="356" text-anchor="middle" class="t1s">External Library</text>
+      <text x="263" y="376" text-anchor="middle" class="mono">/mnt/icloud</text>
+
+      <rect x="185" y="436" width="155" height="62" rx="8" class="box ext"/>
+      <text x="263" y="460" text-anchor="middle" class="t1s">icloudpd · cron</text>
+      <text x="263" y="480" text-anchor="middle" class="he t3">אופציונלי: משיכה מ-iCloud</text>
+      <path d="M263 436 V398" class="edge dash" marker-end="url(#ah)"/>
+      <text x="97" y="440" class="he t3" text-anchor="middle">מערכת הקבצים של השרת · HDD</text>
+      <path d="M20 420 H175" class="edge" style="stroke-width:1"/>
+    </svg>
+    <figcaption>הקו הרציף הוא הנתיב הראשי: העלאה מהאפליקציה לתיקיית ההעלאות. הקווים המקווקווים הם ערוץ אופציונלי שמוריד ישירות מ-iCloud לתיקייה נפרדת, ש-Immich קורא בלבד.</figcaption>
+  </figure>
+
+  <dl class="stack">
+    <div><dt>immich-server</dt><dd>שרת API ב-TypeScript על NestJS. מקבל העלאות, מגיש את ממשק הווב, ומריץ את עבודות הרקע: חילוץ EXIF, יצירת thumbnails, ו-transcoding של וידאו עם ffmpeg.</dd></div>
+    <div><dt>postgres</dt><dd>Postgres 14 עם הרחבות וקטוריות (VectorChord). שומר נתיבי קבצים, אלבומים, משתמשים ומטא-דאטה, וגם את ה-embeddings לחיפוש סמנטי. Immich לא סורק מחדש את תיקיית ההעלאות, ולכן בלי מסד הנתונים הקבצים לבדם הם רק ערימה.</dd></div>
+    <div><dt>redis (valkey)</dt><dd>Valkey, פורק תואם Redis. משמש כ-backend לתורי BullMQ שמתזמנים את עבודות הרקע. עבודה אחת מפעילה את הבאה: Smart Search וזיהוי פנים רצים רק אחרי שנוצר thumbnail.</dd></div>
+    <div><dt>machine-learning</dt><dd>שירות Python ‏(FastAPI) שמריץ מודלים בפורמט ONNX: ‏CLIP לחיפוש בטקסט חופשי וזיהוי פנים. רץ בקונטיינר נפרד, כך שאפשר לכבות אותו או להעביר אותו למכונה חזקה יותר.</dd></div>
+  </dl>
+</section>
+
+<section id="host">
+  <div class="sec-head"><h2>שכבת החומרה וה-OS</h2><span class="tag">BARE METAL</span></div>
+  <ol class="steps">
+    <li>
+      <h4>צריבת ISO והתקנת Ubuntu Server</h4>
+      <p>מורידים את ה-ISO של Ubuntu Server LTS וצורבים אותו לדיסק און קי עם balenaEtcher. התמונה נכתבת byte-for-byte ומאומתת בסוף. בהתקנה מסמנים <strong>OpenSSH server</strong>, ומכאן כל העבודה נעשית מרחוק. גרסת Server מתאימה כי אין בה סביבה גרפית שצורכת זיכרון, ו-LTS מקבלת עדכוני אבטחה חמש שנים, כלומר עד 2031 בגרסה 26.04.</p>
+      <p class="check"><code>ssh user@&lt;server-ip&gt;</code> מהמחשב הרגיל נכנס לשרת.</p>
+    </li>
+    <li>
+      <h4>לוודא שה-root תופס את כל הדיסק</h4>
+      <p>בהתקנה מודרכת עם LVM, ה-Logical Volume של ה-root עשוי לקבל רק חלק מה-Volume Group, ושאר הדיסק נשאר לא מוקצה. בודקים ומרחיבים:</p>
+      <div class="code"><div class="cbar"><span class="lang">BASH</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>df -h /                  <span class="c"># what the filesystem actually sees</span>
+sudo vgs                 <span class="c"># VFree &gt; 0 means unallocated space</span>
+<span class="c"># default Ubuntu names; -r grows the ext4 filesystem in the same step</span>
+sudo lvextend -r -l +100%FREE /dev/ubuntu-vg/ubuntu-lv</code></pre></div>
+      <div class="hood"><span class="h">GB מול GiB</span>דיסק של 500GB (עשרוני, ‏10⁹) הוא 465.7 GiB (בינארי, ‏2³⁰). Immich מדווח ב-GiB. ההפרש בין 465.7 ל-456.3 GiB מוסבר במחיצות EFI ו-boot ובתקורה של מערכת הקבצים, כך שאין כאן "מקום חסר".</div>
+    </li>
+    <li>
+      <h4>כתובת IP קבועה</h4>
+      <p>השרת מקבל כתובת מ-DHCP, ואחרי ריסטארט הראוטר עשוי להקצות כתובת אחרת. האפליקציה ממשיכה לפנות לכתובת הישנה ונכשלת עם <code>Host is down</code>. הפתרון הנקי הוא DHCP Reservation בראוטר, לפי כתובת ה-MAC של כרטיס הרשת, ולא IP סטטי בקונפיגורציית netplan שעלול להתנגש עם טווח ה-DHCP.</p>
+      <div class="code"><div class="cbar"><span class="lang">BASH</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>ip -br link    <span class="c"># interface name + MAC (e.g. enp1s0)</span>
+ip -br addr    <span class="c"># current IPv4</span></code></pre></div>
+      <p class="check">אחרי <code>sudo reboot</code> הכתובת זהה.</p>
+    </li>
+  </ol>
+</section>
+
+<section id="docker">
+  <div class="sec-head"><h2>Docker Engine</h2><span class="tag">CONTAINER RUNTIME</span></div>
+  <p>Immich דורש את <code>docker compose</code> (Compose v2 כ-plugin). חבילות <code>docker.io</code> ו-<code>docker-compose</code> מהמאגר של Ubuntu עלולות להיות ישנות או להתנגש, ולכן מתקינים מהמאגר הרשמי של Docker עם מפתח GPG חתום:</p>
+  <div class="code"><div class="cbar"><span class="lang">BASH</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>sudo apt update
+sudo apt install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+sudo tee /etc/apt/sources.list.d/docker.sources &lt;&lt;EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release &amp;&amp; echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Architectures: $(dpkg --print-architecture)
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo docker run hello-world</code></pre></div>
+  <div class="hood"><span class="h">מתחת למכסה</span>קונטיינר הוא תהליך רגיל של Linux שרץ בתוך namespaces משלו (mount, ‏network, ‏PID) עם מגבלות cgroups. לכן לקונטיינר יש מערכת קבצים נפרדת, ותיקייה מהשרת נראית בתוכו רק דרך <strong>bind mount</strong> שמוגדר ב-<code>volumes</code>. מכאן כלל שחוזר לאורך המדריך: כל נתיב שמזינים בממשק של Immich הוא הנתיב <em>בתוך</em> הקונטיינר, לא על השרת.</div>
+  <p class="note"><b>Docker עוקף את ufw.</b> פורט שמפורסם ב-<code>ports:</code> נפתח דרך כללי iptables של Docker, גם אם ufw מוגדר לחסום אותו. כדי להגביל גישה צריך לעבוד עם שרשרת <code>DOCKER-USER</code> או לקשור את הפורט לכתובת מסוימת.</p>
+</section>
+
+<section id="immich">
+  <div class="sec-head"><h2>הרמת Immich</h2><span class="tag">DOCKER COMPOSE</span></div>
+  <ol class="steps">
+    <li>
+      <h4>קבצי Compose ו-env</h4>
+      <div class="code"><div class="cbar"><span class="lang">BASH</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>mkdir ~/immich-app &amp;&amp; cd ~/immich-app
+wget -O docker-compose.yml https://github.com/immich-app/immich/releases/latest/download/docker-compose.yml
+wget -O .env https://github.com/immich-app/immich/releases/latest/download/example.env</code></pre></div>
+      <p>ב-<code>.env</code> מגדירים סיסמת DB אקראית (תווים <code>A-Za-z0-9</code> בלבד, כדי שלא ישברו את ה-parsing), אזור זמן, ונועלים major version כדי שעדכון לא יקפוץ לגרסה עם breaking changes:</p>
+      <div class="code"><div class="cbar"><span class="lang">.ENV</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>UPLOAD_LOCATION=./library
+DB_DATA_LOCATION=./postgres
+TZ=Asia/Jerusalem
+IMMICH_VERSION=v3
+DB_PASSWORD=ReplaceWithRandomAlnum</code></pre></div>
+    </li>
+    <li>
+      <h4>הפעלה ובדיקת health</h4>
+      <div class="code"><div class="cbar"><span class="lang">BASH</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>sudo docker compose up -d
+sudo docker ps --format 'table {{.Names}}\t{{.Status}}'
+sudo docker compose logs -f immich-server     <span class="c"># live logs</span></code></pre></div>
+      <p>לכל שירות ב-compose מוגדר <code>healthcheck</code> ו-<code>restart: always</code>, כך שהמערכת עולה מחדש לבד אחרי אתחול של השרת. נכנסים ל-<code>http://&lt;server-ip&gt;:2283</code> ויוצרים משתמש אדמין.</p>
+      <p class="check">ארבעת הקונטיינרים <code>immich_server</code>, ‏<code>immich_postgres</code>, ‏<code>immich_redis</code>, ‏<code>immich_machine_learning</code> במצב healthy.</p>
+    </li>
+  </ol>
+  <div class="hood"><span class="h">משאבים</span>Immich מגדיר מינימום של 6GB RAM ו-2 ליבות, וממליץ על 8GB ו-4 ליבות. עם 4GB אפשר לרוץ רק כשה-ML כבוי. מגרסה 3, קונטיינר ה-ML על amd64 דורש מעבד ברמת x86-64-v2, שקיימת ברוב המעבדים מ-2012 בערך. עם 16GB אפשר להשאיר את כל ארבעת השירותים פעילים.</div>
+</section>
+
+<section id="ingest">
+  <div class="sec-head"><h2>קליטת התמונות</h2><span class="tag">INGESTION</span></div>
+  <p>יש שתי דרכים להכניס את הספרייה לשרת. הראשונה, גיבוי מהאפליקציה, היא הנתיב הראשי. השנייה שימושית כשרוצים שהשרת ימשוך מ-iCloud בלי שהטלפון יהיה מעורב.</p>
+
+  <div class="tbl">
+    <table>
+      <thead><tr><th></th><th>אפליקציית Immich</th><th>icloudpd + External Library</th></tr></thead>
+      <tbody>
+        <tr><th>כיוון</th><td>Push מהטלפון לשרת</td><td>Pull מהשרת ל-iCloud</td></tr>
+        <tr><th>איפה נשמר</th><td><code>UPLOAD_LOCATION</code>, בניהול Immich</td><td>תיקייה חיצונית, Immich קורא בלבד</td></tr>
+        <tr><th>דה-דופליקציה</th><td>SHA-1 לכל קובץ לפני העלאה</td><td>לפי שם קובץ בצד icloudpd</td></tr>
+        <tr><th>דרישות</th><td>Background App Refresh באייפון</td><td>כיבוי Advanced Data Protection, ‏2FA כל חודשיים</td></tr>
+        <tr><th>מחיקה מהטלפון</th><td>נתמכת דרך Free Up Space</td><td>לא נוגע בטלפון</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h3>ערוץ א׳ · גיבוי מהאפליקציה</h3><span class="when">הנתיב הראשי</span></div>
+    <ol class="steps">
+      <li>
+        <h4>חיבור והגדרת גיבוי</h4>
+        <p>מתקינים את Immich מה-App Store, מזינים <code>http://&lt;server-ip&gt;:2283</code>, ובוחרים אלבומים לגיבוי. אפשר גם להחריג אלבומים, וזה חשוב ב-iOS כי אותה תמונה יכולה להופיע בכמה אלבומים. בברירת המחדל ההעלאה רצה רק ב-Wi-Fi.</p>
+        <p>כדי שהגיבוי ימשיך ברקע צריך להפעיל Background App Refresh. iOS מחליט בעצמו מתי להריץ משימות רקע, ולכן בפועל הגיבוי מתקדם הכי מהר כשהאפליקציה פתוחה.</p>
+        <p class="check">מסך הגיבוי מציג "מגובים" שמתקרב ל"סה"כ", ו"בהמתנה לגיבוי" יורד לאפס.</p>
+      </li>
+      <li>
+        <h4>איך נמנעות כפילויות</h4>
+        <p>לפני כל העלאה האפליקציה מחשבת SHA-1 על תוכן הקובץ ובודקת מול השרת. קובץ שה-hash שלו כבר קיים מדולג. לכן מותר לעצור ולהמשיך, להחליף טלפון או להריץ שוב, בלי ליצור כפילויות. תמונות שנמצאות רק ב-iCloud נמשכות זמנית ל-cache של האפליקציה לפני ה-hashing, וזה צורך נפח ונתונים בטלפון בזמן הגיבוי הראשוני.</p>
+      </li>
+    </ol>
+    <div class="hood"><span class="h">Sync v2</span>האפליקציה מחזיקה מסד נתונים מקומי ב-SQLite שמשקף את מצב הספרייה, ומסתנכרנת מול השרת בזרם JSON Lines עם ack tokens, כך שסנכרון שנקטע ממשיך מהנקודה האחרונה. זה אינדקס מקומי של האפליקציה, לא גיבוי: מקור האמת הוא Postgres בשרת והקבצים ב-<code>UPLOAD_LOCATION</code>.</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><h3>ערוץ ב׳ · משיכה מ-iCloud עם icloudpd</h3><span class="when">אופציונלי</span></div>
+    <ol class="steps">
+      <li>
+        <h4>דרישות חשבון</h4>
+        <p>icloudpd מדמה סשן של iCloud.com בדפדפן. לכן באייפון צריך להפעיל <strong>Access iCloud Data on the Web</strong> ולכבות <strong>Advanced Data Protection</strong>, שמבטל גישת ווב. אימות ה-2FA פג בערך כל חודשיים, ואז צריך להתחבר מחדש.</p>
+        <p class="note bad"><b>פשרה של אבטחה.</b> כיבוי ADP מחזיר את רוב קטגוריות הנתונים ב-iCloud להצפנה סטנדרטית, שבה המפתחות מוחזקים גם אצל Apple.</p>
+      </li>
+      <li>
+        <h4>אימות ראשוני</h4>
+        <div class="code"><div class="cbar"><span class="lang">BASH</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>sudo mkdir -p /srv/icloud-photos/{Photos,config}
+sudo chmod 700 /srv/icloud-photos/config    <span class="c"># session cookies live here</span>
+
+sudo docker run -it --rm \
+  -v /srv/icloud-photos/config:/config \
+  icloudpd/icloudpd:latest \
+  icloudpd --username you@example.com --cookie-directory /config --auth-only</code></pre></div>
+        <p>נדרשת סיסמת ה-Apple ID הרגילה וקוד 2FA. סיסמה ייעודית לאפליקציה (App-Specific Password) לא עובדת כאן. אם מתקבל <code>Bad Request (400)</code> בהרצה הראשונה, אפל מכינה את נתוני החשבון ל-API, ומנסים שוב אחרי כמה דקות.</p>
+      </li>
+      <li>
+        <h4>הורדה באצוות ו-cron</h4>
+        <p><code>--recent N</code> בודק את N הפריטים שנוספו אחרונים ל-iCloud ומוריד רק מה שחסר. הסקריפט מגדיל את N בכל הרצה, כך שההורדה מתפרסת על פני כמה ריצות ולא מעמיסה על השרתים של Apple בבת אחת:</p>
+        <div class="code"><div class="cbar"><span class="lang">/usr/local/sbin/icloud-sync</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>#!/bin/bash
+# icloud-sync: pull the iCloud library in growing batches
+# Usage: sudo icloud-sync [batch size]
+set -e
+
+ROOT="/srv/icloud-photos"
+APPLE_ID="you@example.com"
+BATCH="${1:-100}"
+STATE="$ROOT/.batch"
+
+[ "$(id -u)" -eq 0 ] || { echo "root required"; exit 1; }
+[ -f "$STATE" ] || echo 0 &gt; "$STATE"
+NEXT=$(( $(cat "$STATE") + BATCH ))
+
+docker run --rm --name icloudpd \
+  -v "$ROOT/Photos:/data" \
+  -v "$ROOT/config:/config" \
+  -e TZ=Asia/Jerusalem \
+  icloudpd/icloudpd:latest \
+  icloudpd --directory /data \
+    --username "$APPLE_ID" \
+    --cookie-directory /config \
+    --recent "$NEXT" \
+    --size original \
+    --folder-structure '{:%Y/%m}' \
+    --set-exif-datetime \
+    --no-progress-bar
+
+# advance the window only after a successful run (set -e)
+echo "$NEXT" &gt; "$STATE"</code></pre></div>
+        <div class="code"><div class="cbar"><span class="lang">/etc/cron.d/icloud-sync</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code># m  h  dom mon dow user command
+30 3  *   *   *   root /usr/local/sbin/icloud-sync 200 &gt;&gt; /var/log/icloud-sync.log 2&gt;&amp;1</code></pre></div>
+        <p>אחרי שכל הספרייה ירדה, כדאי להחליף את <code>--recent</code> ב-<code>--until-found 20</code>, שעוצר אחרי 20 קבצים רצופים שכבר קיימים ומקצר את הריצה הלילית.</p>
+      </li>
+      <li>
+        <h4>חיבור ל-Immich כ-External Library</h4>
+        <p>מוסיפים bind mount בקריאה בלבד ל-<code>immich-server</code>. הדגל <code>:ro</code> מונע מ-Immich למחוק או לכתוב XMP sidecars לתיקייה של icloudpd:</p>
+        <div class="code"><div class="cbar"><span class="lang">DOCKER-COMPOSE.YML</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>    volumes:
+      - ${UPLOAD_LOCATION}:/data
+      - /etc/localtime:/etc/localtime:ro
+      - /srv/icloud-photos/Photos:/mnt/icloud:ro</code></pre></div>
+        <div class="code"><div class="cbar"><span class="lang">BASH</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>sudo docker compose config &gt;/dev/null &amp;&amp; echo "YAML OK"
+sudo docker compose up -d
+sudo docker exec immich_server ls /mnt/icloud</code></pre></div>
+        <p>בממשק: Administration ← External Libraries ← Create Library, ומוסיפים את הנתיב <code>/mnt/icloud</code>, כלומר הנתיב בתוך הקונטיינר. Immich סורק ספריות חיצוניות פעם ביום, ואת התזמון (בפורמט cron) משנים ב-Administration ← Settings ← External Library, כך שירוץ אחרי icloudpd.</p>
+      </li>
+    </ol>
+    <p class="note"><b>לא להפעיל את שני הערוצים על אותן תמונות.</b> icloudpd עם <code>--set-exif-datetime</code> משנה קבצים שחסר בהם EXIF, ואז ה-SHA-1 שלהם שונה מהעותק שהאפליקציה מעלה. התוצאה היא אותה תמונה פעמיים בציר הזמן. עדיף לבחור ערוץ אחד כמקור אמת.</p>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="sec-head"><h2>מספרים וביצועים</h2><span class="tag">BUILD LOG</span></div>
+  <p>הנתונים הבאים לקוחים מבנייה לדוגמה על הרכיבים שתוארו כאן. הם נותנים תחושה של סדרי גודל, ולא יעד שצריך להשיג.</p>
+  <div class="metrics" style="margin-top:14px">
+    <div><span class="v">5,422</span><span class="l">פריטים באלבומים שנבחרו לגיבוי</span></div>
+    <div><span class="v">5,373</span><span class="l">מגובים בשרת, ו-49 נוספים בהכנה</span></div>
+    <div><span class="v">159.5 GiB</span><span class="l">בשימוש מתוך 456.3 GiB בדיסק</span><div class="bar"><i style="width:35%"></i></div></div>
+    <div><span class="v">Wi-Fi</span><span class="l">ההעלאה הראשונית הושלמה בתוך כמה שעות</span></div>
+  </div>
+  <p class="src">הנתונים מתוך מסך הגיבוי באפליקציית Immich ומדד האחסון של השרת. הממשק באפליקציה ובאתר זמין בעברית.</p>
+
+  <h3 style="margin-top:34px">איפה צוואר הבקבוק</h3>
+  <p style="margin-top:8px">ההעלאה הראשונית של 159.5 GiB לקחה כמה שעות. מי שמסתכל על דיסק SATA ישן עשוי לחשוד בו, אבל החשבון מראה אחרת:</p>
+  <div class="code"><div class="cbar"><span class="lang">BACK OF THE ENVELOPE</span></div><pre><code>159.5 GiB × 1.0737           ≈ 171 GB
+assume ~4 h (14,400 s)       → 11.9 MB/s ≈ 95 Mbit/s
+
+SATA II link  3 Gb/s, 8b/10b   → 300 MB/s
+HDD sequential write           → order of 100 MB/s</code></pre></div>
+  <p style="margin-top:14px">הדיסק היה פנוי פי 8 בערך. את הקצב קבעו ה-Wi-Fi, ה-hashing בטלפון, ומשיכת מקוריים מ-iCloud לתמונות שלא נשמרו מקומית. HDD כן מורגש במקום אחר: בגישה אקראית. Postgres ויצירת thumbnails עושים הרבה קריאות קטנות, ולכן התיעוד של Immich ממליץ להציב את <code>DB_DATA_LOCATION</code> על SSD מקומי.</p>
+</section>
+
+<section id="backup">
+  <div class="sec-head"><h2>גיבוי ושחזור</h2><span class="tag">3-2-1</span></div>
+  <div class="flow">
+    <p>שרת עם דיסק אחד הוא עותק אחד. Immich לא מגבה את מערכת הקבצים בעצמו, אבל הוא כן יוצר dump יומי של מסד הנתונים ב-<code>UPLOAD_LOCATION/backups</code> כקבצי <code>.sql.gz</code> (ברירת מחדל: כל יום ב-02:00, ‏14 עותקים אחרונים). ה-dump מכיל מטא-דאטה בלבד ולא תמונות, ולכן צריך לגבות גם אותו וגם את הקבצים.</p>
+    <p>סדר הגיבוי חשוב: קודם מסד הנתונים ואחר כך הקבצים. במקרה הגרוע יהיו על הדיסק קבצים שה-DB לא מכיר, וזה ניתן לתיקון. בסדר ההפוך ה-DB עלול להפנות לקבצים שלא קיימים בגיבוי.</p>
+  </div>
+  <div class="code"><div class="cbar"><span class="lang">BASH</span><button type="button" class="copy" aria-label="העתקת הקוד">copy</button></div><pre><code>ls -lh ~/immich-app/library/backups/      <span class="c"># daily .sql.gz dumps</span>
+<span class="c"># manual dump, e.g. before an upgrade</span>
+sudo docker exec -t immich_postgres pg_dump --clean --if-exists \
+  --dbname=immich --username=postgres | gzip &gt; immich-$(date +%F).sql.gz</code></pre></div>
+</section>
+
+<section id="space">
+  <div class="sec-head"><h2>פינוי מקום בטלפון</h2><span class="tag">FREE UP SPACE</span></div>
+  <p>באפליקציה יש פעולת Free Up Space שמוחקת מהמכשיר רק פריטים שכבר גובו בהצלחה לשרת. יש מסך סקירה לפני המחיקה, אפשרויות לשמור מועדפים ואלבומים מסוימים, וקביעת תאריך סף. הפריטים עוברים לתיקיית "נמחקו לאחרונה" של iOS ל-30 יום.</p>
+  <p class="note bad"><b>iCloud מסנכרן מחיקות לשני הכיוונים.</b> כשיש iCloud Photos, מחיקה מהטלפון מוחקת גם מ-iCloud ומכל המכשירים. אחרי Free Up Space העותק היחיד הוא בשרת. זו בדיוק הנקודה שבה גיבוי שני של השרת מפסיק להיות אופציונלי. כדאי גם להחריג אלבומים של WhatsApp וכדומה, שמסתמכים על הקובץ המקומי.</p>
+</section>
+
+<section id="faults">
+  <div class="sec-head"><h2>תקלות ופתרונות</h2><span class="tag">TROUBLESHOOTING</span></div>
+  <div class="faults">
+    <div class="fault">
+      <div class="sym">האפליקציה מפסיקה להתחבר אחרי ריסטארט</div>
+      <div class="fix">ה-IP של השרת השתנה. מעדכנים את כתובת השרת באפליקציה, ומגדירים DHCP Reservation.<small>בלוג האפליקציה: <code>errno 64, Host is down</code> מול הכתובת הקודמת.</small></div>
+    </div>
+    <div class="fault">
+      <div class="sym">הדיסק מראה פחות מקום ממה שצריך</div>
+      <div class="fix">ה-LV של ה-root לא הוקצה על כל ה-VG. ‏<code>sudo vgs</code> ואז <code>lvextend -r</code>.</div>
+    </div>
+    <div class="fault">
+      <div class="sym">Immich לא רואה את התיקייה החיצונית</div>
+      <div class="fix">הנתיב שהוזן הוא נתיב על השרת ולא בתוך הקונטיינר, או שהזחת ה-YAML שבורה.<small><code>docker exec immich_server ls /mnt/icloud</code> מבדיל בין השניים.</small></div>
+    </div>
+    <div class="fault">
+      <div class="sym">icloudpd נכשל אחרי חודשיים</div>
+      <div class="fix">אימות ה-2FA פג. מריצים שוב את פקודת <code>--auth-only</code>.<small>אפשר לקבל התראה במייל עם <code>--smtp-username</code> ו-<code>--smtp-password</code>.</small></div>
+    </div>
+    <div class="fault">
+      <div class="sym">כל תמונה מופיעה כשני קבצים</div>
+      <div class="fix">Live Photo נשמרת כזוג של HEIC ו-MOV. זו התנהגות צפויה ולא כפילות.</div>
+    </div>
+    <div class="fault">
+      <div class="sym">שגיאות מוזרות ב-<code>docker compose</code></div>
+      <div class="fix">Docker מותקן מחבילת ההפצה. מסירים <code>docker.io</code> ו-<code>docker-compose</code> ומתקינים מהמאגר הרשמי.</div>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <div class="sec-head"><h2>השלבים הבאים</h2><span class="tag">ROADMAP</span></div>
+  <ul class="limits">
+    <li><strong>עותק שני של הנתונים</strong>דיסק חיצוני או NAS שמקבל <code>rsync</code> לילי של <code>UPLOAD_LOCATION</code>, ועותק שלישי מחוץ לבית, כדי להשלים 3-2-1.</li>
+    <li><strong>SSD למסד הנתונים</strong>העברת <code>DB_DATA_LOCATION</code> ל-SSD קטן תשפר את זמני הטעינה של ציר הזמן והחיפוש.</li>
+    <li><strong>גישה מחוץ לבית</strong>כרגע השרת זמין רק ב-LAN. הדרך הבטוחה היא VPN כמו <a href="../index.html#t-wireguard">WireGuard</a>, לא פתיחת פורט 2283 לאינטרנט.</li>
+    <li><strong>מעקב אחרי icloudpd</strong>הפרויקט פעיל אבל מחפש מתחזק חדש, ותלוי ב-API לא רשמי של Apple. מי שמסתמך על ערוץ ב׳ צריך לעקוב אחרי העדכונים שלו.</li>
+  </ul>
+</section>
+
+<footer class="doc">
+  מקורות
+  <ul>
+    <li><a href="https://docs.immich.app/install/requirements">Immich · Requirements</a></li>
+    <li><a href="https://docs.immich.app/install/docker-compose">Immich · Docker Compose</a></li>
+    <li><a href="https://docs.immich.app/developer/architecture/">Immich · Architecture</a></li>
+    <li><a href="https://docs.immich.app/features/mobile-backup">Immich · Mobile Backup</a></li>
+    <li><a href="https://docs.immich.app/features/mobile-app">Immich · Mobile App</a></li>
+    <li><a href="https://immich.app/blog/sync-v2">Immich · Sync v2</a></li>
+    <li><a href="https://docs.immich.app/features/libraries">Immich · External Libraries</a></li>
+    <li><a href="https://docs.immich.app/administration/backup-and-restore">Immich · Backup and Restore</a></li>
+    <li><a href="https://docs.immich.app/guides/database-queries/">Immich · Database Queries</a></li>
+    <li><a href="https://icloud-photos-downloader.github.io/icloud_photos_downloader/authentication.html">icloudpd · Authentication</a></li>
+    <li><a href="https://icloud-photos-downloader.github.io/icloud_photos_downloader/reference.html">icloudpd · CLI Reference</a></li>
+    <li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker · Install on Ubuntu</a></li>
+    <li><a href="https://documentation.ubuntu.com/release-notes/26.04/">Ubuntu 26.04 LTS release notes</a></li>
+  </ul>
+</footer>
+</div>
+
+<script>
+document.querySelectorAll('.code').forEach(function(block){
+  var btn = block.querySelector('.copy');
+  var code = block.querySelector('pre code');
+  if(!btn || !code) return;
+  btn.addEventListener('click', function(){
+    var text = code.innerText;
+    var reset = function(){ setTimeout(function(){ btn.textContent = 'copy'; }, 1400); };
+    var fallback = function(){
+      try{
+        var r = document.createRange(); r.selectNodeContents(code);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      }catch(e){}
+      btn.textContent = 'selected'; reset();
+    };
+    try{
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ btn.textContent = 'copied'; reset(); }, fallback);
+      } else { fallback(); }
+    }catch(e){ fallback(); }
+  });
+});
+</script>
+
+</body>
+</html>
