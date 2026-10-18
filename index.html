@@ -52,9 +52,10 @@ h1,h2,h3,h4{text-wrap:balance;margin:0}
 .thanks li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 .thanks a:first-child{font-family:var(--f-mono);font-size:14px}
 .lic-note{font-size:12px;color:var(--muted);white-space:nowrap}
-.brandhero{margin:0 0 14px}
+.brandhero{margin:0 0 14px;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:clamp(8px,2vw,14px);align-items:stretch}
 .nm{white-space:nowrap;color:var(--ink);font-weight:600}
-.brandimg img.bully{position:absolute;left:3%;bottom:0;height:93%;width:auto;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(0,0,0,.5));pointer-events:none}
+.bullytile{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(120% 90% at 50% 100%,#6b4a2c 0%,#3a2817 55%,#1f160d 100%);display:flex;align-items:flex-end;justify-content:center;padding:8% 6% 0}
+.bullytile img{display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%;filter:drop-shadow(0 4px 10px rgba(0,0,0,.45))}
 .lockup{font-family:"Bebas Neue",var(--f-display),sans-serif;font-size:clamp(23px,6.6vw,38px);line-height:1;letter-spacing:.045em;color:var(--ink);margin:0;display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:baseline;column-gap:.32em;text-transform:uppercase;margin-bottom:8px}
 .lockup .lk-x{color:var(--accent);font-size:.8em;transform:translateY(-.04em)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -516,7 +517,8 @@ nav.tabs a[aria-current="page"] svg{stroke-width:2.2}
 <div class="wrap">
   <header class="top">
     <div class="brandhero">
-    <figure class="brandimg"><img src="brand/hero.webp" srcset="brand/hero-900.webp 900w, brand/hero.webp 1500w" sizes="(max-width: 800px) 100vw, 800px" width="1500" height="500" fetchpriority="high" alt="King Hippopotamus: היפופוטם במשקפיים ובחלוק מעבדה יושב ליד שולחן עבודה עם מוח בפעמון זכוכית, גלובוס, מכונות נתונים ולוחות של אסטרטגיות כמותיות"><img class="bully" src="brand/bully-360.webp" srcset="brand/bully-360.webp 360w, brand/bully-720.webp 720w" sizes="(max-width: 800px) 30vw, 240px" width="860" height="920" alt="American Bully: כלב בולי אמריקאי שרירי בצבעי שחור וחום עם שרשרת ותג כסוף"></figure>
+    <figure class="brandimg"><img src="brand/hero.webp" srcset="brand/hero-900.webp 900w, brand/hero.webp 1500w" sizes="(max-width: 800px) 100vw, 800px" width="1500" height="500" fetchpriority="high" alt="King Hippopotamus: היפופוטם במשקפיים ובחלוק מעבדה יושב ליד שולחן עבודה עם מוח בפעמון זכוכית, גלובוס, מכונות נתונים ולוחות של אסטרטגיות כמותיות"></figure>
+    <figure class="bullytile"><img class="bully" src="brand/bully-360.webp" srcset="brand/bully-360.webp 360w, brand/bully-720.webp 720w" sizes="(max-width: 800px) 25vw, 200px" width="860" height="920" alt="American Bully: כלב בולי אמריקאי שרירי בצבעי שחור וחום עם שרשרת ותג כסוף"></figure>
     </div>
     <p class="lockup" dir="ltr"><span>King Hippopotamus</span> <span class="lk-x" aria-hidden="true">×</span><span class="sr">בשיתוף</span> <span>American Bully</span></p>
     <h1>ארגז הכלים <span>לאירוח עצמי</span></h1>
