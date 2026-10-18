@@ -1,4 +1,4 @@
-<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="קטלוג בעברית של 1,545 כלי קוד פתוח לאירוח עצמי מתוך awesome-sysadmin ו-awesome-selfhosted: מפת קשרים, צילומי מסך, התחלה מהירה, רישיונות ודירוג."><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>ארגז הכלים לאירוח עצמי</title>
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="King Hippopotamus · OpenSource Lib: יותר מ-1,500 כלים חופשיים לאירוח עצמי, ממופים ומדורגים במקום אחד. השרת שלך, הנתונים שלך, הכללים שלך."><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><title>ארגז הכלים לאירוח עצמי</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,6 +49,7 @@ h1,h2,h3,h4{text-wrap:balance;margin:0}
 .top h1{font-family:var(--f-display);font-weight:700;font-size:clamp(46px,13vw,72px);line-height:.92;letter-spacing:.005em;margin-top:6px}
 .top h1 span{color:var(--accent)}
 .lede{color:var(--muted);margin:10px 0 0;max-width:62ch;font-size:14.5px}
+.lede strong{display:block;color:var(--ink);font-weight:700;font-size:16.5px;margin-bottom:4px}
 .stats{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:14px;font-size:13px;color:var(--muted)}
 .stats b{font-family:var(--f-mono);font-weight:500;color:var(--ink);font-size:15px;margin-left:4px}
 
@@ -502,9 +503,9 @@ nav.tabs a[aria-current="page"] svg{stroke-width:2.2}
 
 <div class="wrap">
   <header class="top">
-    <div class="eyebrow">awesome-sysadmin + awesome-selfhosted</div>
+    <div class="eyebrow">King Hippopotamus · OpenSource Lib</div>
     <h1>ארגז הכלים <span>לאירוח עצמי</span></h1>
-    <p class="lede">שתי הרשימות הגדולות של תוכנה חופשית לשרתים, מאוחדות למפה אחת: מהתשתית שמתחת לכול, דרך השירותים שרצים עליה, ועד האפליקציות לעסק ולבית. לכל כלי: מה הוא עושה, איך מארחים אותו, ואיזה רישיון חל עליו.</p>
+    <p class="lede"><strong>השרת שלך. הנתונים שלך. הכללים שלך.</strong> יותר מ-1,500 כלים חופשיים לתשתית, לעסק ולבית, ממופים ומדורגים במקום אחד. מוצאים את הכלי, מבינים אותו בדקה ומרימים אותו אצלך. בלי מנויים ובלי נעילה.</p>
     <div class="stats" id="stats"></div>
   </header>
 
@@ -542,7 +543,6 @@ nav.tabs a[aria-current="page"] svg{stroke-width:2.2}
   <section class="view" id="v-rank" hidden aria-label="דירוג לפי כוכבים"></section>
   <section class="view" id="v-info" hidden aria-label="רישיונות וקישורים"><div id="v-licenses"></div><div id="v-links" style="margin-top:34px"></div></section>
 
-  <p class="foot" id="foot"></p>
 </div>
 
 <nav class="tabs" aria-label="ניווט"><div class="in">
@@ -613,7 +613,6 @@ let mapDom = null, mapCat = null;
 
 /* ---------- header ---------- */
 $('#stats').innerHTML = `<span><b>${T.length.toLocaleString('en-US')}</b>כלים</span><span><b>${C.length}</b>נושאים</span><span><b>${DOM.length}</b>תחומים</span><span><b>${DATA.licenses.filter(l=>l.n).length}</b>רישיונות</span><span><b>${DATA.edges.length}</b>קשרים</span>`;
-$('#foot').innerHTML = `נתוני awesome-sysadmin נכונים ל-<span class="mono">${fmtD(DATA.asof)}</span>, ונתוני awesome-selfhosted ל-<span class="mono">${fmtD(DATA.asofSH)}</span>. מקורות, רישוי והסבר על השיטה בלשונית המידע.`;
 
 /* ---------- map ---------- */
 function ringPos(n, i, r){ const a = -Math.PI/2 + i * 2*Math.PI/Math.max(n,1); return {a, x:Math.cos(a)*r, y:Math.sin(a)*r}; }
@@ -1146,7 +1145,7 @@ function renderRank(){
       if (!top.length) return '';
       return `<div class="podc"><header><span class="cable" style="background:${col(RK.dom)}"></span><button type="button" data-rkcat="${esc(k)}">${esc(catBy[k].he)}</button><small>${catTools[k].length}</small></header><ol>${top.map((t, i) => `<li><i>${i + 1}</i><button type="button" data-tool="${esc(t.id)}">${esc(t.n)}</button><b>★ ${fmtK(t.st)}</b></li>`).join('')}</ol></div>`; }).join('') + `</div></section>`;
   }
-  h += `<p class="rk-note">כוכבים ב-GitHub מודדים פופולריות, לא איכות או התאמה. פרויקטים ותיקים ופרויקטים עם קהל מפתחים גדול צוברים יותר, ו-${T.filter(t => !t.st).length} כלים שהקוד שלהם לא נמצא ב-GitHub (למשל Samba, Proxmox ו-KVM) לא מופיעים בדירוג בכלל. הנתונים ממאגרי הנתונים של שתי הרשימות, נכון ל-<span class="mono">${fmtD(DATA.asofSH)}</span>.</p>`;
+  h += `<p class="rk-note">כוכבים ב-GitHub מודדים פופולריות, לא איכות או התאמה. פרויקטים ותיקים ופרויקטים עם קהל מפתחים גדול צוברים יותר, ו-${T.filter(t => !t.st).length} כלים שהקוד שלהם לא נמצא ב-GitHub (למשל Samba, Proxmox ו-KVM) לא מופיעים בדירוג בכלל.</p>`;
   v.innerHTML = h;
   $('#rkDom').onchange = e => { RK.dom = e.target.value; RK.cat = ''; RK.n = 25; renderRank(); };
   $('#rkCat').onchange = e => { RK.cat = e.target.value; RK.n = 25; renderRank(); };
