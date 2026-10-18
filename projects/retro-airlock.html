@@ -270,6 +270,7 @@ ul.chips li{margin:0}
 ul.prereq{margin:14px 0}
 p.more{font-size:14.5px; color:var(--muted); margin:6px 0 4px}
 
+svg text{direction:ltr!important;unicode-bidi:normal!important}
 </style>
 </head>
 <body>
@@ -332,32 +333,32 @@ p.more{font-size:14.5px; color:var(--muted); margin:6px 0 4px}
 <p>הדרישה שהשרת לא מריץ את המשחק היא הלב של התכנון. emulator שרץ על השרת פירושו שקוד המשחק, שהורד מאתר שאין סיבה לסמוך עליו, רץ על המכונה עצמה. emulator שרץ בדפדפן של הסמארטפון פירושו שקוד המשחק רץ בתוך ה-<span class="term" tabindex="0" data-def="הבידוד שהדפדפן כופה על קוד שהוא מריץ: אין לו גישה למערכת הקבצים, לתהליכים או לרשת המקומית של המכשיר">sandbox</span> של הדפדפן, על מכשיר אחר, שאין לו גישה לשום דבר מהשרת. מבחינת חוויית המשחק אלה שני דברים זהים, ומבחינת סיכון אלה שני עולמות. ההחלטה הזו הפכה את הפרויקט ממערכת שמריצה קוד זר למערכת שמעבירה קבצים, ובלעדיה אי אפשר היה לאשר אותו.</p>
 
 <figure class="fig">
-  <svg viewBox="0 0 960 250" class="wide" role="img" aria-label="שלושה גבולות, וכל אחד מהם נחצה על ידי דבר אחד בלבד" direction="rtl">
+  <svg viewBox="0 0 960 250" class="wide" role="img" aria-label="שלושה גבולות, וכל אחד מהם נחצה על ידי דבר אחד בלבד">
     <defs><marker id="m-a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box soft" x="640" y="20" width="300" height="200" rx="12"/>
     <rect class="box soft" x="330" y="20" width="290" height="200" rx="12"/>
     <rect class="box soft" x="20" y="20" width="290" height="200" rx="12"/>
-    <text class="lbl" x="790" y="46" text-anchor="middle">ה-container</text>
-    <text class="lbl" x="475" y="46" text-anchor="middle">דיסק המכונה</text>
-    <text class="lbl" x="165" y="46" text-anchor="middle">הסמארטפון</text>
+    <text class="lbl" x="790" y="46" text-anchor="middle">&#x202B;ה-container&#x202C;</text>
+    <text class="lbl" x="475" y="46" text-anchor="middle">&#x202B;דיסק המכונה&#x202C;</text>
+    <text class="lbl" x="165" y="46" text-anchor="middle">&#x202B;הסמארטפון&#x202C;</text>
     <rect class="box crit" x="715" y="100" width="150" height="54" rx="8"/>
-    <text class="t-main" x="790" y="124" text-anchor="middle">דפדפן חד-פעמי</text>
-    <text class="t-sub" x="790" y="141" text-anchor="middle">הגלישה מתרחשת כאן</text>
+    <text class="t-main" x="790" y="124" text-anchor="middle">&#x202B;דפדפן חד-פעמי&#x202C;</text>
+    <text class="t-sub" x="790" y="141" text-anchor="middle">&#x202B;הגלישה מתרחשת כאן&#x202C;</text>
     <rect class="box" x="400" y="100" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="124" text-anchor="middle">הסגר ו-verdict</text>
-    <text class="t-sub" x="475" y="141" text-anchor="middle">עד שיש פסיקה</text>
+    <text class="t-main" x="475" y="124" text-anchor="middle">&#x202B;הסגר ו-verdict&#x202C;</text>
+    <text class="t-sub" x="475" y="141" text-anchor="middle">&#x202B;עד שיש פסיקה&#x202C;</text>
     <rect class="box mine" x="90" y="100" width="150" height="54" rx="8"/>
-    <text class="t-main" x="165" y="124" text-anchor="middle">emulator בדפדפן</text>
-    <text class="t-sub" x="165" y="141" text-anchor="middle">המשחק רץ כאן</text>
+    <text class="t-main" x="165" y="124" text-anchor="middle">&#x202B;emulator בדפדפן&#x202C;</text>
+    <text class="t-sub" x="165" y="141" text-anchor="middle">&#x202B;המשחק רץ כאן&#x202C;</text>
     <path class="flow" d="M713,127 L558,127" marker-end="url(#m-a1)"/>
-    <text class="t-edge" x="634" y="114" text-anchor="middle">קובץ אחד בלבד</text>
+    <text class="t-edge" x="634" y="114" text-anchor="middle">&#x202B;קובץ אחד בלבד&#x202C;</text>
     <path class="flow" d="M398,127 L248,127" marker-end="url(#m-a1)"/>
-    <text class="t-edge" x="322" y="114" text-anchor="middle">בייטים, לא הרצה</text>
+    <text class="t-edge" x="322" y="114" text-anchor="middle">&#x202B;בייטים, לא הרצה&#x202C;</text>
     <path class="flow bad" d="M700,196 L500,196"/>
     <path class="flow bad" d="M450,196 L250,196"/>
     <path class="flow bad" d="M467,188 L483,204"/>
     <path class="flow bad" d="M483,188 L467,204"/>
-    <text class="t-edge" x="475" y="178" text-anchor="middle">מסלול שלא קיים</text>
+    <text class="t-edge" x="475" y="178" text-anchor="middle">&#x202B;מסלול שלא קיים&#x202C;</text>
   </svg>
   <figcaption>שלוש הדרישות הן שלושה גבולות, וכל גבול נחצה על ידי דבר אחד בלבד: מה-container יוצא קובץ, ומהדיסק יוצאים בייטים אל הסמארטפון. אין מסלול שמדלג על ה-verdict, ואין מסלול שמביא קוד משחק להרצה על השרת.</figcaption>
 </figure>
@@ -380,26 +381,26 @@ p.more{font-size:14.5px; color:var(--muted); margin:6px 0 4px}
 <p>הסיכון הזה אינו תיאורטי. כשבודקים אותו בפועל, symlink שהונח בתיקיית ההורדות מקבל verdict ״עבר״ ומשוחרר. הדוח אפילו רושם נכון שמדובר ב-symlink ועל מה הוא מצביע, ובשורה שאחרי כן פוסק ״עבר״. המידע היה שם, ואף אחד לא בנה עליו החלטה. לכן כדאי לחפש את הדפוס הזה בכל בדיקה שנכתבת.</p>
 
 <figure class="fig">
-  <svg viewBox="0 0 960 210" class="wide" role="img" aria-label="בדיקה שעוקבת אחרי היעד של ה-symlink פוסקת על הקובץ הפנימי ומשחררת אותו" direction="rtl">
+  <svg viewBox="0 0 960 210" class="wide" role="img" aria-label="בדיקה שעוקבת אחרי היעד של ה-symlink פוסקת על הקובץ הפנימי ומשחררת אותו">
     <defs><marker id="m-a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box crit" x="790" y="80" width="150" height="54" rx="8"/>
-    <text class="t-main" x="865" y="104" text-anchor="middle">symlink בתיקייה</text>
-    <text class="t-sub" x="865" y="121" text-anchor="middle">הדפדפן הפרוץ כותב</text>
+    <text class="t-main" x="865" y="104" text-anchor="middle">&#x202B;symlink בתיקייה&#x202C;</text>
+    <text class="t-sub" x="865" y="121" text-anchor="middle">&#x202B;הדפדפן הפרוץ כותב&#x202C;</text>
     <rect class="box" x="580" y="80" width="150" height="54" rx="8"/>
-    <text class="t-main" x="655" y="104" text-anchor="middle">בדיקה שעוקבת ליעד</text>
-    <text class="t-sub" x="655" y="121" text-anchor="middle">stat במקום lstat</text>
+    <text class="t-main" x="655" y="104" text-anchor="middle">&#x202B;בדיקה שעוקבת ליעד&#x202C;</text>
+    <text class="t-sub" x="655" y="121" text-anchor="middle">&#x202B;stat במקום lstat&#x202C;</text>
     <rect class="box bad" x="370" y="80" width="150" height="54" rx="8"/>
-    <text class="t-main" x="445" y="104" text-anchor="middle">קובץ פנימי נסרק</text>
-    <text class="t-sub" x="445" y="121" text-anchor="middle">התוצאה: נקי</text>
+    <text class="t-main" x="445" y="104" text-anchor="middle">&#x202B;קובץ פנימי נסרק&#x202C;</text>
+    <text class="t-sub" x="445" y="121" text-anchor="middle">&#x202B;התוצאה: נקי&#x202C;</text>
     <rect class="box bad" x="160" y="80" width="150" height="54" rx="8"/>
-    <text class="t-main" x="235" y="104" text-anchor="middle">שחרור ופרסום</text>
-    <text class="t-sub" x="235" y="121" text-anchor="middle">verdict: עבר</text>
+    <text class="t-main" x="235" y="104" text-anchor="middle">&#x202B;שחרור ופרסום&#x202C;</text>
+    <text class="t-sub" x="235" y="121" text-anchor="middle">&#x202B;verdict: עבר&#x202C;</text>
     <path class="flow" d="M788,107 L736,107" marker-end="url(#m-a2)"/>
-    <text class="t-edge" x="760" y="66" text-anchor="middle">שם תמים</text>
+    <text class="t-edge" x="760" y="66" text-anchor="middle">&#x202B;שם תמים&#x202C;</text>
     <path class="flow" d="M578,107 L526,107" marker-end="url(#m-a2)"/>
-    <text class="t-edge" x="550" y="66" text-anchor="middle">הליכה ליעד</text>
+    <text class="t-edge" x="550" y="66" text-anchor="middle">&#x202B;הליכה ליעד&#x202C;</text>
     <path class="flow bad" d="M368,107 L316,107" marker-end="url(#m-a2)"/>
-    <text class="t-edge" x="340" y="66" text-anchor="middle">פסיקה על היעד</text>
+    <text class="t-edge" x="340" y="66" text-anchor="middle">&#x202B;פסיקה על היעד&#x202C;</text>
   </svg>
   <figcaption>כל חוליה בשרשרת עונה נכון על השאלה שהיא נשאלה, ובכל זאת התוצאה שגויה: הפסיקה ניתנה על היעד של ה-symlink, ומה ששוחרר הוא הרשומה שמצביעה על קובץ פנימי.</figcaption>
 </figure>
@@ -436,22 +437,22 @@ p.more{font-size:14.5px; color:var(--muted); margin:6px 0 4px}
 </ul>
 
 <figure class="fig">
-  <svg viewBox="0 0 960 240" class="wide" role="img" aria-label="אותה פקודת משיכה מביאה היום את ה-image שנבדק ומחר image אחר לגמרי" direction="rtl">
+  <svg viewBox="0 0 960 240" class="wide" role="img" aria-label="אותה פקודת משיכה מביאה היום את ה-image שנבדק ומחר image אחר לגמרי">
     <defs><marker id="m-a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <text class="lbl" x="835" y="78" text-anchor="middle">tag: latest</text>
     <rect class="box crit" x="760" y="93" width="150" height="54" rx="8"/>
-    <text class="t-main" x="835" y="117" text-anchor="middle">משיכה של image</text>
-    <text class="t-sub" x="835" y="134" text-anchor="middle">אותה שורה בדיוק</text>
+    <text class="t-main" x="835" y="117" text-anchor="middle">&#x202B;משיכה של image&#x202C;</text>
+    <text class="t-sub" x="835" y="134" text-anchor="middle">&#x202B;אותה שורה בדיוק&#x202C;</text>
     <rect class="box vendor" x="430" y="36" width="150" height="54" rx="8"/>
-    <text class="t-main" x="505" y="60" text-anchor="middle">ה-image שנבדק</text>
-    <text class="t-sub" x="505" y="77" text-anchor="middle">דיגסט מסוים</text>
+    <text class="t-main" x="505" y="60" text-anchor="middle">&#x202B;ה-image שנבדק&#x202C;</text>
+    <text class="t-sub" x="505" y="77" text-anchor="middle">&#x202B;דיגסט מסוים&#x202C;</text>
     <rect class="box bad" x="430" y="150" width="150" height="54" rx="8"/>
-    <text class="t-main" x="505" y="174" text-anchor="middle">image אחר לגמרי</text>
-    <text class="t-sub" x="505" y="191" text-anchor="middle">אותו שם, דיגסט חדש</text>
+    <text class="t-main" x="505" y="174" text-anchor="middle">&#x202B;image אחר לגמרי&#x202C;</text>
+    <text class="t-sub" x="505" y="191" text-anchor="middle">&#x202B;אותו שם, דיגסט חדש&#x202C;</text>
     <path class="flow" d="M758,112 L588,70" marker-end="url(#m-a3)"/>
-    <text class="t-edge" x="505" y="26" text-anchor="middle">מה שנבדק</text>
+    <text class="t-edge" x="505" y="26" text-anchor="middle">&#x202B;מה שנבדק&#x202C;</text>
     <path class="flow bad" d="M758,128 L588,170" marker-end="url(#m-a3)"/>
-    <text class="t-edge" x="505" y="222" text-anchor="middle">מה שיירד מחר</text>
+    <text class="t-edge" x="505" y="222" text-anchor="middle">&#x202B;מה שיירד מחר&#x202C;</text>
   </svg>
   <figcaption>ה-tag הוא שם, לא גרסה. אותה פקודה בדיוק מביאה את ה-image שנבדק או image שזז תחתיו, וההבדל בין שתי האפשרויות אינו נראה בשום מקום בקונפיגורציה.</figcaption>
 </figure>
@@ -478,34 +479,34 @@ upgrade: new versioned folder from a GitHub release asset (never the CDN), new m
 <p>ויש גם צד אנושי: שיתוף ב-<button type="button" class="tech" data-tech="tailscale">Tailscale</button> הוא ברמת <em>מכשיר</em>, לא ברמת port. לצרף חבר כדי שישחק פירושו לתת לו את כל מה שפתוח על אותו מכשיר, כולל דפדפן ההסגר וכולל SSH.</p>
 
 <figure class="fig">
-  <svg viewBox="0 0 960 290" class="wide" role="img" aria-label="מהאינטרנט אין דרך פנימה, אבל מה-container הפתוח יש דרך אל שירותי המכונה ואל השכנים" direction="rtl">
+  <svg viewBox="0 0 960 290" class="wide" role="img" aria-label="מהאינטרנט אין דרך פנימה, אבל מה-container הפתוח יש דרך אל שירותי המכונה ואל השכנים">
     <defs><marker id="m-a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box net" x="780" y="20" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="44" text-anchor="middle">האינטרנט הפתוח</text>
-    <text class="t-sub" x="855" y="61" text-anchor="middle">מי שלא הוזמן</text>
+    <text class="t-main" x="855" y="44" text-anchor="middle">&#x202B;האינטרנט הפתוח&#x202C;</text>
+    <text class="t-sub" x="855" y="61" text-anchor="middle">&#x202B;מי שלא הוזמן&#x202C;</text>
     <rect class="box net" x="780" y="108" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="132" text-anchor="middle">ה-tailnet הפרטי</text>
-    <text class="t-sub" x="855" y="149" text-anchor="middle">המכשירים הפרטיים</text>
+    <text class="t-main" x="855" y="132" text-anchor="middle">&#x202B;ה-tailnet הפרטי&#x202C;</text>
+    <text class="t-sub" x="855" y="149" text-anchor="middle">&#x202B;המכשירים הפרטיים&#x202C;</text>
     <rect class="box crit" x="780" y="196" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="220" text-anchor="middle">הדפדפן ב-container</text>
-    <text class="t-sub" x="855" y="237" text-anchor="middle">מבקר באתרים עוינים</text>
+    <text class="t-main" x="855" y="220" text-anchor="middle">&#x202B;הדפדפן ב-container&#x202C;</text>
+    <text class="t-sub" x="855" y="237" text-anchor="middle">&#x202B;מבקר באתרים עוינים&#x202C;</text>
     <rect class="box" x="430" y="108" width="150" height="54" rx="8"/>
-    <text class="t-main" x="505" y="132" text-anchor="middle">שירותים על המכונה</text>
-    <text class="t-sub" x="505" y="149" text-anchor="middle">ביניהם SSH</text>
+    <text class="t-main" x="505" y="132" text-anchor="middle">&#x202B;שירותים על המכונה&#x202C;</text>
+    <text class="t-sub" x="505" y="149" text-anchor="middle">&#x202B;ביניהם SSH&#x202C;</text>
     <rect class="box" x="430" y="196" width="150" height="54" rx="8"/>
-    <text class="t-main" x="505" y="220" text-anchor="middle">שכנים ורשת מקומית</text>
-    <text class="t-sub" x="505" y="237" text-anchor="middle">bridges אחרים</text>
+    <text class="t-main" x="505" y="220" text-anchor="middle">&#x202B;שכנים ורשת מקומית&#x202C;</text>
+    <text class="t-sub" x="505" y="237" text-anchor="middle">&#x202B;bridges אחרים&#x202C;</text>
     <path class="flow bad" d="M778,55 L712,74"/>
     <path class="flow bad" d="M686,81 L620,100"/>
     <path class="flow bad" d="M691,69 L707,85"/>
     <path class="flow bad" d="M707,69 L691,85"/>
-    <text class="t-edge" x="700" y="40" text-anchor="middle">אין דלת ציבורית</text>
+    <text class="t-edge" x="700" y="40" text-anchor="middle">&#x202B;אין דלת ציבורית&#x202C;</text>
     <path class="flow" d="M778,135 L588,135" marker-end="url(#m-a4)"/>
-    <text class="t-edge" x="683" y="123" text-anchor="middle">מותר ומזוהה</text>
+    <text class="t-edge" x="683" y="123" text-anchor="middle">&#x202B;מותר ומזוהה&#x202C;</text>
     <path class="flow bad" d="M778,212 L600,168" marker-end="url(#m-a4)"/>
-    <text class="t-edge" x="690" y="176" text-anchor="middle">פתוח כברירת מחדל</text>
+    <text class="t-edge" x="690" y="176" text-anchor="middle">&#x202B;פתוח כברירת מחדל&#x202C;</text>
     <path class="flow bad" d="M778,223 L588,223" marker-end="url(#m-a4)"/>
-    <text class="t-edge" x="683" y="211" text-anchor="middle">גם אל השכנים</text>
+    <text class="t-edge" x="683" y="211" text-anchor="middle">&#x202B;גם אל השכנים&#x202C;</text>
   </svg>
   <figcaption>הכיוון פנימה סגור, ולכן קל להניח שהכול סגור. הכיוון החוצה מתוך ה-container נשאר פתוח כברירת מחדל, ודרכו הדפדפן מגיע אל שירותי המכונה ואל השכנים שלו על bridges אחרים.</figcaption>
 </figure>
@@ -524,22 +525,22 @@ https://&lt;host&gt;.&lt;tailnet&gt;.ts.net:3020 (tailnet only)
 <p>הכול רץ על <button type="button" class="tech" data-tech="vps">VPS</button> אחד שמריץ גם שירותים אחרים. מכאן שני סיכונים שאין להם קשר לאבטחה: תהליך שאוכל את כל הזיכרון מפעיל את <span class="term" tabindex="0" data-def="מנגנון של ה-kernel שהורג תהליך כשהזיכרון נגמר, ולא בהכרח את התהליך שגרם למחסור">ה-OOM killer</span> של ה-kernel, והקורבן עלול להיות שירות אחר לגמרי; ותהליך שמושך CPU בלי גבול פוגע בכל השאר. דפדפן גרפי שמשדר וידאו הוא בדיוק סוג התהליך שעושה את שני הדברים.</p>
 
 <figure class="fig">
-  <svg viewBox="0 0 960 230" class="wide" role="img" aria-label="תהליך אחד בלי תקרות מפעיל את ה-OOM killer ופוגע בשירותים אחרים על אותה מכונה" direction="rtl">
+  <svg viewBox="0 0 960 230" class="wide" role="img" aria-label="תהליך אחד בלי תקרות מפעיל את ה-OOM killer ופוגע בשירותים אחרים על אותה מכונה">
     <defs><marker id="m-a5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box crit" x="780" y="88" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="112" text-anchor="middle">דפדפן שמשדר וידאו</text>
-    <text class="t-sub" x="855" y="129" text-anchor="middle">זיכרון ו-CPU בלי גבול</text>
+    <text class="t-main" x="855" y="112" text-anchor="middle">&#x202B;דפדפן שמשדר וידאו&#x202C;</text>
+    <text class="t-sub" x="855" y="129" text-anchor="middle">&#x202B;זיכרון ו-CPU בלי גבול&#x202C;</text>
     <rect class="box" x="500" y="88" width="150" height="54" rx="8"/>
-    <text class="t-main" x="575" y="112" text-anchor="middle">לחץ על ה-kernel</text>
-    <text class="t-sub" x="575" y="129" text-anchor="middle">אין הפרדה בין השירותים</text>
+    <text class="t-main" x="575" y="112" text-anchor="middle">&#x202B;לחץ על ה-kernel&#x202C;</text>
+    <text class="t-sub" x="575" y="129" text-anchor="middle">&#x202B;אין הפרדה בין השירותים&#x202C;</text>
     <rect class="box bad" x="180" y="26" width="150" height="54" rx="8"/>
-    <text class="t-main" x="255" y="50" text-anchor="middle">שירות אחר נהרג</text>
-    <text class="t-sub" x="255" y="67" text-anchor="middle">ה-OOM killer בוחר</text>
+    <text class="t-main" x="255" y="50" text-anchor="middle">&#x202B;שירות אחר נהרג&#x202C;</text>
+    <text class="t-sub" x="255" y="67" text-anchor="middle">&#x202B;ה-OOM killer בוחר&#x202C;</text>
     <rect class="box" x="180" y="150" width="150" height="54" rx="8"/>
-    <text class="t-main" x="255" y="174" text-anchor="middle">כל השאר מאט</text>
-    <text class="t-sub" x="255" y="191" text-anchor="middle">CPU בלי תקרה</text>
+    <text class="t-main" x="255" y="174" text-anchor="middle">&#x202B;כל השאר מאט&#x202C;</text>
+    <text class="t-sub" x="255" y="191" text-anchor="middle">&#x202B;CPU בלי תקרה&#x202C;</text>
     <path class="flow" d="M778,115 L658,115" marker-end="url(#m-a5)"/>
-    <text class="t-edge" x="718" y="103" text-anchor="middle">בלי תקרות</text>
+    <text class="t-edge" x="718" y="103" text-anchor="middle">&#x202B;בלי תקרות&#x202C;</text>
     <path class="flow bad" d="M498,100 L338,62" marker-end="url(#m-a5)"/>
     <path class="flow bad" d="M498,130 L338,168" marker-end="url(#m-a5)"/>
   </svg>
@@ -581,23 +582,23 @@ https://&lt;host&gt;.&lt;tailnet&gt;.ts.net:3020 (tailnet only)
 </ol>
 
 <figure class="fig">
-  <svg viewBox="0 0 760 150" role="img" aria-label="תיקייה אחת מחברת בין הדפדפן המבודד לסורק האבטחה, בכיוון אחד" direction="rtl">
+  <svg viewBox="0 0 760 150" role="img" aria-label="תיקייה אחת מחברת בין הדפדפן המבודד לסורק האבטחה, בכיוון אחד">
     <defs><marker id="m-c1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box vendor" x="590" y="62" width="150" height="54" rx="8"/>
-    <text class="t-main" x="665" y="94" text-anchor="middle">Firefox ב-container</text>
+    <text class="t-main" x="665" y="94" text-anchor="middle">&#x202B;Firefox ב-container&#x202C;</text>
     <rect class="box crit" x="400" y="62" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="86" text-anchor="middle">תיקיית הכניסה</text>
-    <text class="t-sub" x="475" y="103" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="475" y="86" text-anchor="middle">&#x202B;תיקיית הכניסה&#x202C;</text>
+    <text class="t-sub" x="475" y="103" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box mine" x="210" y="62" width="150" height="54" rx="8"/>
-    <text class="t-main" x="285" y="94" text-anchor="middle">סורק האבטחה</text>
+    <text class="t-main" x="285" y="94" text-anchor="middle">&#x202B;סורק האבטחה&#x202C;</text>
     <rect class="box" x="20" y="62" width="150" height="54" rx="8"/>
-    <text class="t-main" x="95" y="94" text-anchor="middle">אחסון פרטי</text>
+    <text class="t-main" x="95" y="94" text-anchor="middle">&#x202B;אחסון פרטי&#x202C;</text>
     <path class="flow" d="M590,89 L554,89" marker-end="url(#m-c1)"/>
-    <text class="t-edge" x="570" y="46" text-anchor="middle">כותב בלבד</text>
+    <text class="t-edge" x="570" y="46" text-anchor="middle">&#x202B;כותב בלבד&#x202C;</text>
     <path class="flow" d="M400,89 L364,89" marker-end="url(#m-c1)"/>
-    <text class="t-edge" x="380" y="46" text-anchor="middle">קורא ומוחק</text>
+    <text class="t-edge" x="380" y="46" text-anchor="middle">&#x202B;קורא ומוחק&#x202C;</text>
     <path class="flow" d="M210,89 L174,89" marker-end="url(#m-c1)"/>
-    <text class="t-edge" x="190" y="46" text-anchor="middle">מועתק ונמחק</text>
+    <text class="t-edge" x="190" y="46" text-anchor="middle">&#x202B;מועתק ונמחק&#x202C;</text>
   </svg>
   <figcaption>המנהרה היחידה בין הדפדפן לשאר המערכת היא תיקייה אחת, והתנועה בה חד-כיוונית. הדפדפן כותב, הסורק קורא ומוחק, והעותק שנשמר יושב כבר מחוץ להישג ידו של הדפדפן.</figcaption>
 </figure>
@@ -626,36 +627,36 @@ https://&lt;host&gt;.&lt;tailnet&gt;.ts.net:3020 (tailnet only)
 <p>כל קובץ עובר ארבע בדיקות בלתי תלויות, ועליהן בדיקת מבנה שמוסיפה סימון. הרעיון אינו שאחת מהן מושלמת, אלא שלכל אחת נקודת עיוורון <em>אחרת</em>, ולכן הצירוף מכסה יותר מהסכום שלהן.</p>
 
 <figure class="fig">
-  <svg class="wide" viewBox="0 0 950 250" role="img" aria-label="ארבע בדיקות בשרשרת, וכל אחת מהן יכולה להחמיר את ההכרעה" direction="rtl">
+  <svg class="wide" viewBox="0 0 950 250" role="img" aria-label="ארבע בדיקות בשרשרת, וכל אחת מהן יכולה להחמיר את ההכרעה">
     <defs><marker id="m-c2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box crit" x="780" y="52" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="76" text-anchor="middle">בדיקת סוג תוכן</text>
-    <text class="t-sub" x="855" y="93" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="855" y="76" text-anchor="middle">&#x202B;בדיקת סוג תוכן&#x202C;</text>
+    <text class="t-sub" x="855" y="93" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box crit" x="590" y="52" width="150" height="54" rx="8"/>
     <text class="t-main" x="665" y="76" text-anchor="middle">ClamAV</text>
-    <text class="t-sub" x="665" y="93" text-anchor="middle">שלב קריטי</text>
+    <text class="t-sub" x="665" y="93" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box" x="400" y="52" width="150" height="54" rx="8"/>
     <text class="t-main" x="475" y="84" text-anchor="middle">YARA</text>
     <rect class="box net" x="210" y="52" width="150" height="54" rx="8"/>
     <text class="t-main" x="285" y="84" text-anchor="middle">VirusTotal</text>
     <rect class="box crit" x="20" y="52" width="150" height="54" rx="8"/>
-    <text class="t-main" x="95" y="76" text-anchor="middle">הכרעה</text>
-    <text class="t-sub" x="95" y="93" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="95" y="76" text-anchor="middle">&#x202B;הכרעה&#x202C;</text>
+    <text class="t-sub" x="95" y="93" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <path class="flow" d="M780,79 L744,79" marker-end="url(#m-c2)"/>
-    <text class="t-edge" x="760" y="36" text-anchor="middle">אותו עותק</text>
+    <text class="t-edge" x="760" y="36" text-anchor="middle">&#x202B;אותו עותק&#x202C;</text>
     <path class="flow" d="M590,79 L554,79" marker-end="url(#m-c2)"/>
-    <text class="t-edge" x="570" y="36" text-anchor="middle">כ-stream</text>
+    <text class="t-edge" x="570" y="36" text-anchor="middle">&#x202B;כ-stream&#x202C;</text>
     <path class="flow" d="M400,79 L364,79" marker-end="url(#m-c2)"/>
-    <text class="t-edge" x="380" y="36" text-anchor="middle">כללי דפוס</text>
+    <text class="t-edge" x="380" y="36" text-anchor="middle">&#x202B;כללי דפוס&#x202C;</text>
     <path class="flow" d="M210,79 L174,79" marker-end="url(#m-c2)"/>
-    <text class="t-edge" x="190" y="36" text-anchor="middle">hash בלבד</text>
+    <text class="t-edge" x="190" y="36" text-anchor="middle">&#x202B;hash בלבד&#x202C;</text>
     <rect class="box bad" x="400" y="170" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="202" text-anchor="middle">FAIL או REVIEW</text>
+    <text class="t-main" x="475" y="202" text-anchor="middle">&#x202B;FAIL או REVIEW&#x202C;</text>
     <path class="flow bad" d="M855,106 C855,145 640,150 492,167" marker-end="url(#m-c2)"/>
     <path class="flow bad" d="M665,106 C665,145 580,152 486,167" marker-end="url(#m-c2)"/>
     <path class="flow bad" d="M475,106 L475,167" marker-end="url(#m-c2)"/>
     <path class="flow bad" d="M285,106 C285,145 380,152 462,167" marker-end="url(#m-c2)"/>
-    <text class="t-edge" x="475" y="243" text-anchor="middle">כל בדיקה יכולה להחמיר</text>
+    <text class="t-edge" x="475" y="243" text-anchor="middle">&#x202B;כל בדיקה יכולה להחמיר&#x202C;</text>
   </svg>
   <figcaption>הקובץ זורם מימין לשמאל דרך ארבע הבדיקות, ורק מי שיצא נקי מכולן מגיע להכרעה החיובית. כל אחת מהבדיקות יכולה להוריד את הקובץ למסלול האטום, ואף אחת מהן לא יכולה לשחרר אותו לבדה.</figcaption>
 </figure>
@@ -731,38 +732,38 @@ https://&lt;host&gt;.&lt;tailnet&gt;.ts.net:3020 (tailnet only)
 </ol>
 
 <figure class="fig">
-  <svg class="wide" viewBox="0 0 950 260" role="img" aria-label="מסלול הכניסה של רשומה, ושלוש הצורות שנדחות ממנו" direction="rtl">
+  <svg class="wide" viewBox="0 0 950 260" role="img" aria-label="מסלול הכניסה של רשומה, ושלוש הצורות שנדחות ממנו">
     <defs><marker id="m-c3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box" x="780" y="46" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="78" text-anchor="middle">רשומה בתיקייה</text>
+    <text class="t-main" x="855" y="78" text-anchor="middle">&#x202B;רשומה בתיקייה&#x202C;</text>
     <rect class="box crit" x="590" y="46" width="150" height="54" rx="8"/>
     <text class="t-main" x="665" y="70" text-anchor="middle">lstat</text>
-    <text class="t-sub" x="665" y="87" text-anchor="middle">שלב קריטי</text>
+    <text class="t-sub" x="665" y="87" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box" x="400" y="46" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="78" text-anchor="middle">קובץ רגיל, שם יחיד</text>
+    <text class="t-main" x="475" y="78" text-anchor="middle">&#x202B;קובץ רגיל, שם יחיד&#x202C;</text>
     <rect class="box crit" x="210" y="46" width="150" height="54" rx="8"/>
     <text class="t-main" x="285" y="70" text-anchor="middle">open O_NOFOLLOW</text>
-    <text class="t-sub" x="285" y="87" text-anchor="middle">שלב קריטי</text>
+    <text class="t-sub" x="285" y="87" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box crit" x="20" y="46" width="150" height="54" rx="8"/>
-    <text class="t-main" x="95" y="70" text-anchor="middle">fstat מול lstat</text>
-    <text class="t-sub" x="95" y="87" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="95" y="70" text-anchor="middle">&#x202B;fstat מול lstat&#x202C;</text>
+    <text class="t-sub" x="95" y="87" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <path class="flow" d="M780,73 L744,73" marker-end="url(#m-c3)"/>
-    <text class="t-edge" x="760" y="30" text-anchor="middle">מה זה עצמו</text>
+    <text class="t-edge" x="760" y="30" text-anchor="middle">&#x202B;מה זה עצמו&#x202C;</text>
     <path class="flow" d="M590,73 L554,73" marker-end="url(#m-c3)"/>
-    <text class="t-edge" x="570" y="30" text-anchor="middle">עובדות הרשומה</text>
+    <text class="t-edge" x="570" y="30" text-anchor="middle">&#x202B;עובדות הרשומה&#x202C;</text>
     <path class="flow" d="M400,73 L364,73" marker-end="url(#m-c3)"/>
-    <text class="t-edge" x="380" y="30" text-anchor="middle">בקשה ל-kernel</text>
+    <text class="t-edge" x="380" y="30" text-anchor="middle">&#x202B;בקשה ל-kernel&#x202C;</text>
     <path class="flow" d="M210,73 L174,73" marker-end="url(#m-c3)"/>
-    <text class="t-edge" x="190" y="30" text-anchor="middle">אותו inode</text>
+    <text class="t-edge" x="190" y="30" text-anchor="middle">&#x202B;אותו inode&#x202C;</text>
     <rect class="box bad" x="400" y="180" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="212" text-anchor="middle">REJECT ודוח</text>
+    <text class="t-main" x="475" y="212" text-anchor="middle">&#x202B;REJECT ודוח&#x202C;</text>
     <path class="flow bad" d="M665,100 C665,145 570,158 490,177" marker-end="url(#m-c3)"/>
     <text class="t-edge" x="625" y="138" text-anchor="middle">symlink</text>
     <path class="flow bad" d="M475,100 L475,177" marker-end="url(#m-c3)"/>
     <text class="t-edge" x="432" y="140" text-anchor="middle">hard link</text>
     <path class="flow bad" d="M285,100 C285,145 380,158 460,177" marker-end="url(#m-c3)"/>
-    <text class="t-edge" x="322" y="138" text-anchor="middle">נתיב שיוצא</text>
-    <text class="t-edge" x="475" y="252" text-anchor="middle">נמחק בלי שנפתח</text>
+    <text class="t-edge" x="322" y="138" text-anchor="middle">&#x202B;נתיב שיוצא&#x202C;</text>
+    <text class="t-edge" x="475" y="252" text-anchor="middle">&#x202B;נמחק בלי שנפתח&#x202C;</text>
   </svg>
   <figcaption>הרשומה נבדקת כמו שהיא, ולא כמו שהיא מתחזה. שלוש הצורות שנדחות אינן תקלות אלא ניסיונות לבלבל בין מה שנבדק לבין מה שמשוחרר, וכל דחייה מייצרת דוח לפני שהרשומה מוסרת.</figcaption>
 </figure>
@@ -807,29 +808,29 @@ if (not stat.S_ISREG(fst.st_mode) or fst.st_nlink != 1
 </ul>
 
 <figure class="fig">
-  <svg class="wide" viewBox="0 0 950 230" role="img" aria-label="השם מבטיח סוג אחד, התוכן מודד סוג אחר, והמיפוי מכריע ביניהם" direction="rtl">
+  <svg class="wide" viewBox="0 0 950 230" role="img" aria-label="השם מבטיח סוג אחד, התוכן מודד סוג אחר, והמיפוי מכריע ביניהם">
     <defs><marker id="m-c4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box" x="780" y="26" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="58" text-anchor="middle">השם והסיומת</text>
+    <text class="t-main" x="855" y="58" text-anchor="middle">&#x202B;השם והסיומת&#x202C;</text>
     <rect class="box" x="780" y="146" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="178" text-anchor="middle">הבייטים הראשונים</text>
+    <text class="t-main" x="855" y="178" text-anchor="middle">&#x202B;הבייטים הראשונים&#x202C;</text>
     <rect class="box crit" x="560" y="86" width="150" height="54" rx="8"/>
-    <text class="t-main" x="635" y="110" text-anchor="middle">מיפוי EXPECTED_MIME</text>
-    <text class="t-sub" x="635" y="127" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="635" y="110" text-anchor="middle">&#x202B;מיפוי EXPECTED_MIME&#x202C;</text>
+    <text class="t-sub" x="635" y="127" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box bad" x="330" y="26" width="150" height="54" rx="8"/>
-    <text class="t-main" x="405" y="58" text-anchor="middle">FAIL בין משפחות</text>
+    <text class="t-main" x="405" y="58" text-anchor="middle">&#x202B;FAIL בין משפחות&#x202C;</text>
     <rect class="box soft" x="330" y="146" width="150" height="54" rx="8"/>
-    <text class="t-main" x="405" y="178" text-anchor="middle">הערה בדוח</text>
+    <text class="t-main" x="405" y="178" text-anchor="middle">&#x202B;הערה בדוח&#x202C;</text>
     <rect class="box" x="100" y="86" width="150" height="54" rx="8"/>
-    <text class="t-main" x="175" y="118" text-anchor="middle">הכרעה</text>
+    <text class="t-main" x="175" y="118" text-anchor="middle">&#x202B;הכרעה&#x202C;</text>
     <path class="flow" d="M780,53 C742,53 730,113 714,113" marker-end="url(#m-c4)"/>
-    <text class="t-edge" x="742" y="80" text-anchor="middle">מה השם מבטיח</text>
+    <text class="t-edge" x="742" y="80" text-anchor="middle">&#x202B;מה השם מבטיח&#x202C;</text>
     <path class="flow" d="M780,173 C742,173 730,113 714,113" marker-end="url(#m-c4)"/>
-    <text class="t-edge" x="742" y="152" text-anchor="middle">מה התוכן באמת</text>
+    <text class="t-edge" x="742" y="152" text-anchor="middle">&#x202B;מה התוכן באמת&#x202C;</text>
     <path class="flow bad" d="M560,113 C520,113 512,53 484,53" marker-end="url(#m-c4)"/>
-    <text class="t-edge" x="522" y="76" text-anchor="middle">משפחות שונות</text>
+    <text class="t-edge" x="522" y="76" text-anchor="middle">&#x202B;משפחות שונות&#x202C;</text>
     <path class="flow" d="M560,113 C520,113 512,173 484,173" marker-end="url(#m-c4)"/>
-    <text class="t-edge" x="522" y="150" text-anchor="middle">אותה משפחה</text>
+    <text class="t-edge" x="522" y="150" text-anchor="middle">&#x202B;אותה משפחה&#x202C;</text>
     <path class="flow bad" d="M330,53 C292,53 282,113 254,113" marker-end="url(#m-c4)"/>
     <path class="flow" d="M330,173 C292,173 282,113 254,113" marker-end="url(#m-c4)"/>
   </svg>
@@ -916,32 +917,32 @@ fq-emulator     6.586MiB / 256MiB    7     0.00%</pre>
 <p>שקיפות הדיכוי היא הכלל שמחזיק את שני האחרים, כי ויסות בלי דיווח הוא עיוורון שנראה כמו שקט. המצב נשמר בקובץ, כך שהפעלה מחדש של השירות לא מאפסת את השעה ולא פותחת מחדש את הברז, וגם <button type="button" class="tech" data-tech="systemd-timers">systemd timer</button> ששולח תקציר יומי קורא את אותו קובץ מצב.</p>
 
 <figure class="fig">
-  <svg class="wide" viewBox="0 0 950 230" role="img" aria-label="ממצא רע עובר איחוד ותקרה לפני שהוא הופך למייל" direction="rtl">
+  <svg class="wide" viewBox="0 0 950 230" role="img" aria-label="ממצא רע עובר איחוד ותקרה לפני שהוא הופך למייל">
     <defs><marker id="m-c5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box bad" x="780" y="56" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="88" text-anchor="middle">verdict רע</text>
+    <text class="t-main" x="855" y="88" text-anchor="middle">&#x202B;verdict רע&#x202C;</text>
     <rect class="box crit" x="590" y="56" width="150" height="54" rx="8"/>
-    <text class="t-main" x="665" y="80" text-anchor="middle">מפתח איחוד</text>
-    <text class="t-sub" x="665" y="97" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;מפתח איחוד&#x202C;</text>
+    <text class="t-sub" x="665" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box" x="400" y="56" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="88" text-anchor="middle">חלון של שעה</text>
+    <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;חלון של שעה&#x202C;</text>
     <rect class="box crit" x="210" y="56" width="150" height="54" rx="8"/>
-    <text class="t-main" x="285" y="80" text-anchor="middle">תקרה של 6 בשעה</text>
-    <text class="t-sub" x="285" y="97" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="285" y="80" text-anchor="middle">&#x202B;תקרה של 6 בשעה&#x202C;</text>
+    <text class="t-sub" x="285" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box" x="20" y="56" width="150" height="54" rx="8"/>
-    <text class="t-main" x="95" y="88" text-anchor="middle">מייל יוצא</text>
+    <text class="t-main" x="95" y="88" text-anchor="middle">&#x202B;מייל יוצא&#x202C;</text>
     <path class="flow" d="M780,83 L744,83" marker-end="url(#m-c5)"/>
-    <text class="t-edge" x="760" y="40" text-anchor="middle">hash של השורה</text>
+    <text class="t-edge" x="760" y="40" text-anchor="middle">&#x202B;hash של השורה&#x202C;</text>
     <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c5)"/>
-    <text class="t-edge" x="570" y="40" text-anchor="middle">ממצא חדש</text>
+    <text class="t-edge" x="570" y="40" text-anchor="middle">&#x202B;ממצא חדש&#x202C;</text>
     <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c5)"/>
-    <text class="t-edge" x="380" y="40" text-anchor="middle">מתחת לתקרה</text>
+    <text class="t-edge" x="380" y="40" text-anchor="middle">&#x202B;מתחת לתקרה&#x202C;</text>
     <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c5)"/>
-    <text class="t-edge" x="190" y="40" text-anchor="middle">עם מונה הדיכוי</text>
+    <text class="t-edge" x="190" y="40" text-anchor="middle">&#x202B;עם מונה הדיכוי&#x202C;</text>
     <rect class="box soft" x="305" y="160" width="150" height="54" rx="8"/>
-    <text class="t-main" x="380" y="192" text-anchor="middle">נספר ולא נשלח</text>
+    <text class="t-main" x="380" y="192" text-anchor="middle">&#x202B;נספר ולא נשלח&#x202C;</text>
     <path class="flow" d="M285,110 C285,140 330,146 376,157" marker-end="url(#m-c5)"/>
-    <text class="t-edge" x="248" y="146" text-anchor="middle">מעבר לתקרה</text>
+    <text class="t-edge" x="248" y="146" text-anchor="middle">&#x202B;מעבר לתקרה&#x202C;</text>
   </svg>
   <figcaption>שני מסננים יושבים בין הממצא למייל: איחוד לפי תוכן השורה, ותקרה על הקצב. מה שנבלע בהם אינו נעלם, הוא נספר ומדווח בגוף המייל הבא.</figcaption>
 </figure>
@@ -965,28 +966,28 @@ fq-notify-verdicts.service   loaded active running   Retro Airlock: mail FAIL/RE
 <p>ה-cache של הדפדפן יושב ב-<span class="term" tabindex="0" data-def="תיקייה שיושבת בזיכרון בלבד ונעלמת עם ה-container">tmpfs</span>, כלומר לזיכרון בלבד. cache מאתרים שאין סיבה לסמוך עליהם הוא בדיוק סוג המידע שלא רוצים שישרוד. ה-<span class="term" tabindex="0" data-def="תיקיית ההגדרות וההיסטוריה של הדפדפן, שנשמרת בין הפעלה להפעלה">profile</span> עצמו נשאר, כי ויתור עליו הופך את המערכת ללא נוחה, אבל הוא נמחק אוטומטית פעם בחודש וידנית אחרי כל verdict רע. את המחיקה מריץ <button type="button" class="tech" data-tech="systemd-timers">systemd timer</button> על <button type="button" class="tech" data-tech="firefox-lsio">image הדפדפן</button>, וסקריפט האיפוס בנוי בסדר הנכון: קודם הוא מסרב לרוץ אם יש הורדה בדרך, אחר כך הוא שומר ארכיון של ה-profile, ורק אז מוחק ומפעיל מחדש. timer שיודע לוותר על ריצה כשהתנאים לא מתאימים שווה יותר מ-timer שתמיד מצליח.</p>
 
 <figure class="fig">
-  <svg viewBox="0 0 760 230" role="img" aria-label="איפוס ה-profile רץ רק כשהתנאים מתאימים, ותמיד אחרי ארכיון" direction="rtl">
+  <svg viewBox="0 0 760 230" role="img" aria-label="איפוס ה-profile רץ רק כשהתנאים מתאימים, ותמיד אחרי ארכיון">
     <defs><marker id="m-c6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box" x="590" y="46" width="150" height="54" rx="8"/>
-    <text class="t-main" x="665" y="78" text-anchor="middle">timer חודשי</text>
+    <text class="t-main" x="665" y="78" text-anchor="middle">&#x202B;timer חודשי&#x202C;</text>
     <rect class="box crit" x="400" y="46" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="70" text-anchor="middle">יש הורדה בדרך</text>
-    <text class="t-sub" x="475" y="87" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="475" y="70" text-anchor="middle">&#x202B;יש הורדה בדרך&#x202C;</text>
+    <text class="t-sub" x="475" y="87" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box crit" x="210" y="46" width="150" height="54" rx="8"/>
-    <text class="t-main" x="285" y="70" text-anchor="middle">ארכיון של ה-profile</text>
-    <text class="t-sub" x="285" y="87" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="285" y="70" text-anchor="middle">&#x202B;ארכיון של ה-profile&#x202C;</text>
+    <text class="t-sub" x="285" y="87" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box" x="20" y="46" width="150" height="54" rx="8"/>
-    <text class="t-main" x="95" y="78" text-anchor="middle">מחיקה והפעלה מחדש</text>
+    <text class="t-main" x="95" y="78" text-anchor="middle">&#x202B;מחיקה והפעלה מחדש&#x202C;</text>
     <path class="flow" d="M590,73 L554,73" marker-end="url(#m-c6)"/>
-    <text class="t-edge" x="570" y="30" text-anchor="middle">בודק תנאים</text>
+    <text class="t-edge" x="570" y="30" text-anchor="middle">&#x202B;בודק תנאים&#x202C;</text>
     <path class="flow" d="M400,73 L364,73" marker-end="url(#m-c6)"/>
-    <text class="t-edge" x="380" y="30" text-anchor="middle">התיקייה שקטה</text>
+    <text class="t-edge" x="380" y="30" text-anchor="middle">&#x202B;התיקייה שקטה&#x202C;</text>
     <path class="flow" d="M210,73 L174,73" marker-end="url(#m-c6)"/>
-    <text class="t-edge" x="190" y="30" text-anchor="middle">רק אחרי גיבוי</text>
+    <text class="t-edge" x="190" y="30" text-anchor="middle">&#x202B;רק אחרי גיבוי&#x202C;</text>
     <rect class="box soft" x="305" y="160" width="150" height="54" rx="8"/>
-    <text class="t-main" x="380" y="192" text-anchor="middle">מוותר על הריצה</text>
+    <text class="t-main" x="380" y="192" text-anchor="middle">&#x202B;מוותר על הריצה&#x202C;</text>
     <path class="flow" d="M475,100 C475,136 430,146 384,157" marker-end="url(#m-c6)"/>
-    <text class="t-edge" x="508" y="146" text-anchor="middle">הורדה פעילה</text>
+    <text class="t-edge" x="508" y="146" text-anchor="middle">&#x202B;הורדה פעילה&#x202C;</text>
   </svg>
   <figcaption>סדר הפעולות הוא ההגנה: בדיקת תנאים, ארכיון, ורק אז מחיקה. ויתור על ריצה הוא תוצאה לגיטימית ולא כישלון, כי הריצה הבאה תגיע בעוד חודש ממילא.</figcaption>
 </figure>
@@ -1007,30 +1008,30 @@ fq-profile-reset.timer    Retro Airlock: monthly browser profile wipe (1st, 05:0
 <p>מי שרוצה להציג את הפרויקט בפומבי עומד בפני שלוש אפשרויות. זו החלטה שקל מאוד לקבל מסיבות לא נכונות, ולכן כדאי לכתוב את שלושתן זו מול זו לפני שבוחרים.</p>
 
 <figure class="fig">
-  <svg class="wide" viewBox="0 0 950 200" role="img" aria-label="אתר סטטי נותן לצופה את אותה תמונה בלי להוסיף מאזין למכונה" direction="rtl">
+  <svg class="wide" viewBox="0 0 950 200" role="img" aria-label="אתר סטטי נותן לצופה את אותה תמונה בלי להוסיף מאזין למכונה">
     <defs><marker id="m-c7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
-    <text class="lbl" x="855" y="24" text-anchor="middle">נבחר</text>
+    <text class="lbl" x="855" y="24" text-anchor="middle">&#x202B;נבחר&#x202C;</text>
     <rect class="box mine" x="780" y="36" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="68" text-anchor="middle">אתר סטטי</text>
+    <text class="t-main" x="855" y="68" text-anchor="middle">&#x202B;אתר סטטי&#x202C;</text>
     <rect class="box crit" x="590" y="36" width="150" height="54" rx="8"/>
-    <text class="t-main" x="665" y="60" text-anchor="middle">אין מאזין חדש</text>
-    <text class="t-sub" x="665" y="77" text-anchor="middle">שלב קריטי</text>
+    <text class="t-main" x="665" y="60" text-anchor="middle">&#x202B;אין מאזין חדש&#x202C;</text>
+    <text class="t-sub" x="665" y="77" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box" x="400" y="36" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="68" text-anchor="middle">דוחות ומשחק חופשי</text>
+    <text class="t-main" x="475" y="68" text-anchor="middle">&#x202B;דוחות ומשחק חופשי&#x202C;</text>
     <rect class="box" x="210" y="36" width="150" height="54" rx="8"/>
-    <text class="t-main" x="285" y="68" text-anchor="middle">אפס תוספת למשטח</text>
+    <text class="t-main" x="285" y="68" text-anchor="middle">&#x202B;אפס תוספת למשטח&#x202C;</text>
     <path class="flow" d="M780,63 L744,63" marker-end="url(#m-c7)"/>
     <path class="flow" d="M590,63 L554,63" marker-end="url(#m-c7)"/>
     <path class="flow" d="M400,63 L364,63" marker-end="url(#m-c7)"/>
-    <text class="lbl" x="855" y="112" text-anchor="middle">נדחה</text>
+    <text class="lbl" x="855" y="112" text-anchor="middle">&#x202B;נדחה&#x202C;</text>
     <rect class="box bad" x="780" y="124" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="156" text-anchor="middle">מנהרה ציבורית</text>
+    <text class="t-main" x="855" y="156" text-anchor="middle">&#x202B;מנהרה ציבורית&#x202C;</text>
     <rect class="box bad" x="590" y="124" width="150" height="54" rx="8"/>
-    <text class="t-main" x="665" y="156" text-anchor="middle">מסלול ציבורי חדש</text>
+    <text class="t-main" x="665" y="156" text-anchor="middle">&#x202B;מסלול ציבורי חדש&#x202C;</text>
     <rect class="box bad" x="400" y="124" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="156" text-anchor="middle">CPU ו-headers של המפעיל</text>
+    <text class="t-main" x="475" y="156" text-anchor="middle">&#x202B;CPU ו-headers של המפעיל&#x202C;</text>
     <rect class="box soft" x="210" y="124" width="150" height="54" rx="8"/>
-    <text class="t-main" x="285" y="156" text-anchor="middle">אותה תמונה בדפדפן</text>
+    <text class="t-main" x="285" y="156" text-anchor="middle">&#x202B;אותה תמונה בדפדפן&#x202C;</text>
     <path class="flow bad" d="M780,151 L744,151" marker-end="url(#m-c7)"/>
     <path class="flow bad" d="M590,151 L554,151" marker-end="url(#m-c7)"/>
     <path class="flow bad" d="M400,151 L364,151" marker-end="url(#m-c7)"/>
@@ -1065,25 +1066,25 @@ $ tailscale funnel status
 <p>זה ה-<button type="button" class="tech" data-tech="docker">container</button> היחיד שנוגע באינטרנט העוין מרצון. בתוכו רץ שולחן עבודה גרפי זעיר עם <button type="button" class="tech" data-tech="firefox-lsio">Firefox</button>, ושכבת ה-streaming, <button type="button" class="tech" data-tech="selkies">Selkies</button>, מעבירה את המסך שלו אל הדפדפן שהמשתמש יושב מולו ומחזירה את הקלט בכיוון ההפוך. מבחינת המשתמש זה tab. מבחינת המכונה זה stream של וידאו, ושום קוד של האתר שבו ביקרו לא מגיע למכשיר של המשתמש.</p>
 
 <figure class="fig">
-  <svg viewBox="0 0 760 200" role="img" aria-label="מסלול ה-stream: Firefox ב-container מצד ימין, Selkies מקודד במרכז, הסמארטפון מצד שמאל, וחץ חוזר של אירועי קלט" direction="rtl">
+  <svg viewBox="0 0 760 200" role="img" aria-label="מסלול ה-stream: Firefox ב-container מצד ימין, Selkies מקודד במרכז, הסמארטפון מצד שמאל, וחץ חוזר של אירועי קלט">
     <defs><marker id="m-d01" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box vendor" x="580" y="40" width="160" height="56" rx="8"/>
-    <text class="t-main" x="660" y="64" text-anchor="middle">Firefox ב-container</text>
-    <text class="t-sub" x="660" y="82" text-anchor="middle">שולחן עבודה גרפי</text>
+    <text class="t-main" x="660" y="64" text-anchor="middle">&#x202B;Firefox ב-container&#x202C;</text>
+    <text class="t-sub" x="660" y="82" text-anchor="middle">&#x202B;שולחן עבודה גרפי&#x202C;</text>
     <rect class="box crit" x="300" y="40" width="160" height="56" rx="8"/>
     <text class="t-main" x="380" y="64" text-anchor="middle">Selkies</text>
-    <text class="t-sub" x="380" y="82" text-anchor="middle">קידוד JPEG ב-CPU</text>
+    <text class="t-sub" x="380" y="82" text-anchor="middle">&#x202B;קידוד JPEG ב-CPU&#x202C;</text>
     <rect class="box net" x="20" y="40" width="160" height="56" rx="8"/>
-    <text class="t-main" x="100" y="64" text-anchor="middle">הסמארטפון</text>
-    <text class="t-sub" x="100" y="82" text-anchor="middle">דפדפן רגיל, בלי התקנה</text>
+    <text class="t-main" x="100" y="64" text-anchor="middle">&#x202B;הסמארטפון&#x202C;</text>
+    <text class="t-sub" x="100" y="82" text-anchor="middle">&#x202B;דפדפן רגיל, בלי התקנה&#x202C;</text>
     <path class="flow" d="M578,68 H462" marker-end="url(#m-d01)"/>
-    <text class="t-edge" x="520" y="30" text-anchor="middle">מסך גולמי</text>
+    <text class="t-edge" x="520" y="30" text-anchor="middle">&#x202B;מסך גולמי&#x202C;</text>
     <path class="flow" d="M298,68 H182" marker-end="url(#m-d01)"/>
-    <text class="t-edge" x="240" y="30" text-anchor="middle">30 FPS ב-WebSocket</text>
+    <text class="t-edge" x="240" y="30" text-anchor="middle">&#x202B;30 FPS ב-WebSocket&#x202C;</text>
     <path class="flow" d="M182,150 H298" marker-end="url(#m-d01)"/>
-    <text class="t-edge" x="240" y="138" text-anchor="middle">אירועי מגע</text>
+    <text class="t-edge" x="240" y="138" text-anchor="middle">&#x202B;אירועי מגע&#x202C;</text>
     <path class="flow" d="M462,150 H578" marker-end="url(#m-d01)"/>
-    <text class="t-edge" x="520" y="138" text-anchor="middle">עכבר ומקלדת וירטואליים</text>
+    <text class="t-edge" x="520" y="138" text-anchor="middle">&#x202B;עכבר ומקלדת וירטואליים&#x202C;</text>
   </svg>
   <figcaption>הקובץ שיורד נשאר בצד ימין של התרשים. מה שחוצה את הרשת אל המכשיר של המשתמש הוא תמונה מקודדת, ומה שחוזר ממנו הוא אירועי קלט בלבד.</figcaption>
 </figure>
@@ -1138,28 +1139,28 @@ INFO:gst_app_resize:on_resize_handler for display &#x27;primary&#x27; with resol
 <p>הרכיב שנותן את ה-<span class="term" tabindex="0" data-def="PASS, REVIEW, FAIL או REJECT: ההכרעה שנרשמת לכל קובץ בסוף הסריקה">verdict</span>. כ-600 שורות Python, בלולאה: כל שתי שניות הוא מסתכל בתיקיית הכניסה ומטפל במה שיש בה. תחילה בדיקת כניסה, אחר כך המתנת יציבות, שבה הקובץ צריך להפסיק לגדול, אחר כך העמדה באחסון פרטי, ואז ארבע הבדיקות וה-verdict.</p>
 
 <figure class="fig">
-  <svg class="wide" viewBox="0 0 1000 170" role="img" aria-label="לולאת הסורק מימין לשמאל: תיקיית הכניסה, בדיקת כניסה, המתנת יציבות והעמדה באחסון פרטי, ארבע בדיקות, verdict" direction="rtl">
+  <svg class="wide" viewBox="0 0 1000 170" role="img" aria-label="לולאת הסורק מימין לשמאל: תיקיית הכניסה, בדיקת כניסה, המתנת יציבות והעמדה באחסון פרטי, ארבע בדיקות, verdict">
     <defs><marker id="m-d02" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box mine" x="828" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="913" y="76" text-anchor="middle">תיקיית הכניסה</text>
-    <text class="t-sub" x="913" y="94" text-anchor="middle">הדפדפן כותב לכאן</text>
+    <text class="t-main" x="913" y="76" text-anchor="middle">&#x202B;תיקיית הכניסה&#x202C;</text>
+    <text class="t-sub" x="913" y="94" text-anchor="middle">&#x202B;הדפדפן כותב לכאן&#x202C;</text>
     <rect class="box crit" x="621" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="706" y="76" text-anchor="middle">בדיקת כניסה</text>
-    <text class="t-sub" x="706" y="94" text-anchor="middle">קובץ רגיל, שם יחיד</text>
+    <text class="t-main" x="706" y="76" text-anchor="middle">&#x202B;בדיקת כניסה&#x202C;</text>
+    <text class="t-sub" x="706" y="94" text-anchor="middle">&#x202B;קובץ רגיל, שם יחיד&#x202C;</text>
     <rect class="box crit" x="414" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="499" y="76" text-anchor="middle">יציבות והעמדה</text>
-    <text class="t-sub" x="499" y="94" text-anchor="middle">אחסון פרטי לסורק</text>
+    <text class="t-main" x="499" y="76" text-anchor="middle">&#x202B;יציבות והעמדה&#x202C;</text>
+    <text class="t-sub" x="499" y="94" text-anchor="middle">&#x202B;אחסון פרטי לסורק&#x202C;</text>
     <rect class="box" x="207" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="292" y="76" text-anchor="middle">ארבע בדיקות</text>
-    <text class="t-sub" x="292" y="94" text-anchor="middle">תוכן, חתימות, דפוס, hash</text>
+    <text class="t-main" x="292" y="76" text-anchor="middle">&#x202B;ארבע בדיקות&#x202C;</text>
+    <text class="t-sub" x="292" y="94" text-anchor="middle">&#x202B;תוכן, חתימות, דפוס, hash&#x202C;</text>
     <rect class="box crit" x="0" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="85" y="76" text-anchor="middle">verdict ודוח JSON</text>
-    <text class="t-sub" x="85" y="94" text-anchor="middle">תיקייה נקייה או איטום</text>
+    <text class="t-main" x="85" y="76" text-anchor="middle">&#x202B;verdict ודוח JSON&#x202C;</text>
+    <text class="t-sub" x="85" y="94" text-anchor="middle">&#x202B;תיקייה נקייה או איטום&#x202C;</text>
     <path class="flow" d="M826,80 H793" marker-end="url(#m-d02)"/>
     <path class="flow" d="M619,80 H586" marker-end="url(#m-d02)"/>
     <path class="flow" d="M412,80 H379" marker-end="url(#m-d02)"/>
     <path class="flow" d="M205,80 H172" marker-end="url(#m-d02)"/>
-    <text class="t-edge" x="500" y="30" text-anchor="middle">כל שתי שניות, על כל רשומה חדשה</text>
+    <text class="t-edge" x="500" y="30" text-anchor="middle">&#x202B;כל שתי שניות, על כל רשומה חדשה&#x202C;</text>
   </svg>
   <figcaption>הסדר הוא ההגנה: הקובץ יוצא מהישג ידו של הדפדפן לפני שהוא נפתח בכלל, וכל הבדיקות רצות על העותק שכבר הועמד באחסון הפרטי.</figcaption>
 </figure>
@@ -1210,24 +1211,24 @@ INFO:gst_app_resize:on_resize_handler for display &#x27;primary&#x27; with resol
 <p>כשקובץ גדול נשלח אליו, ClamAV סגר את החיבור מצדו, הסורק קיבל שגיאת תקשורת, ולפי הכלל ששגיאה אינה PASS, הקובץ נאטם כאילו היה נגוע. התוצאה נראית כמו זיהוי, אבל היא תקלה. התיקון היה להעלות את מגבלות הגודל בקובץ קונפיגורציה שמוצמד ל-container. כשל בטוח הוא עדיין כשל, וצריך לזהות אותו לפי הנימוק בדוח ולא לפי ה-verdict.</p>
 
 <figure class="fig">
-  <svg viewBox="0 0 820 150" role="img" aria-label="שרשרת התקלה: disk image גדול, מגבלת גודל בברירת המחדל, חיבור שנסגר ושגיאת תקשורת, ואיטום הקובץ שנראה כמו זיהוי" direction="rtl">
+  <svg viewBox="0 0 820 150" role="img" aria-label="שרשרת התקלה: disk image גדול, מגבלת גודל בברירת המחדל, חיבור שנסגר ושגיאת תקשורת, ואיטום הקובץ שנראה כמו זיהוי">
     <defs><marker id="m-d03" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box" x="639" y="40" width="180" height="60" rx="8"/>
-    <text class="t-main" x="729" y="66" text-anchor="middle">disk image גדול</text>
-    <text class="t-sub" x="729" y="84" text-anchor="middle">נשלח כ-stream</text>
+    <text class="t-main" x="729" y="66" text-anchor="middle">&#x202B;disk image גדול&#x202C;</text>
+    <text class="t-sub" x="729" y="84" text-anchor="middle">&#x202B;נשלח כ-stream&#x202C;</text>
     <rect class="box bad" x="426" y="40" width="180" height="60" rx="8"/>
-    <text class="t-main" x="516" y="66" text-anchor="middle">מגבלת גודל</text>
-    <text class="t-sub" x="516" y="84" text-anchor="middle">ברירת מחדל נמוכה</text>
+    <text class="t-main" x="516" y="66" text-anchor="middle">&#x202B;מגבלת גודל&#x202C;</text>
+    <text class="t-sub" x="516" y="84" text-anchor="middle">&#x202B;ברירת מחדל נמוכה&#x202C;</text>
     <rect class="box bad" x="213" y="40" width="180" height="60" rx="8"/>
-    <text class="t-main" x="303" y="66" text-anchor="middle">החיבור נסגר</text>
-    <text class="t-sub" x="303" y="84" text-anchor="middle">שגיאת תקשורת</text>
+    <text class="t-main" x="303" y="66" text-anchor="middle">&#x202B;החיבור נסגר&#x202C;</text>
+    <text class="t-sub" x="303" y="84" text-anchor="middle">&#x202B;שגיאת תקשורת&#x202C;</text>
     <rect class="box crit" x="0" y="40" width="180" height="60" rx="8"/>
-    <text class="t-main" x="90" y="66" text-anchor="middle">הקובץ נאטם</text>
-    <text class="t-sub" x="90" y="84" text-anchor="middle">נראה כמו זיהוי</text>
+    <text class="t-main" x="90" y="66" text-anchor="middle">&#x202B;הקובץ נאטם&#x202C;</text>
+    <text class="t-sub" x="90" y="84" text-anchor="middle">&#x202B;נראה כמו זיהוי&#x202C;</text>
     <path class="flow" d="M637,70 H608" marker-end="url(#m-d03)"/>
     <path class="flow bad" d="M424,70 H395" marker-end="url(#m-d03)"/>
     <path class="flow bad" d="M211,70 H182" marker-end="url(#m-d03)"/>
-    <text class="t-edge" x="410" y="26" text-anchor="middle">שגיאה אינה PASS</text>
+    <text class="t-edge" x="410" y="26" text-anchor="middle">&#x202B;שגיאה אינה PASS&#x202C;</text>
   </svg>
   <figcaption>הכיוון הבטוח עבד בדיוק כמתוכנן, ולכן התקלה התחפשה לזיהוי. ההבדל בין השניים נמצא בנימוק שנרשם בדוח, לא בערך ה-verdict.</figcaption>
 </figure>
@@ -1252,28 +1253,28 @@ bytecode.cvd database is up-to-date (version: 339,   sigs: 80,      f-level: 90)
 </dl>
 
 <figure class="fig">
-  <svg class="wide" viewBox="0 0 1000 170" role="img" aria-label="ארבעת השערים של ה-librarian מימין לשמאל: בדיקת רשומה, סוג אמיתי לפי magic bytes, תקינות מבנית ושמות איברים, ROM מוכר בפנים, ואז פרסום לספרייה" direction="rtl">
+  <svg class="wide" viewBox="0 0 1000 170" role="img" aria-label="ארבעת השערים של ה-librarian מימין לשמאל: בדיקת רשומה, סוג אמיתי לפי magic bytes, תקינות מבנית ושמות איברים, ROM מוכר בפנים, ואז פרסום לספרייה">
     <defs><marker id="m-d04" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box crit" x="828" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="913" y="76" text-anchor="middle">שער 1: בדיקת רשומה</text>
-    <text class="t-sub" x="913" y="94" text-anchor="middle">אותו כלל כמו בסורק</text>
+    <text class="t-main" x="913" y="76" text-anchor="middle">&#x202B;שער 1: בדיקת רשומה&#x202C;</text>
+    <text class="t-sub" x="913" y="94" text-anchor="middle">&#x202B;אותו כלל כמו בסורק&#x202C;</text>
     <rect class="box crit" x="621" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="706" y="76" text-anchor="middle">שער 2: magic bytes</text>
-    <text class="t-sub" x="706" y="94" text-anchor="middle">הסיומת היא הצעה</text>
+    <text class="t-main" x="706" y="76" text-anchor="middle">&#x202B;שער 2: magic bytes&#x202C;</text>
+    <text class="t-sub" x="706" y="94" text-anchor="middle">&#x202B;הסיומת היא הצעה&#x202C;</text>
     <rect class="box crit" x="414" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="499" y="76" text-anchor="middle">שער 3: תקינות מבנית</text>
-    <text class="t-sub" x="499" y="94" text-anchor="middle">שם איבר יחסי בלבד</text>
+    <text class="t-main" x="499" y="76" text-anchor="middle">&#x202B;שער 3: תקינות מבנית&#x202C;</text>
+    <text class="t-sub" x="499" y="94" text-anchor="middle">&#x202B;שם איבר יחסי בלבד&#x202C;</text>
     <rect class="box soft" x="207" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="292" y="76" text-anchor="middle">שער 4: ROM מוכר</text>
-    <text class="t-sub" x="292" y="94" text-anchor="middle">אם אין, דילוג שקט</text>
+    <text class="t-main" x="292" y="76" text-anchor="middle">&#x202B;שער 4: ROM מוכר&#x202C;</text>
+    <text class="t-sub" x="292" y="94" text-anchor="middle">&#x202B;אם אין, דילוג שקט&#x202C;</text>
     <rect class="box mine" x="0" y="50" width="170" height="60" rx="8"/>
-    <text class="t-main" x="85" y="76" text-anchor="middle">פרסום לספרייה</text>
-    <text class="t-sub" x="85" y="94" text-anchor="middle">manifest נבנה מחדש</text>
+    <text class="t-main" x="85" y="76" text-anchor="middle">&#x202B;פרסום לספרייה&#x202C;</text>
+    <text class="t-sub" x="85" y="94" text-anchor="middle">&#x202B;manifest נבנה מחדש&#x202C;</text>
     <path class="flow" d="M826,80 H793" marker-end="url(#m-d04)"/>
     <path class="flow" d="M619,80 H586" marker-end="url(#m-d04)"/>
     <path class="flow" d="M412,80 H379" marker-end="url(#m-d04)"/>
     <path class="flow" d="M205,80 H172" marker-end="url(#m-d04)"/>
-    <text class="t-edge" x="500" y="30" text-anchor="middle">כל שער עוצר בפני עצמו</text>
+    <text class="t-edge" x="500" y="30" text-anchor="middle">&#x202B;כל שער עוצר בפני עצמו&#x202C;</text>
   </svg>
   <figcaption>ארבעת השערים רצים לפי הסדר, וכל אחד מהם עוצר את השרשרת. פרסום הוא התוצאה של אימות מלא, ולא של פתיחה מוצלחת.</figcaption>
 </figure>
@@ -1330,29 +1331,29 @@ def archive_valid(path, kind):
 <p>הפתרון: השרת מגדיר מיפוי על פרמטר ה-URL שמציין איזה core מבקשים. עבור שלושת ה-cores הכבדים, שני ה-headers של הבידוד מקבלים ערך אמיתי. עבור כל ערך אחר הם מקבלים מחרוזת ריקה, ו-nginx פשוט לא שולח header ריק. התוצאה: אותו שרת, אותו מקור, ומדיניות שמופעלת רק למשחקים שצריכים אותה. משחקי מחסנית ממשיכים לעבוד בדיוק כמו קודם. העיצוב הזה מכבד גם את הדרישה החדשה וגם את מה שכבר עבד.</p>
 
 <figure class="fig">
-  <svg class="wide" viewBox="0 0 900 250" role="img" aria-label="שני מסלולים באותו מקור: בקשה ל-core כבד מקבלת את שני ה-headers של הבידוד ומקבלת SharedArrayBuffer, ובקשה לדף הספרייה לא מקבלת אותם וממשיכה לטעון עטיפות ו-font ממקור אחר" direction="rtl">
+  <svg class="wide" viewBox="0 0 900 250" role="img" aria-label="שני מסלולים באותו מקור: בקשה ל-core כבד מקבלת את שני ה-headers של הבידוד ומקבלת SharedArrayBuffer, ובקשה לדף הספרייה לא מקבלת אותם וממשיכה לטעון עטיפות ו-font ממקור אחר">
     <defs><marker id="m-d05" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
-    <text class="lbl" x="880" y="30" text-anchor="end">אותו מקור, אותו שרת</text>
+    <text class="lbl" x="880" y="30" text-anchor="start">&#x202B;אותו מקור, אותו שרת&#x202C;</text>
     <rect class="box" x="650" y="45" width="200" height="60" rx="8"/>
-    <text class="t-main" x="750" y="71" text-anchor="middle">בקשה ל-core כבד</text>
-    <text class="t-sub" x="750" y="89" text-anchor="middle">פרמטר URL מזוהה</text>
+    <text class="t-main" x="750" y="71" text-anchor="middle">&#x202B;בקשה ל-core כבד&#x202C;</text>
+    <text class="t-sub" x="750" y="89" text-anchor="middle">&#x202B;פרמטר URL מזוהה&#x202C;</text>
     <rect class="box crit" x="370" y="45" width="200" height="60" rx="8"/>
-    <text class="t-main" x="470" y="71" text-anchor="middle">שני headers של בידוד</text>
-    <text class="t-sub" x="470" y="89" text-anchor="middle">ערך אמיתי נשלח</text>
+    <text class="t-main" x="470" y="71" text-anchor="middle">&#x202B;שני headers של בידוד&#x202C;</text>
+    <text class="t-sub" x="470" y="89" text-anchor="middle">&#x202B;ערך אמיתי נשלח&#x202C;</text>
     <rect class="box mine" x="90" y="45" width="200" height="60" rx="8"/>
-    <text class="t-main" x="190" y="71" text-anchor="middle">SharedArrayBuffer זמין</text>
-    <text class="t-sub" x="190" y="89" text-anchor="middle">הנגן עולה</text>
+    <text class="t-main" x="190" y="71" text-anchor="middle">&#x202B;SharedArrayBuffer זמין&#x202C;</text>
+    <text class="t-sub" x="190" y="89" text-anchor="middle">&#x202B;הנגן עולה&#x202C;</text>
     <path class="flow" d="M648,75 H572" marker-end="url(#m-d05)"/>
     <path class="flow" d="M368,75 H292" marker-end="url(#m-d05)"/>
     <rect class="box" x="650" y="155" width="200" height="60" rx="8"/>
-    <text class="t-main" x="750" y="181" text-anchor="middle">בקשה לדף הספרייה</text>
-    <text class="t-sub" x="750" y="199" text-anchor="middle">כל ערך אחר</text>
+    <text class="t-main" x="750" y="181" text-anchor="middle">&#x202B;בקשה לדף הספרייה&#x202C;</text>
+    <text class="t-sub" x="750" y="199" text-anchor="middle">&#x202B;כל ערך אחר&#x202C;</text>
     <rect class="box soft" x="370" y="155" width="200" height="60" rx="8"/>
-    <text class="t-main" x="470" y="181" text-anchor="middle">מחרוזת ריקה</text>
-    <text class="t-sub" x="470" y="199" text-anchor="middle">header לא נשלח</text>
+    <text class="t-main" x="470" y="181" text-anchor="middle">&#x202B;מחרוזת ריקה&#x202C;</text>
+    <text class="t-sub" x="470" y="199" text-anchor="middle">&#x202B;header לא נשלח&#x202C;</text>
     <rect class="box mine" x="90" y="155" width="200" height="60" rx="8"/>
-    <text class="t-main" x="190" y="181" text-anchor="middle">עטיפות ו-font נטענים</text>
-    <text class="t-sub" x="190" y="199" text-anchor="middle">הספרייה לא נשברת</text>
+    <text class="t-main" x="190" y="181" text-anchor="middle">&#x202B;עטיפות ו-font נטענים&#x202C;</text>
+    <text class="t-sub" x="190" y="199" text-anchor="middle">&#x202B;הספרייה לא נשברת&#x202C;</text>
     <path class="flow" d="M648,185 H572" marker-end="url(#m-d05)"/>
     <path class="flow" d="M368,185 H292" marker-end="url(#m-d05)"/>
   </svg>
@@ -1390,28 +1391,28 @@ const CACHE = &#x27;airlock-arcade-v6&#x27;;   // v6: EmulatorJS vendored under 
 </dl>
 
 <figure class="fig">
-  <svg viewBox="0 0 900 160" role="img" aria-label="מסלול ההתראה: שורת verdict ב-log, סיווג חומרה, תקרה של שישה מיילים בשעה, דדופליקציה של שעה, ומייל אחד" direction="rtl">
+  <svg viewBox="0 0 900 160" role="img" aria-label="מסלול ההתראה: שורת verdict ב-log, סיווג חומרה, תקרה של שישה מיילים בשעה, דדופליקציה של שעה, ומייל אחד">
     <defs><marker id="m-d06" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box mine" x="740" y="45" width="155" height="60" rx="8"/>
-    <text class="t-main" x="817" y="71" text-anchor="middle">שורת verdict ב-log</text>
-    <text class="t-sub" x="817" y="89" text-anchor="middle">tail מתמשך</text>
+    <text class="t-main" x="817" y="71" text-anchor="middle">&#x202B;שורת verdict ב-log&#x202C;</text>
+    <text class="t-sub" x="817" y="89" text-anchor="middle">&#x202B;tail מתמשך&#x202C;</text>
     <rect class="box crit" x="555" y="45" width="155" height="60" rx="8"/>
-    <text class="t-main" x="632" y="71" text-anchor="middle">סיווג חומרה</text>
-    <text class="t-sub" x="632" y="89" text-anchor="middle">קריטי או אזהרה</text>
+    <text class="t-main" x="632" y="71" text-anchor="middle">&#x202B;סיווג חומרה&#x202C;</text>
+    <text class="t-sub" x="632" y="89" text-anchor="middle">&#x202B;קריטי או אזהרה&#x202C;</text>
     <rect class="box" x="370" y="45" width="155" height="60" rx="8"/>
-    <text class="t-main" x="447" y="71" text-anchor="middle">תקרת קצב</text>
-    <text class="t-sub" x="447" y="89" text-anchor="middle">שישה בשעה</text>
+    <text class="t-main" x="447" y="71" text-anchor="middle">&#x202B;תקרת קצב&#x202C;</text>
+    <text class="t-sub" x="447" y="89" text-anchor="middle">&#x202B;שישה בשעה&#x202C;</text>
     <rect class="box" x="185" y="45" width="155" height="60" rx="8"/>
-    <text class="t-main" x="262" y="71" text-anchor="middle">דדופליקציה</text>
-    <text class="t-sub" x="262" y="89" text-anchor="middle">אותו ממצא, שעה</text>
+    <text class="t-main" x="262" y="71" text-anchor="middle">&#x202B;דדופליקציה&#x202C;</text>
+    <text class="t-sub" x="262" y="89" text-anchor="middle">&#x202B;אותו ממצא, שעה&#x202C;</text>
     <rect class="box net" x="0" y="45" width="155" height="60" rx="8"/>
-    <text class="t-main" x="77" y="71" text-anchor="middle">מייל אחד</text>
-    <text class="t-sub" x="77" y="89" text-anchor="middle">עם ספירת מושתקים</text>
+    <text class="t-main" x="77" y="71" text-anchor="middle">&#x202B;מייל אחד&#x202C;</text>
+    <text class="t-sub" x="77" y="89" text-anchor="middle">&#x202B;עם ספירת מושתקים&#x202C;</text>
     <path class="flow" d="M738,75 H712" marker-end="url(#m-d06)"/>
     <path class="flow" d="M553,75 H527" marker-end="url(#m-d06)"/>
     <path class="flow" d="M368,75 H342" marker-end="url(#m-d06)"/>
     <path class="flow" d="M183,75 H157" marker-end="url(#m-d06)"/>
-    <text class="t-edge" x="450" y="26" text-anchor="middle">verdict תקין נעצר כבר בסיווג</text>
+    <text class="t-edge" x="450" y="26" text-anchor="middle">&#x202B;verdict תקין נעצר כבר בסיווג&#x202C;</text>
   </svg>
   <figcaption>הוויסות הוא חלק מההגנה ולא ויתור עליה: מערכת שמציפה את המפעיל במיילים מאמנת אותו להתעלם מהם, ולכן היא מדווחת גם כמה היא השתיקה.</figcaption>
 </figure>
@@ -1433,24 +1434,24 @@ const CACHE = &#x27;airlock-arcade-v6&#x27;;   // v6: EmulatorJS vendored under 
 </dl>
 
 <figure class="fig">
-  <svg viewBox="0 0 900 270" role="img" aria-label="מה-container של הדפדפן דרך ה-bridge ושתי שכבות ה-firewall: האינטרנט הציבורי מותר, שכנים על אותו bridge מותרים, וטווחים פרטיים ושירותי המכונה נחסמים" direction="rtl">
+  <svg viewBox="0 0 900 270" role="img" aria-label="מה-container של הדפדפן דרך ה-bridge ושתי שכבות ה-firewall: האינטרנט הציבורי מותר, שכנים על אותו bridge מותרים, וטווחים פרטיים ושירותי המכונה נחסמים">
     <defs><marker id="m-d07" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box vendor" x="720" y="100" width="170" height="60" rx="8"/>
-    <text class="t-main" x="805" y="126" text-anchor="middle">ה-container של הדפדפן</text>
-    <text class="t-sub" x="805" y="144" text-anchor="middle">מבקר באתרים לא מוכרים</text>
+    <text class="t-main" x="805" y="126" text-anchor="middle">&#x202B;ה-container של הדפדפן&#x202C;</text>
+    <text class="t-sub" x="805" y="144" text-anchor="middle">&#x202B;מבקר באתרים לא מוכרים&#x202C;</text>
     <rect class="box crit" x="450" y="100" width="190" height="60" rx="8"/>
-    <text class="t-main" x="545" y="126" text-anchor="middle">bridge בשם קבוע</text>
-    <text class="t-sub" x="545" y="144" text-anchor="middle">שתי שכבות iptables</text>
+    <text class="t-main" x="545" y="126" text-anchor="middle">&#x202B;bridge בשם קבוע&#x202C;</text>
+    <text class="t-sub" x="545" y="144" text-anchor="middle">&#x202B;שתי שכבות iptables&#x202C;</text>
     <path class="flow" d="M718,130 H642" marker-end="url(#m-d07)"/>
     <rect class="box net" x="100" y="10" width="280" height="56" rx="8"/>
-    <text class="t-main" x="240" y="34" text-anchor="middle">האינטרנט הציבורי</text>
-    <text class="t-sub" x="240" y="52" text-anchor="middle">גלישה והורדה, מותר</text>
+    <text class="t-main" x="240" y="34" text-anchor="middle">&#x202B;האינטרנט הציבורי&#x202C;</text>
+    <text class="t-sub" x="240" y="52" text-anchor="middle">&#x202B;גלישה והורדה, מותר&#x202C;</text>
     <rect class="box net" x="100" y="102" width="280" height="56" rx="8"/>
-    <text class="t-main" x="240" y="126" text-anchor="middle">שכנים על אותו bridge</text>
-    <text class="t-sub" x="240" y="144" text-anchor="middle">חוק RETURN מפורש</text>
+    <text class="t-main" x="240" y="126" text-anchor="middle">&#x202B;שכנים על אותו bridge&#x202C;</text>
+    <text class="t-sub" x="240" y="144" text-anchor="middle">&#x202B;חוק RETURN מפורש&#x202C;</text>
     <rect class="box bad" x="100" y="194" width="280" height="56" rx="8"/>
-    <text class="t-main" x="240" y="218" text-anchor="middle">טווחים פרטיים ושירותי המכונה</text>
-    <text class="t-sub" x="240" y="236" text-anchor="middle">נופל בשתי הטבלאות</text>
+    <text class="t-main" x="240" y="218" text-anchor="middle">&#x202B;טווחים פרטיים ושירותי המכונה&#x202C;</text>
+    <text class="t-sub" x="240" y="236" text-anchor="middle">&#x202B;נופל בשתי הטבלאות&#x202C;</text>
     <path class="flow" d="M448,116 L384,44" marker-end="url(#m-d07)"/>
     <path class="flow" d="M448,130 H384" marker-end="url(#m-d07)"/>
     <path class="flow bad" d="M448,144 L384,216" marker-end="url(#m-d07)"/>
@@ -1527,7 +1528,7 @@ games.json (הרשומה שנוספה)
 <h3>5.2 מסלול הקובץ: מהורדה ועד ספרייה, כתרשים</h3>
 
 <figure class="fig">
-  <svg viewBox="0 0 700 970" role="img" aria-label="תרשים זרימה אנכי: מהסמארטפון דרך הרשת הפרטית לדפדפן המבודד, משם לתיקיית הכניסה, לסורק האבטחה עם מנוע החתימות ושירות המוניטין, לתיקייה הנקייה או לאחסון האטום, ל-librarian, לתיקיית המשחקים, לשרת ה-emulator, וחזרה לסמארטפון שבו רץ המנוע" direction="rtl">
+  <svg viewBox="0 0 700 970" role="img" aria-label="תרשים זרימה אנכי: מהסמארטפון דרך הרשת הפרטית לדפדפן המבודד, משם לתיקיית הכניסה, לסורק האבטחה עם מנוע החתימות ושירות המוניטין, לתיקייה הנקייה או לאחסון האטום, ל-librarian, לתיקיית המשחקים, לשרת ה-emulator, וחזרה לסמארטפון שבו רץ המנוע">
     <title>מסלול קובץ אחד: מהורדה ועד משחק</title>
     <defs>
       <marker id="m-d20" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
@@ -1536,98 +1537,98 @@ games.json (הרשומה שנוספה)
     </defs>
 
     <rect x="210" y="14" width="280" height="56" rx="10" class="box net"/>
-    <text x="350" y="38" text-anchor="middle" class="t-main">הסמארטפון</text>
-    <text x="350" y="56" text-anchor="middle" class="t-sub">דפדפן רגיל, בלי התקנה</text>
+    <text x="350" y="38" text-anchor="middle" class="t-main">&#x202B;הסמארטפון&#x202C;</text>
+    <text x="350" y="56" text-anchor="middle" class="t-sub">&#x202B;דפדפן רגיל, בלי התקנה&#x202C;</text>
 
     <path d="M350,70 V104" class="flow" marker-end="url(#m-d20)"/>
-    <text x="360" y="92" class="t-edge">בקשה מוצפנת, זהות ברמת המכשיר</text>
+    <text x="360" y="92" class="t-edge">&#x202B;בקשה מוצפנת, זהות ברמת המכשיר&#x202C;</text>
 
     <rect x="210" y="108" width="280" height="56" rx="10" class="box net"/>
-    <text x="350" y="132" text-anchor="middle" class="t-main">הרשת הפרטית ופרסום פנימי</text>
-    <text x="350" y="150" text-anchor="middle" class="t-sub">מאזינה בכתובת הפרטית בלבד</text>
+    <text x="350" y="132" text-anchor="middle" class="t-main">&#x202B;הרשת הפרטית ופרסום פנימי&#x202C;</text>
+    <text x="350" y="150" text-anchor="middle" class="t-sub">&#x202B;מאזינה בכתובת הפרטית בלבד&#x202C;</text>
 
     <path d="M350,164 V198" class="flow" marker-end="url(#m-d20)"/>
-    <text x="360" y="186" class="t-edge">מנהרה אל הכתובת המקומית של המכונה</text>
+    <text x="360" y="186" class="t-edge">&#x202B;מנהרה אל הכתובת המקומית של המכונה&#x202C;</text>
 
     <rect x="210" y="202" width="280" height="56" rx="10" class="box vendor"/>
-    <text x="350" y="226" text-anchor="middle" class="t-main">ה-container של הדפדפן</text>
-    <text x="350" y="244" text-anchor="middle" class="t-sub">כאן ורק כאן מבקרים באתר</text>
+    <text x="350" y="226" text-anchor="middle" class="t-main">&#x202B;ה-container של הדפדפן&#x202C;</text>
+    <text x="350" y="244" text-anchor="middle" class="t-sub">&#x202B;כאן ורק כאן מבקרים באתר&#x202C;</text>
 
     <path d="M350,258 V292" class="flow" marker-end="url(#m-d22)"/>
-    <text x="360" y="272" class="t-edge">הקובץ שירד נכתב לתיקייה</text>
-    <text x="360" y="286" class="t-edge">זו זכות הכתיבה היחידה של הדפדפן</text>
+    <text x="360" y="272" class="t-edge">&#x202B;הקובץ שירד נכתב לתיקייה&#x202C;</text>
+    <text x="360" y="286" class="t-edge">&#x202B;זו זכות הכתיבה היחידה של הדפדפן&#x202C;</text>
 
     <rect x="210" y="296" width="280" height="56" rx="10" class="box mine" stroke-dasharray="5 4"/>
-    <text x="350" y="320" text-anchor="middle" class="t-main">תיקיית הכניסה</text>
-    <text x="350" y="338" text-anchor="middle" class="t-sub">תיקייה גלויה, ב-bind mount לשני הצדדים</text>
+    <text x="350" y="320" text-anchor="middle" class="t-main">&#x202B;תיקיית הכניסה&#x202C;</text>
+    <text x="350" y="338" text-anchor="middle" class="t-sub">&#x202B;תיקייה גלויה, ב-bind mount לשני הצדדים&#x202C;</text>
 
     <path d="M350,352 V386" class="flow" marker-end="url(#m-d21)"/>
-    <text x="360" y="366" class="t-edge">בדיקת כניסה: קובץ רגיל, שם יחיד, נתיב בפנים</text>
-    <text x="360" y="380" class="t-edge">ואז העמדה באחסון פרטי דרך file descriptor</text>
+    <text x="360" y="366" class="t-edge">&#x202B;בדיקת כניסה: קובץ רגיל, שם יחיד, נתיב בפנים&#x202C;</text>
+    <text x="360" y="380" class="t-edge">&#x202B;ואז העמדה באחסון פרטי דרך file descriptor&#x202C;</text>
 
     <rect x="210" y="390" width="280" height="56" rx="10" class="box mine"/>
-    <text x="350" y="414" text-anchor="middle" class="t-main">סורק האבטחה</text>
-    <text x="350" y="432" text-anchor="middle" class="t-sub">ארבע בדיקות, verdict אחד</text>
+    <text x="350" y="414" text-anchor="middle" class="t-main">&#x202B;סורק האבטחה&#x202C;</text>
+    <text x="350" y="432" text-anchor="middle" class="t-sub">&#x202B;ארבע בדיקות, verdict אחד&#x202C;</text>
 
     <rect x="20" y="390" width="170" height="56" rx="10" class="box vendor"/>
-    <text x="105" y="414" text-anchor="middle" class="t-main">מנוע החתימות</text>
-    <text x="105" y="432" text-anchor="middle" class="t-sub">אותו גשר פנימי</text>
+    <text x="105" y="414" text-anchor="middle" class="t-main">&#x202B;מנוע החתימות&#x202C;</text>
+    <text x="105" y="432" text-anchor="middle" class="t-sub">&#x202B;אותו גשר פנימי&#x202C;</text>
     <path d="M208,418 H192" class="flow" marker-end="url(#m-d21)"/>
-    <text x="196" y="408" text-anchor="end" class="t-edge">stream של הקובץ</text>
+    <text x="196" y="408" text-anchor="start" class="t-edge">&#x202B;stream של הקובץ&#x202C;</text>
 
     <rect x="510" y="390" width="170" height="56" rx="10" class="box net"/>
-    <text x="595" y="414" text-anchor="middle" class="t-main">שירות מוניטין</text>
-    <text x="595" y="432" text-anchor="middle" class="t-sub">חיצוני</text>
+    <text x="595" y="414" text-anchor="middle" class="t-main">&#x202B;שירות מוניטין&#x202C;</text>
+    <text x="595" y="432" text-anchor="middle" class="t-sub">&#x202B;חיצוני&#x202C;</text>
     <path d="M492,418 H508" class="flow" marker-end="url(#m-d20)"/>
-    <text x="504" y="408" class="t-edge">hash בלבד</text>
+    <text x="504" y="408" class="t-edge">&#x202B;hash בלבד&#x202C;</text>
 
     <path d="M490,440 H595 V496" class="flow" marker-end="url(#m-d21)"/>
     <rect x="510" y="500" width="170" height="56" rx="10" class="box mine" stroke-dasharray="5 4"/>
-    <text x="595" y="524" text-anchor="middle" class="t-main">אחסון אטום</text>
-    <text x="595" y="542" text-anchor="middle" class="t-sub">לא במערכת הקבצים הגלויה</text>
-    <text x="500" y="470" class="t-edge">נכשל או נדחה</text>
+    <text x="595" y="524" text-anchor="middle" class="t-main">&#x202B;אחסון אטום&#x202C;</text>
+    <text x="595" y="542" text-anchor="middle" class="t-sub">&#x202B;לא במערכת הקבצים הגלויה&#x202C;</text>
+    <text x="500" y="470" class="t-edge">&#x202B;נכשל או נדחה&#x202C;</text>
 
     <path d="M210,440 H105 V496" class="flow" marker-end="url(#m-d21)"/>
     <rect x="20" y="500" width="170" height="56" rx="10" class="box mine"/>
-    <text x="105" y="524" text-anchor="middle" class="t-main">שכבת ההתראות</text>
-    <text x="105" y="542" text-anchor="middle" class="t-sub">רצה על המכונה</text>
-    <text x="200" y="470" text-anchor="end" class="t-edge">שורות verdict רע</text>
+    <text x="105" y="524" text-anchor="middle" class="t-main">&#x202B;שכבת ההתראות&#x202C;</text>
+    <text x="105" y="542" text-anchor="middle" class="t-sub">&#x202B;רצה על המכונה&#x202C;</text>
+    <text x="200" y="470" text-anchor="start" class="t-edge">&#x202B;שורות verdict רע&#x202C;</text>
 
     <path d="M350,446 V496" class="flow" marker-end="url(#m-d21)"/>
-    <text x="360" y="470" class="t-edge">PASS, אחרי חישוב חוזר של ה-hash</text>
+    <text x="360" y="470" class="t-edge">&#x202B;PASS, אחרי חישוב חוזר של ה-hash&#x202C;</text>
 
     <rect x="210" y="500" width="280" height="56" rx="10" class="box mine" stroke-dasharray="5 4"/>
-    <text x="350" y="524" text-anchor="middle" class="t-main">התיקייה הנקייה</text>
-    <text x="350" y="542" text-anchor="middle" class="t-sub">תיקייה גלויה, מקור האמת</text>
+    <text x="350" y="524" text-anchor="middle" class="t-main">&#x202B;התיקייה הנקייה&#x202C;</text>
+    <text x="350" y="542" text-anchor="middle" class="t-sub">&#x202B;תיקייה גלויה, מקור האמת&#x202C;</text>
 
     <path d="M350,556 V590" class="flow" marker-end="url(#m-d21)"/>
-    <text x="360" y="578" class="t-edge">ה-librarian קורא, ב-bind mount לקריאה בלבד</text>
+    <text x="360" y="578" class="t-edge">&#x202B;ה-librarian קורא, ב-bind mount לקריאה בלבד&#x202C;</text>
 
     <rect x="210" y="594" width="280" height="56" rx="10" class="box mine"/>
-    <text x="350" y="618" text-anchor="middle" class="t-main">ה-librarian</text>
-    <text x="350" y="636" text-anchor="middle" class="t-sub">ארבעה שערים לפני פרסום</text>
+    <text x="350" y="618" text-anchor="middle" class="t-main">&#x202B;ה-librarian&#x202C;</text>
+    <text x="350" y="636" text-anchor="middle" class="t-sub">&#x202B;ארבעה שערים לפני פרסום&#x202C;</text>
 
     <path d="M350,650 V684" class="flow" marker-end="url(#m-d21)"/>
-    <text x="360" y="664" class="t-edge">מבנה מאומת, שמות איברים תקינים</text>
-    <text x="360" y="678" class="t-edge">ROM מחולץ, manifest נבנה מחדש</text>
+    <text x="360" y="664" class="t-edge">&#x202B;מבנה מאומת, שמות איברים תקינים&#x202C;</text>
+    <text x="360" y="678" class="t-edge">&#x202B;ROM מחולץ, manifest נבנה מחדש&#x202C;</text>
 
     <rect x="210" y="688" width="280" height="56" rx="10" class="box mine" stroke-dasharray="5 4"/>
-    <text x="350" y="712" text-anchor="middle" class="t-main">תיקיית המשחקים וה-manifest</text>
-    <text x="350" y="730" text-anchor="middle" class="t-sub">מה שמוגש, וכלום מעבר לזה</text>
+    <text x="350" y="712" text-anchor="middle" class="t-main">&#x202B;תיקיית המשחקים וה-manifest&#x202C;</text>
+    <text x="350" y="730" text-anchor="middle" class="t-sub">&#x202B;מה שמוגש, וכלום מעבר לזה&#x202C;</text>
 
     <path d="M350,744 V778" class="flow" marker-end="url(#m-d22)"/>
-    <text x="360" y="766" class="t-edge">מוצמד לשרת ב-bind mount לקריאה בלבד</text>
+    <text x="360" y="766" class="t-edge">&#x202B;מוצמד לשרת ב-bind mount לקריאה בלבד&#x202C;</text>
 
     <rect x="210" y="782" width="280" height="56" rx="10" class="box vendor"/>
-    <text x="350" y="806" text-anchor="middle" class="t-main">שרת ה-emulator</text>
-    <text x="350" y="824" text-anchor="middle" class="t-sub">מערכת קבצים לקריאה בלבד</text>
+    <text x="350" y="806" text-anchor="middle" class="t-main">&#x202B;שרת ה-emulator&#x202C;</text>
+    <text x="350" y="824" text-anchor="middle" class="t-sub">&#x202B;מערכת קבצים לקריאה בלבד&#x202C;</text>
 
     <path d="M350,838 V872" class="flow" marker-end="url(#m-d20)"/>
-    <text x="360" y="856" class="t-edge">בייטים בלבד. השרת לא מריץ דבר</text>
+    <text x="360" y="856" class="t-edge">&#x202B;בייטים בלבד. השרת לא מריץ דבר&#x202C;</text>
 
     <rect x="210" y="876" width="280" height="56" rx="10" class="box net"/>
-    <text x="350" y="900" text-anchor="middle" class="t-main">הסמארטפון: המנוע רץ כאן</text>
-    <text x="350" y="918" text-anchor="middle" class="t-sub">ב-sandbox של הדפדפן</text>
+    <text x="350" y="900" text-anchor="middle" class="t-main">&#x202B;הסמארטפון: המנוע רץ כאן&#x202C;</text>
+    <text x="350" y="918" text-anchor="middle" class="t-sub">&#x202B;ב-sandbox של הדפדפן&#x202C;</text>
   </svg>
   <figcaption>המסלול של קובץ אחד. כל חץ נושא את מה שעובר בו ואת הבדיקה שנעשית באותו מעבר. הקובץ נע בכיוון אחד בלבד; אין חץ שחוזר לכיוון הדפדפן, וזה במכוון. תיבות בקו מקווקו הן אחסון ולא תהליך, והצבע מבדיל בין שכבת הרשת והמכשירים, תוכנה שלא נכתבה בפרויקט, והקוד והתיקיות של הפרויקט.</figcaption>
 </figure>
@@ -1636,7 +1637,7 @@ games.json (הרשומה שנוספה)
 <p>התרשים הקודם מתאר את מסלול הקובץ. התרשים הזה מתאר משהו אחר לגמרי: לא מה הדפדפן <em>אמור</em> לעשות, אלא מה הוא <em>מסוגל</em> לעשות אם ייפרץ לגמרי. זו השאלה שה-<button type="button" class="tech" data-tech="docker-network">firewall</button> עונה עליה, והגישה מבחוץ אל כל זה עוברת רק דרך <button type="button" class="tech" data-tech="tailscale">Tailscale</button>.</p>
 
 <figure class="fig">
-  <svg viewBox="0 0 700 480" role="img" aria-label="תרשים firewall: ה-container של הדפדפן במרכז, ארבעה יעדים חסומים למעלה (שירותי המכונה, bridges אחרים והרשת המקומית, מכשירים ברשת הפרטית, כתובת ה-metadata של הענן) ושלושה יעדים מותרים למטה (האינטרנט הציבורי, מנוע החתימות ושרת ה-emulator על אותו גשר)" direction="rtl">
+  <svg viewBox="0 0 700 480" role="img" aria-label="תרשים firewall: ה-container של הדפדפן במרכז, ארבעה יעדים חסומים למעלה (שירותי המכונה, bridges אחרים והרשת המקומית, מכשירים ברשת הפרטית, כתובת ה-metadata של הענן) ושלושה יעדים מותרים למטה (האינטרנט הציבורי, מנוע החתימות ושרת ה-emulator על אותו גשר)">
     <title>מה חסום ומה מותר מתוך ה-container של הדפדפן</title>
     <defs>
       <marker id="m-d23" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
@@ -1644,20 +1645,20 @@ games.json (הרשומה שנוספה)
     </defs>
 
     <rect x="15" y="20" width="155" height="52" rx="9" class="box bad"/>
-    <text x="92" y="42" text-anchor="middle" class="t-main">שירותי המכונה</text>
-    <text x="92" y="60" text-anchor="middle" class="t-sub">דרך ה-gateway של ה-bridge</text>
+    <text x="92" y="42" text-anchor="middle" class="t-main">&#x202B;שירותי המכונה&#x202C;</text>
+    <text x="92" y="60" text-anchor="middle" class="t-sub">&#x202B;דרך ה-gateway של ה-bridge&#x202C;</text>
 
     <rect x="188" y="20" width="155" height="52" rx="9" class="box bad"/>
-    <text x="265" y="42" text-anchor="middle" class="t-main">bridges שכנים</text>
-    <text x="265" y="60" text-anchor="middle" class="t-sub">ומערכות אחרות</text>
+    <text x="265" y="42" text-anchor="middle" class="t-main">&#x202B;bridges שכנים&#x202C;</text>
+    <text x="265" y="60" text-anchor="middle" class="t-sub">&#x202B;ומערכות אחרות&#x202C;</text>
 
     <rect x="361" y="20" width="155" height="52" rx="9" class="box bad"/>
-    <text x="438" y="42" text-anchor="middle" class="t-main">הרשת הפרטית</text>
-    <text x="438" y="60" text-anchor="middle" class="t-sub">מכשירים אחרים ברשת</text>
+    <text x="438" y="42" text-anchor="middle" class="t-main">&#x202B;הרשת הפרטית&#x202C;</text>
+    <text x="438" y="60" text-anchor="middle" class="t-sub">&#x202B;מכשירים אחרים ברשת&#x202C;</text>
 
     <rect x="534" y="20" width="151" height="52" rx="9" class="box bad"/>
-    <text x="609" y="42" text-anchor="middle" class="t-main">כתובת metadata</text>
-    <text x="609" y="60" text-anchor="middle" class="t-sub">של ספק הענן</text>
+    <text x="609" y="42" text-anchor="middle" class="t-main">&#x202B;כתובת metadata&#x202C;</text>
+    <text x="609" y="60" text-anchor="middle" class="t-sub">&#x202B;של ספק הענן&#x202C;</text>
 
     <path d="M300,212 L110,80" class="flow bad" marker-end="url(#m-d24)"/>
     <path d="M330,210 L268,80" class="flow bad" marker-end="url(#m-d24)"/>
@@ -1672,27 +1673,27 @@ games.json (הרשומה שנוספה)
     </g>
 
     <rect x="250" y="214" width="200" height="60" rx="10" class="box vendor"/>
-    <text x="350" y="240" text-anchor="middle" class="t-main">ה-container של הדפדפן</text>
-    <text x="350" y="258" text-anchor="middle" class="t-sub">מבקר באתרים לא אמינים</text>
+    <text x="350" y="240" text-anchor="middle" class="t-main">&#x202B;ה-container של הדפדפן&#x202C;</text>
+    <text x="350" y="258" text-anchor="middle" class="t-sub">&#x202B;מבקר באתרים לא אמינים&#x202C;</text>
 
     <path d="M320,274 L180,396" class="flow" marker-end="url(#m-d23)"/>
     <path d="M350,274 V396" class="flow" marker-end="url(#m-d23)"/>
     <path d="M380,274 L520,396" class="flow" marker-end="url(#m-d23)"/>
 
     <rect x="80" y="400" width="200" height="56" rx="10" class="box net"/>
-    <text x="180" y="424" text-anchor="middle" class="t-main">האינטרנט הציבורי</text>
-    <text x="180" y="442" text-anchor="middle" class="t-sub">גלישה והורדה</text>
+    <text x="180" y="424" text-anchor="middle" class="t-main">&#x202B;האינטרנט הציבורי&#x202C;</text>
+    <text x="180" y="442" text-anchor="middle" class="t-sub">&#x202B;גלישה והורדה&#x202C;</text>
 
     <rect x="290" y="400" width="120" height="56" rx="10" class="box net"/>
-    <text x="350" y="424" text-anchor="middle" class="t-main">אותו bridge</text>
-    <text x="350" y="442" text-anchor="middle" class="t-sub">שכנים פנימיים</text>
+    <text x="350" y="424" text-anchor="middle" class="t-main">&#x202B;אותו bridge&#x202C;</text>
+    <text x="350" y="442" text-anchor="middle" class="t-sub">&#x202B;שכנים פנימיים&#x202C;</text>
 
     <rect x="420" y="400" width="200" height="56" rx="10" class="box net"/>
-    <text x="520" y="424" text-anchor="middle" class="t-main">עדכון חתימות ומוניטין</text>
-    <text x="520" y="442" text-anchor="middle" class="t-sub">יעדים ציבוריים</text>
+    <text x="520" y="424" text-anchor="middle" class="t-main">&#x202B;עדכון חתימות ומוניטין&#x202C;</text>
+    <text x="520" y="442" text-anchor="middle" class="t-sub">&#x202B;יעדים ציבוריים&#x202C;</text>
 
-    <text x="15" y="110" class="t-edge">חסום בשתי טבלאות: חיבורים חדשים אל המכונה, ותעבורה אל טווחים פרטיים</text>
-    <text x="15" y="330" class="t-edge">מותר במפורש, כי בלי זה המערכת לא עובדת</text>
+    <text x="15" y="110" class="t-edge">&#x202B;חסום בשתי טבלאות: חיבורים חדשים אל המכונה, ותעבורה אל טווחים פרטיים&#x202C;</text>
+    <text x="15" y="330" class="t-edge">&#x202B;מותר במפורש, כי בלי זה המערכת לא עובדת&#x202C;</text>
   </svg>
   <figcaption>ה-firewall הוא שתי שכבות: חסימת חיבורים חדשים מה-bridge אל המכונה עצמה, וחסימת תעבורה מה-bridge אל טווחי הכתובות הפרטיים. מעליהן חוק אחד שמחזיר את התעבורה בתוך ה-bridge, כדי שסורק האבטחה ימשיך לדבר עם מנוע החתימות. אימות של firewall הוא תמיד שתי רשימות: מה נחסם, ומה עדיין עובד.</figcaption>
 </figure>
@@ -1823,29 +1824,29 @@ games.json (הרשומה שנוספה)
   <p>מה שהיא איננה: לא מכונה פיזית ייעודית, לא סביבה מנוהלת עם גיבוי ועדכונים אוטומטיים, ובעיקר לא גבול אבטחה בין השירותים שרצים עליה. שירות שמצליח לפרוץ מה-container שלו מגיע לאותה מערכת קבצים שבה יושב כל השאר. לכן ה-VPS אינו נספר כשכבת הגנה; הוא הרצפה שעליה השכבות מונחות.</p>
   <p>בפרויקט הזה המכונה מריצה חמישה שירותים בקביעות: הדפדפן המבודד, סורק האבטחה, מנוע החתימות, ה-librarian ושרת הנגן. אין בה כרטיס מסך, ולכן קידוד התמונה נעשה במעבד. לכל שירות יש תקרת זיכרון ותקרת תהליכים מפורשות, שנקבעו ממדידה של המצב הרגיל ועם מרווח, כדי ששירות שיוצא משליטה יפגע בעצמו ולא בשכנים שלו על אותה מכונה.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="נתח משרת פיזי הופך למכונה עם kernel יחיד ומערכת קבצים אחת שחמישה שירותים חולקים, ולכן ההגנה בין שכנים היא תקרת משאבים" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="נתח משרת פיזי הופך למכונה עם kernel יחיד ומערכת קבצים אחת שחמישה שירותים חולקים, ולכן ההגנה בין שכנים היא תקרת משאבים">
       <defs><marker id="m-b1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="92" text-anchor="middle">נתח משרת פיזי</text>
+      <text class="t-main" x="855" y="92" text-anchor="middle">&#x202B;נתח משרת פיזי&#x202C;</text>
       <rect class="box crit" x="590" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="82" text-anchor="middle">kernel אחד</text>
-      <text class="t-sub" x="665" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="82" text-anchor="middle">&#x202B;kernel אחד&#x202C;</text>
+      <text class="t-sub" x="665" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="400" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="82" text-anchor="middle">מערכת קבצים אחת</text>
-      <text class="t-sub" x="475" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="475" y="82" text-anchor="middle">&#x202B;מערכת קבצים אחת&#x202C;</text>
+      <text class="t-sub" x="475" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="210" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="92" text-anchor="middle">חמישה שירותים</text>
+      <text class="t-main" x="285" y="92" text-anchor="middle">&#x202B;חמישה שירותים&#x202C;</text>
       <rect class="box crit" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="82" text-anchor="middle">תקרות משאבים</text>
-      <text class="t-sub" x="95" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="95" y="82" text-anchor="middle">&#x202B;תקרות משאבים&#x202C;</text>
+      <text class="t-sub" x="95" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b1)"/>
-      <text class="t-edge" x="760" y="47" text-anchor="middle">הקצאה</text>
+      <text class="t-edge" x="760" y="47" text-anchor="middle">&#x202B;הקצאה&#x202C;</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b1)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">root מלא</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;root מלא&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b1)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">הכל חולק</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;הכל חולק&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b1)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">הגבלת נזק</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;הגבלת נזק&#x202C;</text>
     </svg>
     <figcaption>המכונה המושכרת היא נתח מתוך שרת פיזי, אבל ה-kernel ומערכת הקבצים שלה יחידים. כל השירותים יושבים עליהם, ולכן מה שמפריד בין שכן לשכן הוא תקרת המשאבים שהוגדרה לכל אחד, ולא גבול חומרה.</figcaption>
   </figure>
@@ -1859,29 +1860,29 @@ games.json (הרשומה שנוספה)
   <p>container אינו מכונה וירטואלית. אין לו kernel משלו, והוא חולק את ה-kernel של המכונה, ולכן פרצה ב-kernel חוצה את הגבול הזה בלי מאמץ. גם root בתוך container הוא root מול אותו kernel, אלא אם הורידו ממנו את ה-capabilities. ״זה רץ ב-container״ היא אמירה על בידוד ברמת מערכת ההפעלה, לא ערובה מתמטית, ובתכנון הזה זו שכבה אחת מתוך כמה ולא השכבה היחידה.</p>
   <p>כל שירות רץ כ-container נפרד עם <span class="ltr">cap_drop: ALL</span> והחזרה מפורשת של מה שהתוכנה באמת צריכה, עם <span class="term" tabindex="0" data-def="flag של ה-kernel שמונע מתהליך ומצאצאיו לעלות בהרשאות לעולם, גם אם ימצאו קובץ setuid">no-new-privileges</span>, עם תקרת זיכרון ותקרת תהליכים, ועם רשת פנימית אחת. הדפדפן המבודד הוא היחיד שנוגע באינטרנט העוין מרצון, והוא גם היחיד שה-container שלו מטופל כשרוף מראש.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="image נמשך לפי tag, נפרס לשכבות על הדיסק, ומופעל כתהליך מבודד ב-namespaces וב-cgroups מעל ה-kernel של המכונה" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="image נמשך לפי tag, נפרס לשכבות על הדיסק, ומופעל כתהליך מבודד ב-namespaces וב-cgroups מעל ה-kernel של המכונה">
       <defs><marker id="m-b2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box vendor" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="92" text-anchor="middle">image ב-registry</text>
+      <text class="t-main" x="855" y="92" text-anchor="middle">&#x202B;image ב-registry&#x202C;</text>
       <rect class="box crit" x="590" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="82" text-anchor="middle">משיכה לפי tag</text>
-      <text class="t-sub" x="665" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="82" text-anchor="middle">&#x202B;משיכה לפי tag&#x202C;</text>
+      <text class="t-sub" x="665" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="400" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="92" text-anchor="middle">שכבות על הדיסק</text>
+      <text class="t-main" x="475" y="92" text-anchor="middle">&#x202B;שכבות על הדיסק&#x202C;</text>
       <rect class="box crit" x="210" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="82" text-anchor="middle">namespaces ו-cgroups</text>
-      <text class="t-sub" x="285" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="82" text-anchor="middle">&#x202B;namespaces ו-cgroups&#x202C;</text>
+      <text class="t-sub" x="285" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="82" text-anchor="middle">תהליך על ה-kernel</text>
-      <text class="t-sub" x="95" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="95" y="82" text-anchor="middle">&#x202B;תהליך על ה-kernel&#x202C;</text>
+      <text class="t-sub" x="95" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b2)"/>
       <text class="t-edge" x="760" y="47" text-anchor="middle">pull</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b2)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">גרסה שזזה</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;גרסה שזזה&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b2)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">הפעלה</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;הפעלה&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b2)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">בלי kernel משלו</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;בלי kernel משלו&#x202C;</text>
     </svg>
     <figcaption>הדרך מ-image ל-container עוברת דרך שני שלבים שקובעים את הביטחון: ה-tag, שמחליט איזו תוכנה בדיוק הגיעה, והבידוד, שנשען על namespaces ועל cgroups של אותו kernel משותף.</figcaption>
   </figure>
@@ -1895,28 +1896,28 @@ games.json (הרשומה שנוספה)
   <p>Compose אינו scheduler ואינו מערכת זמינות. הוא לא מפזר עומס בין מכונות, לא מרים שירות שנפל על מכונה אחרת ולא מנהל אשכול. לשם כך יש Kubernetes, ובשביל מכונה אחת וחמישה שירותים הוא עולה יותר ממה שהוא מחזיר: זיכרון, מורכבות ומשטח תקיפה. ההחלטה הזו מתהפכת כשיש יותר ממכונה אחת או דרישת זמינות שמצדיקה הרמה אוטומטית במקום אחר, ושניהם לא נכונים כאן.</p>
   <p>הקובץ בפרויקט הוא כעשרה קילובייט, והוא מחזיק כל מה שאפשר לאכוף מראש: <span class="ltr">cap_drop: ALL</span> והחזרה מפורשת של הרשאות בודדות, no-new-privileges על כל השירותים, תקרות זיכרון ותהליכים, rootfs לקריאה בלבד היכן שאפשר, tmpfs ל-cache, שם קבוע לרשת הפנימית, ושירות נוסף מאחורי profile שלא עולה בהפעלה רגילה ומשמש לשיתוף.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="קובץ Compose אחד מגדיר את השירותים ואת הרשת, אוכף הרשאות ומגבלות, קובע סדר עלייה לפי healthcheck, ומשאיר שירות מאחורי profile שלא עולה כברירת מחדל" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="קובץ Compose אחד מגדיר את השירותים ואת הרשת, אוכף הרשאות ומגבלות, קובע סדר עלייה לפי healthcheck, ומשאיר שירות מאחורי profile שלא עולה כברירת מחדל">
       <defs><marker id="m-b3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box mine" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="92" text-anchor="middle">קובץ YAML אחד</text>
+      <text class="t-main" x="855" y="92" text-anchor="middle">&#x202B;קובץ YAML אחד&#x202C;</text>
       <rect class="box" x="590" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="92" text-anchor="middle">services ו-networks</text>
+      <text class="t-main" x="665" y="92" text-anchor="middle">&#x202B;services ו-networks&#x202C;</text>
       <rect class="box crit" x="400" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="82" text-anchor="middle">הרשאות ומגבלות</text>
-      <text class="t-sub" x="475" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="475" y="82" text-anchor="middle">&#x202B;הרשאות ומגבלות&#x202C;</text>
+      <text class="t-sub" x="475" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="210" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="82" text-anchor="middle">healthcheck וסדר</text>
-      <text class="t-sub" x="285" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="82" text-anchor="middle">&#x202B;healthcheck וסדר&#x202C;</text>
+      <text class="t-sub" x="285" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box soft" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="92" text-anchor="middle">שירות מאחורי profile</text>
+      <text class="t-main" x="95" y="92" text-anchor="middle">&#x202B;שירות מאחורי profile&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b3)"/>
-      <text class="t-edge" x="760" y="47" text-anchor="middle">פקודה אחת</text>
+      <text class="t-edge" x="760" y="47" text-anchor="middle">&#x202B;פקודה אחת&#x202C;</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b3)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">לכל שירות</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;לכל שירות&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b3)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">לפני התלויים</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;לפני התלויים&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b3)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">רק לפי בקשה</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;רק לפי בקשה&#x202C;</text>
     </svg>
     <figcaption>הקובץ הוא גם ההפעלה וגם התיעוד. השלבים הקריטיים הם ההרשאות והמגבלות, שנאכפות לפני שהתוכנה מתחילה לרוץ, וסדר העלייה; השלב המקווקו הוא השירות שנשאר מאחורי profile ולא עולה כברירת מחדל.</figcaption>
   </figure>
@@ -1930,28 +1931,28 @@ games.json (הרשומה שנוספה)
   <p>bind mount אינו volume. volume הוא אחסון ש-Docker מנהל בעצמו בתוך התיקייה הפנימית שלו, ובדרך כלל לא עובדים בו ישירות. ההבחנה הזו היא עמוד התווך של התכנון: קובץ שעבר את הבדיקות מקבל bind mount לתיקייה גלויה במערכת הקבצים, וקובץ שנפסל נאטם ב-volume. כך ההפרדה בין נקי למזוהם אינה עניין של משמעת או של שם תיקייה, אלא של המקום שבו הבייטים יושבים. חשוב גם מה bind mount לא נותן: אין בו בקרת גישה לפי משתמש, אין בו היסטוריה, ואין בו שום דבר שמונע ממי שכותב בתוכו לכתוב <span class="term" tabindex="0" data-def="רשומה קטנה שמכילה נתיב ליעד. תוכנה שפותחת אותה כרגיל מגיעה ליעד בלי לדעת">symlink</span> במקום קובץ.</p>
   <p>בפרויקט הזה יש בדיוק תיקייה אחת שמוצמדת לשני containers: תיקיית ההסגר. הדפדפן המבודד מקבל אותה ב-rw כי הוא חייב להוריד לתוכה, וסורק האבטחה מקבל אותה ב-rw כי הוא חייב להוציא ממנה. שום container אחר לא מקבל אותה בשום הרשאה. זה ה-channel היחיד בין הצד העוין לצד הבודק, והוא מצומצם מספיק כדי שאפשר יהיה לכתוב עליו חוזה ולבדוק שהוא נשמר.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="תיקייה בדיסק המכונה מוצהרת ב-Compose, מוצמדת אל נתיב בתוך ה-container, ונפתחת בהרשאת כתיבה או קריאה בלבד שנאכפת ב-kernel" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="תיקייה בדיסק המכונה מוצהרת ב-Compose, מוצמדת אל נתיב בתוך ה-container, ונפתחת בהרשאת כתיבה או קריאה בלבד שנאכפת ב-kernel">
       <defs><marker id="m-b4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="92" text-anchor="middle">תיקייה בדיסק</text>
+      <text class="t-main" x="855" y="92" text-anchor="middle">&#x202B;תיקייה בדיסק&#x202C;</text>
       <rect class="box mine" x="590" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="92" text-anchor="middle">הצהרה ב-Compose</text>
+      <text class="t-main" x="665" y="92" text-anchor="middle">&#x202B;הצהרה ב-Compose&#x202C;</text>
       <rect class="box crit" x="400" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="82" text-anchor="middle">mount ב-container</text>
-      <text class="t-sub" x="475" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="475" y="82" text-anchor="middle">&#x202B;mount ב-container&#x202C;</text>
+      <text class="t-sub" x="475" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="210" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="82" text-anchor="middle">rw: אותם בייטים</text>
-      <text class="t-sub" x="285" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="82" text-anchor="middle">&#x202B;rw: אותם בייטים&#x202C;</text>
+      <text class="t-sub" x="285" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box soft" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="92" text-anchor="middle">ro: קריאה בלבד</text>
+      <text class="t-main" x="95" y="92" text-anchor="middle">&#x202B;ro: קריאה בלבד&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b4)"/>
-      <text class="t-edge" x="760" y="47" text-anchor="middle">נתיב במכונה</text>
+      <text class="t-edge" x="760" y="47" text-anchor="middle">&#x202B;נתיב במכונה&#x202C;</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b4)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">בעליית השירות</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;בעליית השירות&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b4)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">הרשאה</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;הרשאה&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b4)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">או לחלופין</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;או לחלופין&#x202C;</text>
     </svg>
     <figcaption>המסלול מתיקייה בדיסק אל נתיב בתוך ה-container. ההרשאה נקבעת ברגע ההצמדה ונאכפת ב-kernel, ולכן היא לא נתונה למשא ומתן עם התוכנה שרצה בפנים; המלבן המקווקו הוא החלופה לקריאה בלבד.</figcaption>
   </figure>
@@ -1965,29 +1966,29 @@ games.json (הרשומה שנוספה)
   <p>זה אינו firewall ברמת האפליקציה ואינו תחליף לבידוד. החוקים לא יודעים איזה תהליך שלח את החבילה, רק מאיפה היא יצאה ולאן היא הולכת, והם לא מגינים על ה-container מפני עצמו. הם מגדירים את גבולות התנועה שלו, ותו לא.</p>
   <p>בפרויקט <span class="ltr">fq-firewall.service</span> מתקין שתי שכבות. ב-INPUT, חיבורים חדשים שמגיעים דרך br-fq אל המכונה נחסמים לפי <span class="term" tabindex="0" data-def="תנאי שבודק את מצב החיבור: NEW הוא חיבור שנפתח עכשיו, לעומת תשובה לחיבור קיים">ctstate</span> NEW, כך שתשובות לחיבורים שהמכונה עצמה יזמה ממשיכות לעבור והגישה הרגילה לא נשברת. ב-DOCKER-USER, תעבורה מ-br-fq אל <span class="ltr">10.0.0.0/8</span>, <span class="ltr">172.16.0.0/12</span>, <span class="ltr">192.168.0.0/16</span>, <span class="ltr">169.254.0.0/16</span> ואל טווח הרשת הפרטית <span class="ltr">100.64.0.0/10</span> נחסמת, ומעליהם מונח חוק RETURN שמחזיר תעבורה בתוך אותו bridge כדי שהשיחות הפנימיות ימשיכו לעבוד. מה שנשאר פתוח בכוונה: גלישה באינטרנט הציבורי, עדכון חתימות, ושאילתת המוניטין.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="חבילה שיוצאת מ-container על br-fq נחסמת אל המכונה בשרשרת INPUT ואל הרשתות הפרטיות בשרשרת DOCKER-USER, חוזרת בתוך אותו bridge, ונשארת עם יציאה לאינטרנט הציבורי בלבד" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="חבילה שיוצאת מ-container על br-fq נחסמת אל המכונה בשרשרת INPUT ואל הרשתות הפרטיות בשרשרת DOCKER-USER, חוזרת בתוך אותו bridge, ונשארת עם יציאה לאינטרנט הציבורי בלבד">
       <defs><marker id="m-b5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box net" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="92" text-anchor="middle">container על br-fq</text>
+      <text class="t-main" x="855" y="92" text-anchor="middle">&#x202B;container על br-fq&#x202C;</text>
       <rect class="box crit" x="590" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="82" text-anchor="middle">INPUT: NEW נחסם</text>
-      <text class="t-sub" x="665" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="82" text-anchor="middle">&#x202B;INPUT: NEW נחסם&#x202C;</text>
+      <text class="t-sub" x="665" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="400" y="60" width="150" height="54" rx="8"/>
       <text class="t-main" x="475" y="82" text-anchor="middle">DOCKER-USER: DROP</text>
-      <text class="t-sub" x="475" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-sub" x="475" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="210" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="82" text-anchor="middle">RETURN באותו bridge</text>
-      <text class="t-sub" x="285" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="82" text-anchor="middle">&#x202B;RETURN באותו bridge&#x202C;</text>
+      <text class="t-sub" x="285" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box net" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="92" text-anchor="middle">אינטרנט ציבורי</text>
+      <text class="t-main" x="95" y="92" text-anchor="middle">&#x202B;אינטרנט ציבורי&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b5)"/>
-      <text class="t-edge" x="760" y="47" text-anchor="middle">חבילה יוצאת</text>
+      <text class="t-edge" x="760" y="47" text-anchor="middle">&#x202B;חבילה יוצאת&#x202C;</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b5)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">אל המכונה</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;אל המכונה&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b5)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">אל רשתות פרטיות</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;אל רשתות פרטיות&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b5)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">מה שנשאר</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;מה שנשאר&#x202C;</text>
     </svg>
     <figcaption>שתי השכבות עובדות על אותה חבילה בזו אחר זו: אחת סוגרת את הדרך אל המכונה עצמה, ואחרת סוגרת את הדרך אל הרשתות הפרטיות, וחוק ההחזרה שומר על השיחות בתוך ה-bridge כדי שהסריקה תמשיך לעבוד.</figcaption>
   </figure>
@@ -2001,29 +2002,29 @@ games.json (הרשומה שנוספה)
   <p>זו אינה חשיפה לאינטרנט ואינה תחליף להרשאות בתוך המערכת. שיתוף של צומת ברשת הפרטית משתף את כל מה שפתוח עליו ולא דלת אחת, כלומר הזמנה לבניין אינה הזמנה לדירה. המנגנון שכן פותח שירות לאינטרנט הפתוח נקרא funnel, והוא כבוי כאן ולא יידלק; הצטרפות של מכשיר חדש לרשת דורשת אישור מפורש מהמפעיל.</p>
   <p>בפרויקט <span class="ltr">tailscale serve</span> מאזין בכתובת הפרטית של המכונה, מסיים <span class="term" tabindex="0" data-def="שכבת ההצפנה של תעבורת web. ״מסיים TLS״ פירושו שהשירות מפענח את התעבורה המוצפנת אצלו ומעביר פנימה">TLS</span> עם תעודה של הרשת הפרטית, ומעביר פנימה אל <span class="ltr">:3011</span> עבור הדפדפן המבודד ואל <span class="ltr">:3020</span> עבור שרת הנגן. הוא גם מוסיף לכל בקשה header בשם <span class="ltr">Tailscale-User-Login</span> שמזהה מי שלח אותה, כלומר הזהות נקבעת בשכבת הרשת ולא בסיסמה באפליקציה. כדי לשתף משחק בלי לשתף את כל המכונה, מוגדר צומת נפרד מאחורי profile, שמשרת את הארקייד ואת הארקייד בלבד.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="צומת נרשם עם מפתח, שרת התיאום מחליף כתובות ומפתחות, נפתח חיבור WireGuard ישיר או ממסר DERP כשאין מסלול, ובקצה serve מסיים TLS ומוסיף header זהות" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="צומת נרשם עם מפתח, שרת התיאום מחליף כתובות ומפתחות, נפתח חיבור WireGuard ישיר או ממסר DERP כשאין מסלול, ובקצה serve מסיים TLS ומוסיף header זהות">
       <defs><marker id="m-b6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box crit" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="82" text-anchor="middle">מפתח לכל צומת</text>
-      <text class="t-sub" x="855" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="855" y="82" text-anchor="middle">&#x202B;מפתח לכל צומת&#x202C;</text>
+      <text class="t-sub" x="855" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box net" x="590" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="92" text-anchor="middle">שרת תיאום ו-ACL</text>
+      <text class="t-main" x="665" y="92" text-anchor="middle">&#x202B;שרת תיאום ו-ACL&#x202C;</text>
       <rect class="box crit" x="400" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="82" text-anchor="middle">WireGuard ישיר</text>
-      <text class="t-sub" x="475" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="475" y="82" text-anchor="middle">&#x202B;WireGuard ישיר&#x202C;</text>
+      <text class="t-sub" x="475" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box soft" x="210" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="92" text-anchor="middle">ממסר DERP</text>
+      <text class="t-main" x="285" y="92" text-anchor="middle">&#x202B;ממסר DERP&#x202C;</text>
       <rect class="box crit" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="82" text-anchor="middle">serve: TLS וזהות</text>
-      <text class="t-sub" x="95" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="95" y="82" text-anchor="middle">&#x202B;serve: TLS וזהות&#x202C;</text>
+      <text class="t-sub" x="95" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b6)"/>
-      <text class="t-edge" x="760" y="47" text-anchor="middle">רישום מכשיר</text>
+      <text class="t-edge" x="760" y="47" text-anchor="middle">&#x202B;רישום מכשיר&#x202C;</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b6)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">כתובות ומפתחות</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;כתובות ומפתחות&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b6)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">אם אין מסלול</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;אם אין מסלול&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b6)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">אל השירות</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;אל השירות&#x202C;</text>
     </svg>
     <figcaption>הצומת נרשם פעם אחת, ומשם שרת התיאום רק מחבר בין הצדדים בלי לראות את התוכן. המלבן המקווקו הוא הממסר, מסלול חלופי שנכנס לפעולה רק כשאין חיבור ישיר, ובקצה השירות מסיים את ההצפנה ומצרף את זהות השולח.</figcaption>
   </figure>
@@ -2037,29 +2038,29 @@ games.json (הרשומה שנוספה)
   <p>Selkies אינה שכבת אבטחה ואינה sandbox. היא צינור התצוגה אל container שמטופל כשרוף מראש, והיא גם התוכנה הגדולה והמורכבת ביותר במערכת, כלומר משטח תקיפה בפני עצמו. היא גם לא מריצה משחקים: המשחק רץ בדפדפן של הסמארטפון מול שרת הנגן הנפרד, ולא בערוץ הזה.</p>
   <p>נעילת הרוחב והגובה בצד השרת הוסרה בתכנון הזה, כי ה-client מודד את גודל החלון האמיתי שלו ומבקש אותו, ונעילה דוחה את הבקשה הזו וגורמת לכל מכשיר לקבל מסך של מכשיר אחר. מצב Trackpad mode למגע הוא ברירת מחדל בצד ה-client, שנשמרת בדפדפן תחת המפתח <span class="ltr">trackpadMode</span> ומגיעה כבויה. לשיתוף יש שתי צורות: קישור עם <span class="ltr">#shared</span> שנותן צפייה בלבד, וקישורים עם <span class="ltr">#player2</span> עד <span class="ltr">#player4</span> שנותנים gamepad בלבד. כשהכיתוב <span class="ltr">Waiting for stream</span> נתקע על המסך, המשמעות היא שה-container עלה אבל שולחן העבודה בפנים עוד לא סיים לעלות, או שה-WebSocket לא נפתח עד הסוף.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="שולחן העבודה שבתוך ה-container מצולם, מקודד כ-JPEG במעבד, נשלח ב-WebSocket אל הדפדפן ומצויר שם, והקלט חוזר באותו חיבור" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="שולחן העבודה שבתוך ה-container מצולם, מקודד כ-JPEG במעבד, נשלח ב-WebSocket אל הדפדפן ומצויר שם, והקלט חוזר באותו חיבור">
       <defs><marker id="m-b7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box vendor" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="92" text-anchor="middle">שולחן עבודה בפנים</text>
+      <text class="t-main" x="855" y="92" text-anchor="middle">&#x202B;שולחן עבודה בפנים&#x202C;</text>
       <rect class="box crit" x="590" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="82" text-anchor="middle">קידוד JPEG במעבד</text>
-      <text class="t-sub" x="665" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="82" text-anchor="middle">&#x202B;קידוד JPEG במעבד&#x202C;</text>
+      <text class="t-sub" x="665" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="400" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="82" text-anchor="middle">WebSocket אל הדפדפן</text>
-      <text class="t-sub" x="475" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="475" y="82" text-anchor="middle">&#x202B;WebSocket אל הדפדפן&#x202C;</text>
+      <text class="t-sub" x="475" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="210" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="92" text-anchor="middle">ציור על המסך</text>
+      <text class="t-main" x="285" y="92" text-anchor="middle">&#x202B;ציור על המסך&#x202C;</text>
       <rect class="box crit" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="82" text-anchor="middle">קלט חוזר</text>
-      <text class="t-sub" x="95" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="95" y="82" text-anchor="middle">&#x202B;קלט חוזר&#x202C;</text>
+      <text class="t-sub" x="95" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b7)"/>
-      <text class="t-edge" x="760" y="47" text-anchor="middle">צילום מסך</text>
+      <text class="t-edge" x="760" y="47" text-anchor="middle">&#x202B;צילום מסך&#x202C;</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b7)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">פריימים</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;פריימים&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b7)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">30 בשנייה</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;30 בשנייה&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b7)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">מגע ומקלדת</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;מגע ומקלדת&#x202C;</text>
     </svg>
     <figcaption>מה שנראה כמו tab בדפדפן הוא למעשה מסך שמצולם, נדחס במעבד ונשלח פריים אחר פריים. שני השלבים שקובעים את התחושה הם הקידוד, שהוא כל עומס המעבד כאן, וחיבור ה-WebSocket שמחזיר גם את הקלט.</figcaption>
   </figure>
@@ -2073,29 +2074,29 @@ games.json (הרשומה שנוספה)
   <p>זה אינו image רשמי של יצרן הדפדפן, וזו נקודה בשרשרת האספקה: המפעיל סומך על צד שלישי שאורז עבורו תוכנה. התשובה אינה אמון עיוור אלא נעילה על tag מלא, שמכיל את גרסת הדפדפן ואת מספר הבנייה, במקום tag מתגלגל, כך שעדכון הוא מהלך מודע ולא תופעת לוואי של הפעלה מחדש.</p>
   <p>יש כאן מלכודת שעלולה לבזבז זמן. אחד משלבי ה-init מוחק את תוכן <span class="ltr">/usr/share/selkies/web</span> בכל הפעלה ומשחזר אותו מה-image, ולכן קובץ מותאם שמונח שם ישירות נעלם, ו-bind mount על התיקייה הזו שובר את השלב עצמו. הדרך שעובדת היא להוסיף שירות מותאם תחת <span class="ltr">/custom-services.d</span>: לולאה קטנה שממתינה לסיום שלב ה-init ואז מעתיקה את הקבצים המותאמים פנימה. ה-profile של הדפדפן נשמר תחת <span class="ltr">/config</span>, וזו עסקה מודעת בין נוחות לשאריות, ולכן הוא נמחק אוטומטית פעם בחודש וידנית אחרי כל verdict רע.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="image נעול על tag מלא עולה עם s6-overlay, שלב init מוחק את תיקיית ה-web בכל הפעלה, שירות מותאם מעתיק את הקבצים אחריו, וה-profile נשאר תחת config" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="image נעול על tag מלא עולה עם s6-overlay, שלב init מוחק את תיקיית ה-web בכל הפעלה, שירות מותאם מעתיק את הקבצים אחריו, וה-profile נשאר תחת config">
       <defs><marker id="m-b8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box vendor" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="92" text-anchor="middle">image עם tag מלא</text>
+      <text class="t-main" x="855" y="92" text-anchor="middle">&#x202B;image עם tag מלא&#x202C;</text>
       <rect class="box crit" x="590" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="82" text-anchor="middle">s6-overlay מעלה</text>
-      <text class="t-sub" x="665" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="82" text-anchor="middle">&#x202B;s6-overlay מעלה&#x202C;</text>
+      <text class="t-sub" x="665" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="400" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="82" text-anchor="middle">init מוחק web</text>
-      <text class="t-sub" x="475" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="475" y="82" text-anchor="middle">&#x202B;init מוחק web&#x202C;</text>
+      <text class="t-sub" x="475" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="210" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="82" text-anchor="middle">שירות מותאם מעתיק</text>
-      <text class="t-sub" x="285" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="82" text-anchor="middle">&#x202B;שירות מותאם מעתיק&#x202C;</text>
+      <text class="t-sub" x="285" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box soft" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="92" text-anchor="middle">profile תחת config</text>
+      <text class="t-main" x="95" y="92" text-anchor="middle">&#x202B;profile תחת config&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b8)"/>
-      <text class="t-edge" x="760" y="47" text-anchor="middle">משיכה</text>
+      <text class="t-edge" x="760" y="47" text-anchor="middle">&#x202B;משיכה&#x202C;</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b8)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">בשלבים</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;בשלבים&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b8)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">בכל הפעלה</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;בכל הפעלה&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b8)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">אחרי השלב</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;אחרי השלב&#x202C;</text>
     </svg>
     <figcaption>סדר העלייה בתוך ה-image הוא מה שקובע איפה מותר להניח קבצים מותאמים. המחיקה של תיקיית ה-web היא שלב רגיל ומתוכנן של ה-image, ולכן ההוספה המותאמת חייבת לרוץ אחריו ולא במקומו. המלבן המקווקו הוא מה שנשאר בין הפעלה להפעלה.</figcaption>
   </figure>
@@ -2109,28 +2110,28 @@ games.json (הרשומה שנוספה)
   <p>הוא אינו reverse proxy כאן ואינו נקודת כניסה מהאינטרנט. הוא מאזין ל-loopback של המכונה בלבד, והדרך היחידה אליו עוברת ברשת הפרטית. הוא גם לא מריץ שום ROM: קובץ המשחק נשלח כמו שהוא, וכל האמולציה קורית בדפדפן של הסמארטפון, לא על השרת.</p>
   <p>על דף הנגן מונח <span class="term" tabindex="0" data-def="header שמצהיר לדפדפן לאן הדף רשאי לפנות ומה מותר לו להריץ. האכיפה היא בדפדפן, לא בקוד הדף">CSP</span> שמצהיר שהדף רשאי לפתוח חיבורים למקור שלו בלבד. זה חשוב מפני שמנוע האמולציה מכיל בתוך הקוד שלו בדיקת עדכון ומנגנון חילוץ מהרשת; כשבודקים בדפדפן אמיתי, הפנייה החוצה אכן נשלחת ואכן נחסמת, והמשחק נטען עד הסוף. <span class="term" tabindex="0" data-def="סקריפט שמתווך לבקשות הרשת של דף, גם כשאין חיבור. כאן הוא שומר את הקבצים הכבדים והקבועים">service worker</span> שומר את הקבצים הכבדים ב-cache ששמו נושא מספר גרסה, כך ששדרוג מפיל את הישן במקום להתנגש בו. רשימת המשחקים מגיעה כקובץ <span class="term" tabindex="0" data-def="פורמט טקסט להעברת נתונים מובנים בין שרת לדפדפן">JSON</span> שה-librarian מפרסם, והדף בונה ממנו את הספרייה.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="בקשה מהסמארטפון מגיעה ל-nginx שמגיש קובץ סטטי עם headers, ה-CSP נאכף בדפדפן, service worker שומר את הכבדים, והדף בונה את הספרייה מאינדקס JSON" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="בקשה מהסמארטפון מגיעה ל-nginx שמגיש קובץ סטטי עם headers, ה-CSP נאכף בדפדפן, service worker שומר את הכבדים, והדף בונה את הספרייה מאינדקס JSON">
       <defs><marker id="m-b9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box net" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="92" text-anchor="middle">בקשה מהסמארטפון</text>
+      <text class="t-main" x="855" y="92" text-anchor="middle">&#x202B;בקשה מהסמארטפון&#x202C;</text>
       <rect class="box crit" x="590" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="82" text-anchor="middle">nginx מגיש קובץ</text>
-      <text class="t-sub" x="665" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="82" text-anchor="middle">&#x202B;nginx מגיש קובץ&#x202C;</text>
+      <text class="t-sub" x="665" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="400" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="82" text-anchor="middle">CSP ו-headers</text>
-      <text class="t-sub" x="475" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="475" y="82" text-anchor="middle">&#x202B;CSP ו-headers&#x202C;</text>
+      <text class="t-sub" x="475" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box soft" x="210" y="60" width="150" height="54" rx="8"/>
       <text class="t-main" x="285" y="92" text-anchor="middle">service worker cache</text>
       <rect class="box" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="92" text-anchor="middle">אינדקס JSON</text>
+      <text class="t-main" x="95" y="92" text-anchor="middle">&#x202B;אינדקס JSON&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b9)"/>
-      <text class="t-edge" x="760" y="47" text-anchor="middle">בקשה</text>
+      <text class="t-edge" x="760" y="47" text-anchor="middle">&#x202B;בקשה&#x202C;</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b9)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">מהדיסק</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;מהדיסק&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b9)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">נאכף בדפדפן</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;נאכף בדפדפן&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b9)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">טעינה</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;טעינה&#x202C;</text>
     </svg>
     <figcaption>שרת סטטי שמשמעותי בעיקר בזכות מה שהוא מצרף לתשובה. ה-CSP הוא שלב קריטי מפני שהוא אוכף את הגבול בדפדפן גם אם קוד הספרייה ינסה לפנות החוצה; ה-cache המקווקו משפר טעינה חוזרת ואינו תנאי לפעולה.</figcaption>
   </figure>
@@ -2144,29 +2145,29 @@ games.json (הרשומה שנוספה)
   <p>timer אינו scheduler מבוזר ואינו ערובה להצלחה. הוא מבטיח שהתהליך יופעל, לא שהעבודה הסתיימה כמו שצריך, ומי שלא קורא את קוד היציאה מקבל שקט שנראה כמו הצלחה. בפרויקט היחידות האלה רצות ברמת המשתמש, כלומר בלי הרשאות root, וזו הגבלה מכוונת: משימה מתוזמנת שמנקה ומוחקת היא בדיוק המקום שבו לא רוצים הרשאות מיותרות.</p>
   <p>העבודה המתוזמנת בפרויקט היא ניקוי של תיקיית ההסגר, גיבוי של ה-profile של הדפדפן לפני כל מחיקה, ומייל שמסכם את ה-verdicts שיצאו. סדר הפעולות בסקריפט האיפוס הוא העיקר: הוא מסרב לרוץ אם יש הורדה בדרך ויוצא עם קוד שגיאה מפורש, אחר כך שומר ארכיון של ה-profile, ורק אז מוחק ומפעיל מחדש. timer שיודע לוותר על ריצה כשהתנאים לא מתאימים שווה יותר מ-timer שתמיד מצליח. ה-timer החודשי רץ ב-1 לכל חודש, ומומלץ להריץ אותו ידנית גם אחרי כל verdict רע.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="unit מתאר מה להריץ, timer מפעיל אותו לפי OnCalendar, הסקריפט בודק שאין הורדה בדרך, מנקה ומגבה, וקוד היציאה נרשם ביומן" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 150" role="img" aria-label="unit מתאר מה להריץ, timer מפעיל אותו לפי OnCalendar, הסקריפט בודק שאין הורדה בדרך, מנקה ומגבה, וקוד היציאה נרשם ביומן">
       <defs><marker id="m-b10" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box mine" x="780" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="92" text-anchor="middle">unit: מה להריץ</text>
+      <text class="t-main" x="855" y="92" text-anchor="middle">&#x202B;unit: מה להריץ&#x202C;</text>
       <rect class="box crit" x="590" y="60" width="150" height="54" rx="8"/>
       <text class="t-main" x="665" y="82" text-anchor="middle">timer: OnCalendar</text>
-      <text class="t-sub" x="665" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-sub" x="665" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="400" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="82" text-anchor="middle">בדיקת תנאי קדם</text>
-      <text class="t-sub" x="475" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="475" y="82" text-anchor="middle">&#x202B;בדיקת תנאי קדם&#x202C;</text>
+      <text class="t-sub" x="475" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="210" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="92" text-anchor="middle">גיבוי, ניקוי, סיכום</text>
+      <text class="t-main" x="285" y="92" text-anchor="middle">&#x202B;גיבוי, ניקוי, סיכום&#x202C;</text>
       <rect class="box crit" x="20" y="60" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="82" text-anchor="middle">היומן: הקבלה</text>
-      <text class="t-sub" x="95" y="101" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="95" y="82" text-anchor="middle">&#x202B;היומן: הקבלה&#x202C;</text>
+      <text class="t-sub" x="95" y="101" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <path class="flow" d="M778 87 L744 87" marker-end="url(#m-b10)"/>
-      <text class="t-edge" x="760" y="47" text-anchor="middle">הגדרה</text>
+      <text class="t-edge" x="760" y="47" text-anchor="middle">&#x202B;הגדרה&#x202C;</text>
       <path class="flow" d="M588 87 L554 87" marker-end="url(#m-b10)"/>
-      <text class="t-edge" x="570" y="47" text-anchor="middle">מפעיל בזמן</text>
+      <text class="t-edge" x="570" y="47" text-anchor="middle">&#x202B;מפעיל בזמן&#x202C;</text>
       <path class="flow" d="M398 87 L364 87" marker-end="url(#m-b10)"/>
-      <text class="t-edge" x="380" y="47" text-anchor="middle">רק אם פנוי</text>
+      <text class="t-edge" x="380" y="47" text-anchor="middle">&#x202B;רק אם פנוי&#x202C;</text>
       <path class="flow" d="M208 87 L174 87" marker-end="url(#m-b10)"/>
-      <text class="t-edge" x="190" y="47" text-anchor="middle">קוד יציאה</text>
+      <text class="t-edge" x="190" y="47" text-anchor="middle">&#x202B;קוד יציאה&#x202C;</text>
     </svg>
     <figcaption>המסלול של משימה מתוזמנת אחת. השלב שמכריע אם היא בטוחה הוא בדיקת התנאים לפני הפעולה, כלומר הסירוב לרוץ בזמן שהורדה בדרך, והשלב שמכריע אם אפשר לסמוך עליה הוא הרישום ביומן עם קוד היציאה.</figcaption>
   </figure>
@@ -2178,28 +2179,28 @@ games.json (הרשומה שנוספה)
   <p>מה שחתימה תופסת: נוזקה שכבר נראתה ותוארה, כולל וריאציות קרובות שלה, וגם קבצים שנארזו בתוך ארכיונים. מה שהיא לא תופסת: קוד חדש, קוד שנכתב למטרה אחת, וכל דבר שאיש עוד לא ראה. מסיבה זו ClamAV בפרויקט אינו הבדיקה היחידה אלא חוליה בשרשרת, ולצידו יושבות בדיקת תוכן, כללי דפוס ושאילתת מוניטין, שכל אחת מהן עיוורת במקום אחר.</p>
   <p>שאלת החיים של השירות נענית בשני מישורים: <span class="term" tabindex="0" data-def="בדיקה תקופתית שמריצה Docker בתוך ה-container כדי לדעת אם השירות באמת עונה">healthcheck</span> שבודק שה-daemon עונה, ובדיקת מסלול מלאה עם <span class="term" tabindex="0" data-def="קובץ טקסט לא מזיק שכל מנוע אנטי-וירוס מזהה בכוונה, ומשמש לבדיקת חיים של מסלול הסריקה">EICAR</span>, שהוא קובץ בדיקה תקני שאמור להיתפס. שירות שעונה אבל לא מזהה כלום גרוע משירות שנפל, כי הוא נראה בסדר.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="מסד החתימות נטען פעם אחת, ומשם כל סריקה היא שאלה על חיבור פתוח" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="מסד החתימות נטען פעם אחת, ומשם כל סריקה היא שאלה על חיבור פתוח">
       <defs><marker id="m-c11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box soft" x="780" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="88" text-anchor="middle">freshclam מעדכן</text>
+      <text class="t-main" x="855" y="88" text-anchor="middle">&#x202B;freshclam מעדכן&#x202C;</text>
       <rect class="box crit" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="80" text-anchor="middle">מסד חתימות בזיכרון</text>
-      <text class="t-sub" x="665" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;מסד חתימות בזיכרון&#x202C;</text>
+      <text class="t-sub" x="665" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="400" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="88" text-anchor="middle">clamd מאזין</text>
+      <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;clamd מאזין&#x202C;</text>
       <rect class="box crit" x="210" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="80" text-anchor="middle">הקובץ עובר כ-stream</text>
-      <text class="t-sub" x="285" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="80" text-anchor="middle">&#x202B;הקובץ עובר כ-stream&#x202C;</text>
+      <text class="t-sub" x="285" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="20" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="88" text-anchor="middle">נקי או שם חתימה</text>
+      <text class="t-main" x="95" y="88" text-anchor="middle">&#x202B;נקי או שם חתימה&#x202C;</text>
       <path class="flow" d="M780,83 L744,83" marker-end="url(#m-c11)"/>
-      <text class="t-edge" x="760" y="38" text-anchor="middle">חתימות חדשות</text>
+      <text class="t-edge" x="760" y="38" text-anchor="middle">&#x202B;חתימות חדשות&#x202C;</text>
       <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c11)"/>
-      <text class="t-edge" x="570" y="38" text-anchor="middle">נטען בעלייה</text>
+      <text class="t-edge" x="570" y="38" text-anchor="middle">&#x202B;נטען בעלייה&#x202C;</text>
       <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c11)"/>
-      <text class="t-edge" x="380" y="38" text-anchor="middle">חיבור פנימי</text>
+      <text class="t-edge" x="380" y="38" text-anchor="middle">&#x202B;חיבור פנימי&#x202C;</text>
       <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c11)"/>
-      <text class="t-edge" x="190" y="38" text-anchor="middle">כולל פירוק ארכיון</text>
+      <text class="t-edge" x="190" y="38" text-anchor="middle">&#x202B;כולל פירוק ארכיון&#x202C;</text>
     </svg>
     <figcaption>העדכון והטעינה קורים פעם אחת, והסריקה עצמה היא שיחה קצרה על חיבור פתוח. לכן שגיאת תקשורת בשלב הזה אינה שקופה: היא אומרת שאף אחד לא בדק את הקובץ.</figcaption>
   </figure>
@@ -2212,28 +2213,28 @@ games.json (הרשומה שנוספה)
   <p>בפרויקט רצים 748 קובצי כללים, חלקם אוספים ציבוריים וחלקם כללים שנכתבו במיוחד למשפחות התחזות: תוכן שמתחזה לתמונה, ארכיון שמתחזה ל-ROM, וקבצים שנושאים מבנה של קובץ הרצה תחת שם תמים. הכללים מהודרים פעם אחת בעליית השירות, כי הידור בכל סריקה היה הופך כל הורדה לעבודת CPU מיותרת, ולכל קובץ נקבעה תקרת זמן של 120 שניות. תקרת זמן אינה פינוק: כלל כתוב גרוע על קובץ גדול יכול לרוץ זמן בלתי מוגבל, וזו דרך להפיל שירות בלי נוזקה בכלל.</p>
   <p>YARA רצה אחרי מנוע החתימות, על אותו עותק פרטי של הקובץ. התאמה קובעת FAIL, ושם הכלל שנתפס נרשם בדוח, כי ״נמצאה התאמה״ בלי שם הכלל אינו ממצא שאפשר לחקור.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="כללים מהודרים פעם אחת, ואז נבדקים מול הבייטים של כל קובץ" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="כללים מהודרים פעם אחת, ואז נבדקים מול הבייטים של כל קובץ">
       <defs><marker id="m-c12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box" x="780" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="88" text-anchor="middle">748 קובצי כללים</text>
+      <text class="t-main" x="855" y="88" text-anchor="middle">&#x202B;748 קובצי כללים&#x202C;</text>
       <rect class="box crit" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="80" text-anchor="middle">הידור בעלייה</text>
-      <text class="t-sub" x="665" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;הידור בעלייה&#x202C;</text>
+      <text class="t-sub" x="665" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="400" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="88" text-anchor="middle">בייטים של הקובץ</text>
+      <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;בייטים של הקובץ&#x202C;</text>
       <rect class="box crit" x="210" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="80" text-anchor="middle">מחרוזות ותנאים</text>
-      <text class="t-sub" x="285" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="80" text-anchor="middle">&#x202B;מחרוזות ותנאים&#x202C;</text>
+      <text class="t-sub" x="285" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="20" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="88" text-anchor="middle">שם הכלל בדוח</text>
+      <text class="t-main" x="95" y="88" text-anchor="middle">&#x202B;שם הכלל בדוח&#x202C;</text>
       <path class="flow" d="M780,83 L744,83" marker-end="url(#m-c12)"/>
-      <text class="t-edge" x="760" y="38" text-anchor="middle">פעם אחת בלבד</text>
+      <text class="t-edge" x="760" y="38" text-anchor="middle">&#x202B;פעם אחת בלבד&#x202C;</text>
       <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c12)"/>
-      <text class="t-edge" x="570" y="38" text-anchor="middle">כללים בזיכרון</text>
+      <text class="t-edge" x="570" y="38" text-anchor="middle">&#x202B;כללים בזיכרון&#x202C;</text>
       <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c12)"/>
-      <text class="t-edge" x="380" y="38" text-anchor="middle">תקרה של 120 שניות</text>
+      <text class="t-edge" x="380" y="38" text-anchor="middle">&#x202B;תקרה של 120 שניות&#x202C;</text>
       <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c12)"/>
-      <text class="t-edge" x="190" y="38" text-anchor="middle">התאמה קובעת FAIL</text>
+      <text class="t-edge" x="190" y="38" text-anchor="middle">&#x202B;התאמה קובעת FAIL&#x202C;</text>
     </svg>
     <figcaption>ההידור הוא השלב היקר, והוא קורה פעם אחת. משם כל קובץ נבדק מול אותה ערכת כללים בזיכרון, תחת תקרת זמן שמונעת מכלל אחד לתקוע את המסלול.</figcaption>
   </figure>
@@ -2246,28 +2247,28 @@ games.json (הרשומה שנוספה)
   <p>ותשובת ״לא מוכר״ היא בדיוק המקום שבו קל לטעות. היא אינה אומרת שהקובץ נקי, אלא שאיש לא שאל עליו קודם. קובץ ממוקד, שנבנה עבור יעד אחד, יהיה תמיד לא מוכר. לכן התשובה הזו אינה מזכה ואינה מרשיעה, והקובץ ממשיך להישפט לפי הבדיקות האחרות. רק סימון של מנוע אחד ומעלה מחמיר את ההכרעה. גם הכיוון ההפוך נכון: ריבוי מנועים שמכריזים על קובץ כנקי אינו משחרר אותו, כי הוא נשפט ממילא מול הבדיקות שרצות על הבייטים עצמם.</p>
   <p>לשירות הזה יש גם מגבלת קצב, וגם התנהגות שכדאי להכיר: פנייה מסביבה חסומה מקבלת הפניה, ולא תשובה. כשבודקים את זה מתוך ה-container של הדפדפן מתקבלת הפניה, וזו עדות טובה: הגדר עובד, והדפדפן אינו יכול לדבר עם השירות. השאילתה יוצאת מסורק האבטחה בלבד, שהוא היחיד שאמור לדעת מה הורד. מגבלת הקצב מטופלת כמו כל תלות חיצונית אחרת: תשובה שלא הגיעה אינה נחשבת לתשובה חיובית, אלא מורידה את ההכרעה למסלול שדורש בדיקה אנושית.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="רק טביעת האצבע יוצאת מהמכונה, והתשובה יכולה להחמיר אך לא לזכות" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="רק טביעת האצבע יוצאת מהמכונה, והתשובה יכולה להחמיר אך לא לזכות">
       <defs><marker id="m-c13" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box mine" x="780" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="88" text-anchor="middle">הקובץ נשאר במכונה</text>
+      <text class="t-main" x="855" y="88" text-anchor="middle">&#x202B;הקובץ נשאר במכונה&#x202C;</text>
       <rect class="box crit" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="80" text-anchor="middle">טביעת אצבע בלבד</text>
-      <text class="t-sub" x="665" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;טביעת אצבע בלבד&#x202C;</text>
+      <text class="t-sub" x="665" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box net" x="400" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="88" text-anchor="middle">שאילתה לשירות</text>
+      <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;שאילתה לשירות&#x202C;</text>
       <rect class="box" x="210" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="88" text-anchor="middle">כמה מנועים סימנו</text>
+      <text class="t-main" x="285" y="88" text-anchor="middle">&#x202B;כמה מנועים סימנו&#x202C;</text>
       <rect class="box crit" x="20" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="80" text-anchor="middle">מחמיר או ממשיך</text>
-      <text class="t-sub" x="95" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="95" y="80" text-anchor="middle">&#x202B;מחמיר או ממשיך&#x202C;</text>
+      <text class="t-sub" x="95" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <path class="flow" d="M780,83 L744,83" marker-end="url(#m-c13)"/>
-      <text class="t-edge" x="760" y="38" text-anchor="middle">חישוב מקומי</text>
+      <text class="t-edge" x="760" y="38" text-anchor="middle">&#x202B;חישוב מקומי&#x202C;</text>
       <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c13)"/>
-      <text class="t-edge" x="570" y="38" text-anchor="middle">מהסורק בלבד</text>
+      <text class="t-edge" x="570" y="38" text-anchor="middle">&#x202B;מהסורק בלבד&#x202C;</text>
       <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c13)"/>
-      <text class="t-edge" x="380" y="38" text-anchor="middle">תשובה או לא מוכר</text>
+      <text class="t-edge" x="380" y="38" text-anchor="middle">&#x202B;תשובה או לא מוכר&#x202C;</text>
       <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c13)"/>
-      <text class="t-edge" x="190" y="38" text-anchor="middle">סימון אחד מספיק</text>
+      <text class="t-edge" x="190" y="38" text-anchor="middle">&#x202B;סימון אחד מספיק&#x202C;</text>
     </svg>
     <figcaption>הקובץ לא זז מהמכונה בשום שלב. מה שיוצא החוצה הוא מחרוזת שאי אפשר לשחזר ממנה דבר, ומה שחוזר יכול רק להחמיר את ההכרעה.</figcaption>
   </figure>
@@ -2280,28 +2281,28 @@ games.json (הרשומה שנוספה)
   <p>מה שהספרייה אינה עושה: היא לא מחפשת נוזקה, לא מריצה את הקובץ, ולא יודעת לומר דבר על פורמטים שאין להם חתימה. סיומות של ROM ושל דיסקי משחק שייכות בדיוק לקבוצה הזו, ולכן במיפוי הן פשוט נעדרות, במקום לקבל כלל מומצא שהיה מייצר רעש בכל הורדה לגיטימית.</p>
   <p>המיפוי עצמו הוא טבלת התאמה מפורשת בקוד הסורק, שבה לכל סיומת בעלת חתימה חד-משמעית רשום ה-MIME הצפוי לה. אי-התאמה בין משפחות היא התחזות, והיא נסגרת כמו נוזקה. אי-התאמה בתוך אותה משפחה, כמו פורמט דחיסה שלובש שם של פורמט דחיסה אחר, מתועדת כהערה בלבד, כי זה דפוס נפוץ ולגיטימי בהורדות אמיתיות. המבנה הזה גם מייצר תחזוקה שקופה: כשמתווספת סיומת חדשה, ברור מיד אם יש לה הבטחה שאפשר למדוד או שהיא נכנסת לקבוצה שאין עליה מה לומר.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="הבייטים קובעים את סוג התוכן, והמיפוי משווה אותו להבטחת הסיומת" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="הבייטים קובעים את סוג התוכן, והמיפוי משווה אותו להבטחת הסיומת">
       <defs><marker id="m-c14" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box" x="780" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="88" text-anchor="middle">קובץ שהורד</text>
+      <text class="t-main" x="855" y="88" text-anchor="middle">&#x202B;קובץ שהורד&#x202C;</text>
       <rect class="box crit" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="80" text-anchor="middle">הבייטים הראשונים</text>
-      <text class="t-sub" x="665" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;הבייטים הראשונים&#x202C;</text>
+      <text class="t-sub" x="665" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="400" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="88" text-anchor="middle">חתימות מבנה</text>
+      <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;חתימות מבנה&#x202C;</text>
       <rect class="box" x="210" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="88" text-anchor="middle">MIME מדוד</text>
+      <text class="t-main" x="285" y="88" text-anchor="middle">&#x202B;MIME מדוד&#x202C;</text>
       <rect class="box crit" x="20" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="80" text-anchor="middle">השוואה למיפוי</text>
-      <text class="t-sub" x="95" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="95" y="80" text-anchor="middle">&#x202B;השוואה למיפוי&#x202C;</text>
+      <text class="t-sub" x="95" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <path class="flow" d="M780,83 L744,83" marker-end="url(#m-c14)"/>
-      <text class="t-edge" x="760" y="38" text-anchor="middle">בלי להסתכל בשם</text>
+      <text class="t-edge" x="760" y="38" text-anchor="middle">&#x202B;בלי להסתכל בשם&#x202C;</text>
       <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c14)"/>
-      <text class="t-edge" x="570" y="38" text-anchor="middle">התאמת רצף</text>
+      <text class="t-edge" x="570" y="38" text-anchor="middle">&#x202B;התאמת רצף&#x202C;</text>
       <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c14)"/>
-      <text class="t-edge" x="380" y="38" text-anchor="middle">משפחה ותת-סוג</text>
+      <text class="t-edge" x="380" y="38" text-anchor="middle">&#x202B;משפחה ותת-סוג&#x202C;</text>
       <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c14)"/>
-      <text class="t-edge" x="190" y="38" text-anchor="middle">מול הבטחת הסיומת</text>
+      <text class="t-edge" x="190" y="38" text-anchor="middle">&#x202B;מול הבטחת הסיומת&#x202C;</text>
     </svg>
     <figcaption>המדידה רצה מהתוכן כלפי חוץ, והסיומת נכנסת לתמונה רק בשלב האחרון. כך ההתחזות נראית כפער בין שני מקורות ידע, ולא כתחושה של הקוד.</figcaption>
   </figure>
@@ -2314,29 +2315,29 @@ games.json (הרשומה שנוספה)
   <p>הבדיקה נשענת על lstat בלבד, ומצרפת אליה שלוש עובדות: שהרשומה היא קובץ רגיל, שמספר ה-links שלה הוא בדיוק 1, ושהנתיב המפוענח שלה יושב ישירות בתיקיית הכניסה ולא מחוצה לה. פענוח הנתיב חשוב בפני עצמו, כי גם כשהרשומה תמימה, אחד מרכיבי הנתיב שמעליה יכול להיות symlink שמוביל למקום אחר לגמרי.</p>
   <p>מעל כל זה יושבת שכבה שלא תלויה בקוד הסורק: הקובץ נפתח עם <span class="term" tabindex="0" data-def="flag פתיחה שמבקש מה-kernel לסרב אם הרשומה היא symlink. אכיפה ב-kernel ולא בקוד">O_NOFOLLOW</span>, כלומר ה-kernel עצמו מסרב לפתוח רשומה שהיא symlink. ומיד אחרי הפתיחה נבדקות העובדות שוב, הפעם על הידית הפתוחה, ומושוות למה שנמדד קודם. אם משהו הוחלף בין הבדיקה לפתיחה, הפעולה נעצרת. רשומה שנפסלה מקבלת דוח מלא עם סוג, הרשאות, מספר links ומזהה הקובץ, ואז מוסרת בפעולה שאינה הולכת אחרי symlinks.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="הרשומה נמדדת כמו שהיא, ואז נפתחת באכיפת kernel ונמדדת שוב" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="הרשומה נמדדת כמו שהיא, ואז נפתחת באכיפת kernel ונמדדת שוב">
       <defs><marker id="m-c15" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box" x="780" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="88" text-anchor="middle">רשומה בתיקייה</text>
+      <text class="t-main" x="855" y="88" text-anchor="middle">&#x202B;רשומה בתיקייה&#x202C;</text>
       <rect class="box crit" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="80" text-anchor="middle">lstat ולא stat</text>
-      <text class="t-sub" x="665" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;lstat ולא stat&#x202C;</text>
+      <text class="t-sub" x="665" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="400" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="88" text-anchor="middle">קובץ רגיל, שם יחיד</text>
+      <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;קובץ רגיל, שם יחיד&#x202C;</text>
       <rect class="box crit" x="210" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="80" text-anchor="middle">פתיחה בלי מעקב</text>
-      <text class="t-sub" x="285" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="80" text-anchor="middle">&#x202B;פתיחה בלי מעקב&#x202C;</text>
+      <text class="t-sub" x="285" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box crit" x="20" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="80" text-anchor="middle">מדידה חוזרת</text>
-      <text class="t-sub" x="95" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="95" y="80" text-anchor="middle">&#x202B;מדידה חוזרת&#x202C;</text>
+      <text class="t-sub" x="95" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <path class="flow" d="M780,83 L744,83" marker-end="url(#m-c15)"/>
-      <text class="t-edge" x="760" y="38" text-anchor="middle">מה זה עצמו</text>
+      <text class="t-edge" x="760" y="38" text-anchor="middle">&#x202B;מה זה עצמו&#x202C;</text>
       <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c15)"/>
-      <text class="t-edge" x="570" y="38" text-anchor="middle">נתיב בתוך התיקייה</text>
+      <text class="t-edge" x="570" y="38" text-anchor="middle">&#x202B;נתיב בתוך התיקייה&#x202C;</text>
       <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c15)"/>
-      <text class="t-edge" x="380" y="38" text-anchor="middle">אכיפת kernel</text>
+      <text class="t-edge" x="380" y="38" text-anchor="middle">&#x202B;אכיפת kernel&#x202C;</text>
       <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c15)"/>
-      <text class="t-edge" x="190" y="38" text-anchor="middle">אותה רשומה בדיוק</text>
+      <text class="t-edge" x="190" y="38" text-anchor="middle">&#x202B;אותה רשומה בדיוק&#x202C;</text>
     </svg>
     <figcaption>המדידה שלפני הפתיחה קובעת מה מותר, וזו שאחריה מוודאת שמה שנפתח הוא אותו דבר. בין שתיהן עומדת אכיפה של ה-kernel ולא הבטחה של הקוד.</figcaption>
   </figure>
@@ -2349,24 +2350,24 @@ games.json (הרשומה שנוספה)
   <p>מה שהיא אינה: היא אינה הצפנה, אינה חתימה, ואינה אומרת דבר על תוכן הקובץ. קובץ זדוני וקובץ תמים מקבלים מחרוזת באותו אורך ובאותה צורה. היא מזהה, לא שופטת. מסיבה זו היא גם לעולם אינה משמשת בפרויקט כאישור כניסה: התאמה של ערך אומרת שהתוכן זהה למה שנמדד קודם, ולא שהתוכן ראוי לשחרור.</p>
   <p>בפרויקט היא מופיעה בארבעה תפקידים: כשאלה לשירות המוניטין, במקום העברת הקובץ; כאימות של חבילת המנוע השמורה מקומית, שבה לכל קובץ רשום ערך צפוי; כבדיקה כפולה שמחשבת את הערך שוב לפני שהקובץ מועבר לאחסון הפרטי ומשווה לזה שנמדד בגילוי; וכמפתח איחוד בהתראות, שבו הערך מחושב על שורת ה-log בלי חותמת הזמן, כך שאותו ממצא בדיוק מזוהה כחזרה. בכל ארבעת המקומות האלה התפקיד זהה: להחליף השוואה של תוכן שלם בהשוואה של מחרוזת קצרה, בלי לוותר על הדיוק.</p>
   <figure class="fig">
-    <svg viewBox="0 0 760 130" role="img" aria-label="אותם בייטים תמיד מניבים אותה מחרוזת, וממנה אי אפשר לחזור לקובץ" direction="rtl">
+    <svg viewBox="0 0 760 130" role="img" aria-label="אותם בייטים תמיד מניבים אותה מחרוזת, וממנה אי אפשר לחזור לקובץ">
       <defs><marker id="m-c16" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="88" text-anchor="middle">בייטים של הקובץ</text>
+      <text class="t-main" x="665" y="88" text-anchor="middle">&#x202B;בייטים של הקובץ&#x202C;</text>
       <rect class="box crit" x="400" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="80" text-anchor="middle">חישוב SHA-256</text>
-      <text class="t-sub" x="475" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="475" y="80" text-anchor="middle">&#x202B;חישוב SHA-256&#x202C;</text>
+      <text class="t-sub" x="475" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="210" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="88" text-anchor="middle">מחרוזת קבועת אורך</text>
+      <text class="t-main" x="285" y="88" text-anchor="middle">&#x202B;מחרוזת קבועת אורך&#x202C;</text>
       <rect class="box crit" x="20" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="80" text-anchor="middle">שאלה, אימות, איחוד</text>
-      <text class="t-sub" x="95" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="95" y="80" text-anchor="middle">&#x202B;שאלה, אימות, איחוד&#x202C;</text>
+      <text class="t-sub" x="95" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c16)"/>
-      <text class="t-edge" x="570" y="38" text-anchor="middle">קריאה מקומית</text>
+      <text class="t-edge" x="570" y="38" text-anchor="middle">&#x202B;קריאה מקומית&#x202C;</text>
       <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c16)"/>
-      <text class="t-edge" x="380" y="38" text-anchor="middle">256 ביט</text>
+      <text class="t-edge" x="380" y="38" text-anchor="middle">&#x202B;256 ביט&#x202C;</text>
       <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c16)"/>
-      <text class="t-edge" x="190" y="38" text-anchor="middle">בלי דרך חזרה</text>
+      <text class="t-edge" x="190" y="38" text-anchor="middle">&#x202B;בלי דרך חזרה&#x202C;</text>
     </svg>
     <figcaption>החישוב הוא חד-כיווני: מהקובץ אל המחרוזת קל, וההפך בלתי אפשרי. זו הסיבה שאפשר לשלוח את המחרוזת לשירות חיצוני בלי לשלוח שום דבר מהתוכן.</figcaption>
   </figure>
@@ -2379,28 +2380,28 @@ games.json (הרשומה שנוספה)
   <p>הספרייה מיועדת להיטען משירות הפצה חיצוני, וזו ברירת מחדל שלא כדאי לקבל. מורידים גרסה מתויגת אחת, 4.2.3, ושומרים אותה מקומית במלואה: 133 קבצים, קובץ MANIFEST.sha256 עם ערך צפוי לכל אחד מהם, וקובץ PROVENANCE.txt שרושם מאיפה כל זה הגיע ובאיזה tag. שדרוג הוא תיקייה חדשה שמאומתת מול הערכים, ולא משיכה חוזרת מהרשת.</p>
   <p>בתוך הקוד של הספרייה נשארו נתיבים שפונים החוצה, כמו בדיקת עדכון ומנגנון חילוץ שמושך קובץ חסר מהרשת. לכן דף הנגן נושא CSP עם connect-src 'self', שמצהיר לדפדפן שהדף רשאי לפתוח חיבורים למקור שלו בלבד. כשבודקים בדפדפן אמיתי, בדיקת העדכון נשלחת ונחסמת, והמשחק נטען עד הסוף. ה-service worker מחזיק cache בגרסה v6 לקבצים הכבדים, כך שטעינה חוזרת אינה מושכת שוב את אותם מגה.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="הכול נטען מהשרת, וההרצה עצמה קורית בדפדפן של מי שמשחק" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="הכול נטען מהשרת, וההרצה עצמה קורית בדפדפן של מי שמשחק">
       <defs><marker id="m-c17" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box mine" x="780" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="88" text-anchor="middle">קבצים סטטיים בשרת</text>
+      <text class="t-main" x="855" y="88" text-anchor="middle">&#x202B;קבצים סטטיים בשרת&#x202C;</text>
       <rect class="box crit" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="80" text-anchor="middle">דף הנגן עם CSP</text>
-      <text class="t-sub" x="665" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;דף הנגן עם CSP&#x202C;</text>
+      <text class="t-sub" x="665" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box vendor" x="400" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="88" text-anchor="middle">core ב-WebAssembly</text>
+      <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;core ב-WebAssembly&#x202C;</text>
       <rect class="box crit" x="210" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="80" text-anchor="middle">sandbox של הדפדפן</text>
-      <text class="t-sub" x="285" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="80" text-anchor="middle">&#x202B;sandbox של הדפדפן&#x202C;</text>
+      <text class="t-sub" x="285" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="20" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="88" text-anchor="middle">מסך, קול ובקר</text>
+      <text class="t-main" x="95" y="88" text-anchor="middle">&#x202B;מסך, קול ובקר&#x202C;</text>
       <path class="flow" d="M780,83 L744,83" marker-end="url(#m-c17)"/>
-      <text class="t-edge" x="760" y="38" text-anchor="middle">בלי שירות חיצוני</text>
+      <text class="t-edge" x="760" y="38" text-anchor="middle">&#x202B;בלי שירות חיצוני&#x202C;</text>
       <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c17)"/>
-      <text class="t-edge" x="570" y="38" text-anchor="middle">מקור אחד בלבד</text>
+      <text class="t-edge" x="570" y="38" text-anchor="middle">&#x202B;מקור אחד בלבד&#x202C;</text>
       <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c17)"/>
-      <text class="t-edge" x="380" y="38" text-anchor="middle">נטען לזיכרון</text>
+      <text class="t-edge" x="380" y="38" text-anchor="middle">&#x202B;נטען לזיכרון&#x202C;</text>
       <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c17)"/>
-      <text class="t-edge" x="190" y="38" text-anchor="middle">הרצה אצל הנגן</text>
+      <text class="t-edge" x="190" y="38" text-anchor="middle">&#x202B;הרצה אצל הנגן&#x202C;</text>
     </svg>
     <figcaption>השרת מגיש בייטים, והדפדפן מריץ אותם בתוך הסביבה המוגבלת שלו. גם אם קובץ משחק היה פגום, הקוד שמפרש אותו רץ הרחק ממערכת הקבצים של השרת.</figcaption>
   </figure>
@@ -2413,23 +2414,23 @@ games.json (הרשומה שנוספה)
   <p>לכן סיומות ROM נעדרות מהמיפוי במכוון. כלל שמחייב חתימה שאינה קיימת היה מסמן כל הורדה תקינה, וסימון שמופיע תמיד שווה לסימון שלא מופיע אף פעם. הקובץ נשפט לפי הבדיקות האחרות: חתימות, כללי דפוס, מוניטין ומבנה הארכיון שעוטף אותו. העטיפה הזו דווקא כן נמדדת, כי ל-zip יש חתימה ברורה, ואפשר לספור כמה איברים יש בפנים ולכמה הם מתנפחים.</p>
   <p>מבחינת הרצה, השרת לא נוגע בקובץ אחרי הסריקה. הוא מגיש אותו כבייטים לדפדפן, וה-core שרץ בתוך הדפדפן הוא זה שמפרש אותו. מבחינה משפטית הכלל פשוט: המערכת מגישה רק קבצים שהמפעיל הוא הבעלים של העותק שלהם, לשימוש אישי, ברשת סגורה, ואינה מפיצה דבר.</p>
   <figure class="fig">
-    <svg viewBox="0 0 760 130" role="img" aria-label="הקובץ נשאר בייטים לאורך כל הדרך, ומפורש רק בדפדפן" direction="rtl">
+    <svg viewBox="0 0 760 130" role="img" aria-label="הקובץ נשאר בייטים לאורך כל הדרך, ומפורש רק בדפדפן">
       <defs><marker id="m-c18" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="88" text-anchor="middle">מחסנית או דיסק</text>
+      <text class="t-main" x="665" y="88" text-anchor="middle">&#x202B;מחסנית או דיסק&#x202C;</text>
       <rect class="box" x="400" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="88" text-anchor="middle">עותק בייט אחר בייט</text>
+      <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;עותק בייט אחר בייט&#x202C;</text>
       <rect class="box crit" x="210" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="80" text-anchor="middle">בייטים בלבד בשרת</text>
-      <text class="t-sub" x="285" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="80" text-anchor="middle">&#x202B;בייטים בלבד בשרת&#x202C;</text>
+      <text class="t-sub" x="285" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box vendor" x="20" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="88" text-anchor="middle">core מפרש בדפדפן</text>
+      <text class="t-main" x="95" y="88" text-anchor="middle">&#x202B;core מפרש בדפדפן&#x202C;</text>
       <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c18)"/>
-      <text class="t-edge" x="570" y="38" text-anchor="middle">בלי פרשנות</text>
+      <text class="t-edge" x="570" y="38" text-anchor="middle">&#x202B;בלי פרשנות&#x202C;</text>
       <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c18)"/>
-      <text class="t-edge" x="380" y="38" text-anchor="middle">נסרק ומאוחסן</text>
+      <text class="t-edge" x="380" y="38" text-anchor="middle">&#x202B;נסרק ומאוחסן&#x202C;</text>
       <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c18)"/>
-      <text class="t-edge" x="190" y="38" text-anchor="middle">מוגש כקובץ סטטי</text>
+      <text class="t-edge" x="190" y="38" text-anchor="middle">&#x202B;מוגש כקובץ סטטי&#x202C;</text>
     </svg>
     <figcaption>בכל שלב בשרת הקובץ הוא נתונים ולא תוכנית. ההרצה היחידה שלו קורית בדפדפן של מי שמשחק, בתוך הסביבה המוגבלת שלו.</figcaption>
   </figure>
@@ -2442,28 +2443,28 @@ games.json (הרשומה שנוספה)
   <p>מה שמחזיק את השניים האלה ישרים הוא השקיפות: כל מייל שכן יוצא נושא בגופו כמה התראות דוכאו מאז הקודם. ויסות בלי דיווח הוא עיוורון שנראה כמו שקט. המצב נשמר בקובץ ולא בזיכרון התהליך, כך שהפעלה מחדש של השירות לא מאפסת את השעה ולא פותחת מחדש את הברז.</p>
   <p>המייל עצמו מכיל את ההכרעה, את הסיבה שלה, את שם הבדיקה שקבעה אותה ואת עובדות הרשומה. הוא אינו מכיל את הקובץ עצמו, שנשאר אטום באחסון הפנימי, ואינו מכיל תוכן שנשאב ממנו. השליחה נעשית דרך שירות מייל שקיים ממילא על המכונה, ולכן אין בפרויקט הזה קוד SMTP משלו ואין עוד עותק של סודות. כשל בשליחה עצמה אינו מוחק את הממצא: הוא נשאר ב-log ובקובץ המצב, והתקציר היומי מגיע אליו גם אם המייל המיידי לא יצא.</p>
   <figure class="fig">
-    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="רק הכרעה רעה יוצרת מייל, ורק אחרי איחוד ותקרה" direction="rtl">
+    <svg class="wide" viewBox="0 0 950 130" role="img" aria-label="רק הכרעה רעה יוצרת מייל, ורק אחרי איחוד ותקרה">
       <defs><marker id="m-c19" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
       <rect class="box" x="780" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="855" y="88" text-anchor="middle">שורת הכרעה ב-log</text>
+      <text class="t-main" x="855" y="88" text-anchor="middle">&#x202B;שורת הכרעה ב-log&#x202C;</text>
       <rect class="box crit" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="80" text-anchor="middle">רק FAIL, REVIEW, REJECT</text>
-      <text class="t-sub" x="665" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;רק FAIL, REVIEW, REJECT&#x202C;</text>
+      <text class="t-sub" x="665" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box" x="400" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="475" y="88" text-anchor="middle">איחוד לשעה</text>
+      <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;איחוד לשעה&#x202C;</text>
       <rect class="box crit" x="210" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="285" y="80" text-anchor="middle">תקרה של 6 בשעה</text>
-      <text class="t-sub" x="285" y="97" text-anchor="middle">שלב קריטי</text>
+      <text class="t-main" x="285" y="80" text-anchor="middle">&#x202B;תקרה של 6 בשעה&#x202C;</text>
+      <text class="t-sub" x="285" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
       <rect class="box net" x="20" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="95" y="88" text-anchor="middle">מייל עם מונה דיכוי</text>
+      <text class="t-main" x="95" y="88" text-anchor="middle">&#x202B;מייל עם מונה דיכוי&#x202C;</text>
       <path class="flow" d="M780,83 L744,83" marker-end="url(#m-c19)"/>
-      <text class="t-edge" x="760" y="38" text-anchor="middle">PASS נשאר שקט</text>
+      <text class="t-edge" x="760" y="38" text-anchor="middle">&#x202B;PASS נשאר שקט&#x202C;</text>
       <path class="flow" d="M590,83 L554,83" marker-end="url(#m-c19)"/>
-      <text class="t-edge" x="570" y="38" text-anchor="middle">מפתח לפי תוכן</text>
+      <text class="t-edge" x="570" y="38" text-anchor="middle">&#x202B;מפתח לפי תוכן&#x202C;</text>
       <path class="flow" d="M400,83 L364,83" marker-end="url(#m-c19)"/>
-      <text class="t-edge" x="380" y="38" text-anchor="middle">ממצא חדש בלבד</text>
+      <text class="t-edge" x="380" y="38" text-anchor="middle">&#x202B;ממצא חדש בלבד&#x202C;</text>
       <path class="flow" d="M210,83 L174,83" marker-end="url(#m-c19)"/>
-      <text class="t-edge" x="190" y="38" text-anchor="middle">מתחת לתקרה</text>
+      <text class="t-edge" x="190" y="38" text-anchor="middle">&#x202B;מתחת לתקרה&#x202C;</text>
     </svg>
     <figcaption>שלושה מסננים עומדים בין שורת log למייל, וכל מה שנבלע בהם נספר ומדווח בגוף המייל הבא. כך הוויסות אינו הופך לשקט מזויף.</figcaption>
   </figure>
@@ -2616,6 +2617,132 @@ games.json (הרשומה שנוספה)
   window.addEventListener("scroll", function(){
     if (tipHost) { showTip(tipHost); }
   }, true);
+}());
+</script>
+
+<style>
+/* phone layout for diagrams: the SVG is rebuilt as a vertical flow of cards */
+.fig .mflow{display:none}
+.fig .mfull{display:none}
+@media (max-width:700px){
+  figure.fig.has-m{width:auto; margin-inline:0; overflow:visible}
+  .fig.has-m > svg{display:none}
+  .fig.has-m .mflow{display:flex; flex-direction:column; align-items:stretch; gap:0; margin:4px 0 2px}
+  .fig.has-m .mfull{display:inline-flex; align-items:center; gap:6px; margin-top:10px; min-height:40px; padding:0 12px; border:1px solid var(--border); border-radius:10px; background:var(--surface); color:var(--muted); font:inherit; font-size:13.5px; cursor:pointer}
+  .fig.has-m.show-full{overflow-x:auto}
+  .fig.has-m.show-full > svg{display:block; min-width:760px}
+  .fig.has-m.show-full .mflow{display:none}
+}
+.mstep{display:flex; flex-wrap:wrap; gap:8px; justify-content:center}
+.mcard{flex:1 1 140px; max-width:100%; background:var(--surface); border:1.5px solid var(--border); border-radius:12px; padding:10px 12px; text-align:center; box-shadow:var(--shadow)}
+.mcard b{display:block; font-weight:500; font-size:15px; line-height:1.35; color:var(--text)}
+.mcard small{display:block; font-size:12.5px; line-height:1.45; color:var(--muted); margin-top:2px}
+.mcard .mz,.mcard .mk{display:inline-block; font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); background:var(--surface-2); border-radius:6px; padding:1px 7px; margin-bottom:5px}
+.mcard.crit{border-color:var(--accent)}
+.mcard.bad{border-color:var(--bad); background:var(--accent-soft)}
+.mcard.net{border-color:var(--net)} .mcard.vendor{border-color:var(--vendor)} .mcard.mine{border-color:var(--mine)}
+.mconn{position:relative; display:flex; flex-direction:column; align-items:center; padding:4px 0 6px; color:var(--muted)}
+.mconn::before{content:""; width:0; height:14px; border-inline-start:1.7px solid currentColor}
+.mconn::after{content:""; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-top:8px solid currentColor}
+.mconn span{font-size:12.5px; line-height:1.4; text-align:center; background:var(--bg); padding:2px 10px; border:1px solid var(--border); border-radius:999px; margin:3px 0; max-width:92%}
+.mconn.bad{color:var(--bad)}
+.mconn.bad::before{border-inline-start-style:dashed}
+.mconn.bad span{border-color:var(--bad); color:var(--bad)}
+.mnote{font-size:12.5px; color:var(--muted); text-align:center; margin:8px 0 0}
+</style>
+<script>
+(function(){
+  var NS = 'http://www.w3.org/2000/svg';
+  function num(el, a){ var v = parseFloat(el.getAttribute(a)); return isNaN(v) ? 0 : v; }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function inside(t, r, pad){ pad = pad || 0; return t.x >= r.x - pad && t.x <= r.x + r.w + pad && t.y >= r.y - pad && t.y <= r.y + r.h + pad; }
+  function build(fig){
+    var svg = fig.querySelector(':scope > svg'); if (!svg || !svg.viewBox || !svg.viewBox.baseVal) return;
+    var W = svg.viewBox.baseVal.width, H = svg.viewBox.baseVal.height;
+    var rects = [].slice.call(svg.querySelectorAll('rect.box')).map(function(r){
+      var c = r.getAttribute('class') || '';
+      return {x:num(r,'x'), y:num(r,'y'), w:num(r,'width'), h:num(r,'height'), cls:c, soft:/\bsoft\b/.test(c)};
+    });
+    var texts = [].slice.call(svg.querySelectorAll('text')).map(function(t){
+      return {x:num(t,'x'), y:num(t,'y'), cls:t.getAttribute('class') || '', s:t.textContent.replace(/[\u202A-\u202E]/g, '').trim(), used:false};
+    }).filter(function(t){ return t.s; });
+    var zones = rects.filter(function(r){ return r.soft; });
+    var nodes = rects.filter(function(r){ return !r.soft; });
+    if (nodes.length < 2) return;
+    nodes.forEach(function(n){
+      n.main = []; n.sub = [];
+      texts.forEach(function(t){ if (!t.used && inside(t, n, 2) && /t-main|t-sub/.test(t.cls)) { (/t-main/.test(t.cls) ? n.main : n.sub).push(t.s); t.used = true; } });
+      n.cx = n.x + n.w / 2; n.cy = n.y + n.h / 2;
+    });
+    zones.forEach(function(z){
+      texts.forEach(function(t){ if (!t.used && /lbl/.test(t.cls) && inside(t, z, 2)) { z.label = t.s; t.used = true; } });
+    });
+    nodes.forEach(function(n){
+      zones.forEach(function(z){ if (z.label && n.cx > z.x && n.cx < z.x + z.w && n.cy > z.y && n.cy < z.y + z.h) n.zone = z.label; });
+      texts.forEach(function(t){ if (!t.used && /lbl/.test(t.cls) && t.x >= n.x - 10 && t.x <= n.x + n.w + 10 && t.y < n.y && t.y > n.y - 34) { n.kicker = t.s; t.used = true; } });
+    });
+    nodes = nodes.filter(function(n){ return n.main.length || n.sub.length; });
+    if (nodes.length < 2) return;
+    var vert = H > W * 0.6;
+    var key = vert ? function(n){ return n.cy; } : function(n){ return -n.cx; };
+    var tol = vert ? 30 : 70;
+    nodes.sort(function(a, b){ return key(a) - key(b); });
+    var steps = [];
+    nodes.forEach(function(n){
+      var last = steps[steps.length - 1];
+      if (last && Math.abs(key(n) - last.k) < tol) last.items.push(n); else steps.push({k:key(n), items:[n]});
+    });
+    steps.forEach(function(s){
+      s.items.sort(vert ? function(a, b){ return b.cx - a.cx; } : function(a, b){ return a.cy - b.cy; });
+      if (vert) { s.lo = Math.min.apply(null, s.items.map(function(n){ return n.y; })); s.hi = Math.max.apply(null, s.items.map(function(n){ return n.y + n.h; })); }
+      else { s.lo = Math.min.apply(null, s.items.map(function(n){ return n.x; })); s.hi = Math.max.apply(null, s.items.map(function(n){ return n.x + n.w; })); }
+    });
+    var conns = steps.slice(1).map(function(){ return {labels:[], bad:false, ok:false}; });
+    function gapOf(v){
+      for (var i = 0; i < steps.length - 1; i++) {
+        var a = steps[i], b = steps[i + 1];
+        var g1 = vert ? a.hi : b.hi, g2 = vert ? b.lo : a.lo;
+        var lo = Math.min(g1, g2), hi = Math.max(g1, g2);
+        if (v >= lo - 18 && v <= hi + 18) return i;
+      }
+      return -1;
+    }
+    var notes = [];
+    texts.forEach(function(t){
+      if (t.used || !/t-edge|lbl/.test(t.cls)) return;
+      var i = gapOf(vert ? t.y : t.x);
+      if (i >= 0) conns[i].labels.push(t.s); else notes.push(t.s);
+      t.used = true;
+    });
+    [].slice.call(svg.querySelectorAll('path.flow')).forEach(function(p){
+      var nums = (p.getAttribute('d') || '').match(/-?\d+(\.\d+)?/g); if (!nums) return;
+      var xs = [], ys = [];
+      nums.forEach(function(v, i){ (i % 2 ? ys : xs).push(+v); });
+      if (/\bH\b/.test(p.getAttribute('d'))) { xs = nums.map(Number); ys = []; }
+      var arr = vert ? ys : xs; if (!arr.length) return;
+      var m = (Math.min.apply(null, arr) + Math.max.apply(null, arr)) / 2, i = gapOf(m);
+      if (i < 0) return;
+      if (/\bbad\b/.test(p.getAttribute('class'))) conns[i].bad = true; else conns[i].ok = true;
+    });
+    var h = '';
+    steps.forEach(function(s, i){
+      if (i) { var c = conns[i - 1]; h += '<div class="mconn' + (c.bad && !c.ok ? ' bad' : '') + '" aria-hidden="true">' + c.labels.map(function(l){ return '<span>' + esc(l) + '</span>'; }).join('') + '</div>'; }
+      h += '<div class="mstep">' + s.items.map(function(n){
+        var cl = (n.cls.match(/\b(crit|bad|net|vendor|mine)\b/g) || []).join(' ');
+        return '<div class="mcard ' + cl + '">' + (n.kicker ? '<span class="mk">' + esc(n.kicker) + '</span>' : '') + (n.zone ? '<span class="mz">' + esc(n.zone) + '</span>' : '') + '<b>' + esc(n.main.join(' ')) + '</b>' + (n.sub.length ? '<small>' + esc(n.sub.join(' · ')) + '</small>' : '') + '</div>';
+      }).join('') + '</div>';
+    });
+    notes.forEach(function(n){ h += '<p class="mnote">' + esc(n) + '</p>'; });
+    var box = document.createElement('div'); box.className = 'mflow'; box.setAttribute('role', 'img'); box.setAttribute('aria-label', svg.getAttribute('aria-label') || ''); box.innerHTML = h;
+    svg.insertAdjacentElement('afterend', box);
+    var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'mfull'; btn.textContent = 'הצגת התרשים המקורי';
+    btn.addEventListener('click', function(){ var on = fig.classList.toggle('show-full'); btn.textContent = on ? 'חזרה לתצוגת טלפון' : 'הצגת התרשים המקורי'; });
+    var cap = fig.querySelector('figcaption'); if (cap) fig.insertBefore(btn, cap); else fig.appendChild(btn);
+    fig.classList.add('has-m');
+  }
+  function all(root){ [].slice.call((root || document).querySelectorAll('figure.fig:not(.has-m)')).forEach(function(f){ try { build(f); } catch (e) {} }); }
+  all();
+  new MutationObserver(function(ms){ ms.forEach(function(m){ m.addedNodes.forEach(function(n){ if (n.nodeType === 1) all(n); }); }); }).observe(document.body, {childList:true, subtree:true});
 }());
 </script>
 
