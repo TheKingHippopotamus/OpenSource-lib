@@ -811,26 +811,26 @@ if (not stat.S_ISREG(fst.st_mode) or fst.st_nlink != 1
   <svg class="wide" viewBox="0 0 950 230" role="img" aria-label="השם מבטיח סוג אחד, התוכן מודד סוג אחר, והמיפוי מכריע ביניהם">
     <defs><marker id="m-c4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
     <rect class="box" x="780" y="26" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="58" text-anchor="middle">&#x202B;השם והסיומת&#x202C;</text>
+    <text class="t-main" x="855" y="50" text-anchor="middle">&#x202B;השם והסיומת&#x202C;</text>
+    <text class="t-sub" x="855" y="67" text-anchor="middle">&#x202B;מה השם מבטיח&#x202C;</text>
     <rect class="box" x="780" y="146" width="150" height="54" rx="8"/>
-    <text class="t-main" x="855" y="178" text-anchor="middle">&#x202B;הבייטים הראשונים&#x202C;</text>
+    <text class="t-main" x="855" y="170" text-anchor="middle">&#x202B;הבייטים הראשונים&#x202C;</text>
+    <text class="t-sub" x="855" y="187" text-anchor="middle">&#x202B;מה התוכן באמת&#x202C;</text>
     <rect class="box crit" x="560" y="86" width="150" height="54" rx="8"/>
     <text class="t-main" x="635" y="110" text-anchor="middle">&#x202B;מיפוי EXPECTED_MIME&#x202C;</text>
     <text class="t-sub" x="635" y="127" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
     <rect class="box bad" x="330" y="26" width="150" height="54" rx="8"/>
-    <text class="t-main" x="405" y="58" text-anchor="middle">&#x202B;FAIL בין משפחות&#x202C;</text>
+    <text class="t-main" x="405" y="50" text-anchor="middle">&#x202B;FAIL&#x202C;</text>
+    <text class="t-sub" x="405" y="67" text-anchor="middle">&#x202B;כשהמשפחות שונות&#x202C;</text>
     <rect class="box soft" x="330" y="146" width="150" height="54" rx="8"/>
-    <text class="t-main" x="405" y="178" text-anchor="middle">&#x202B;הערה בדוח&#x202C;</text>
+    <text class="t-main" x="405" y="170" text-anchor="middle">&#x202B;הערה בדוח&#x202C;</text>
+    <text class="t-sub" x="405" y="187" text-anchor="middle">&#x202B;כשזו אותה משפחה&#x202C;</text>
     <rect class="box" x="100" y="86" width="150" height="54" rx="8"/>
     <text class="t-main" x="175" y="118" text-anchor="middle">&#x202B;הכרעה&#x202C;</text>
     <path class="flow" d="M780,53 C742,53 730,113 714,113" marker-end="url(#m-c4)"/>
-    <text class="t-edge" x="742" y="80" text-anchor="middle">&#x202B;מה השם מבטיח&#x202C;</text>
     <path class="flow" d="M780,173 C742,173 730,113 714,113" marker-end="url(#m-c4)"/>
-    <text class="t-edge" x="742" y="152" text-anchor="middle">&#x202B;מה התוכן באמת&#x202C;</text>
     <path class="flow bad" d="M560,113 C520,113 512,53 484,53" marker-end="url(#m-c4)"/>
-    <text class="t-edge" x="522" y="76" text-anchor="middle">&#x202B;משפחות שונות&#x202C;</text>
     <path class="flow" d="M560,113 C520,113 512,173 484,173" marker-end="url(#m-c4)"/>
-    <text class="t-edge" x="522" y="150" text-anchor="middle">&#x202B;אותה משפחה&#x202C;</text>
     <path class="flow bad" d="M330,53 C292,53 282,113 254,113" marker-end="url(#m-c4)"/>
     <path class="flow" d="M330,173 C292,173 282,113 254,113" marker-end="url(#m-c4)"/>
   </svg>
@@ -1029,7 +1029,8 @@ fq-profile-reset.timer    Retro Airlock: monthly browser profile wipe (1st, 05:0
     <rect class="box bad" x="590" y="124" width="150" height="54" rx="8"/>
     <text class="t-main" x="665" y="156" text-anchor="middle">&#x202B;מסלול ציבורי חדש&#x202C;</text>
     <rect class="box bad" x="400" y="124" width="150" height="54" rx="8"/>
-    <text class="t-main" x="475" y="156" text-anchor="middle">&#x202B;CPU ו-headers של המפעיל&#x202C;</text>
+    <text class="t-main" x="475" y="148" text-anchor="middle">&#x202B;CPU ו-headers&#x202C;</text>
+    <text class="t-sub" x="475" y="165" text-anchor="middle">&#x202B;של המפעיל, לזרים&#x202C;</text>
     <rect class="box soft" x="210" y="124" width="150" height="54" rx="8"/>
     <text class="t-main" x="285" y="156" text-anchor="middle">&#x202B;אותה תמונה בדפדפן&#x202C;</text>
     <path class="flow bad" d="M780,151 L744,151" marker-end="url(#m-c7)"/>
@@ -1333,7 +1334,7 @@ def archive_valid(path, kind):
 <figure class="fig">
   <svg class="wide" viewBox="0 0 900 250" role="img" aria-label="שני מסלולים באותו מקור: בקשה ל-core כבד מקבלת את שני ה-headers של הבידוד ומקבלת SharedArrayBuffer, ובקשה לדף הספרייה לא מקבלת אותם וממשיכה לטעון עטיפות ו-font ממקור אחר">
     <defs><marker id="m-d05" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
-    <text class="lbl" x="880" y="30" text-anchor="start">&#x202B;אותו מקור, אותו שרת&#x202C;</text>
+    <text class="lbl" x="880" y="30" text-anchor="end">&#x202B;אותו מקור, אותו שרת&#x202C;</text>
     <rect class="box" x="650" y="45" width="200" height="60" rx="8"/>
     <text class="t-main" x="750" y="71" text-anchor="middle">&#x202B;בקשה ל-core כבד&#x202C;</text>
     <text class="t-sub" x="750" y="89" text-anchor="middle">&#x202B;פרמטר URL מזוהה&#x202C;</text>
@@ -1574,25 +1575,25 @@ games.json (הרשומה שנוספה)
     <text x="105" y="414" text-anchor="middle" class="t-main">&#x202B;מנוע החתימות&#x202C;</text>
     <text x="105" y="432" text-anchor="middle" class="t-sub">&#x202B;אותו גשר פנימי&#x202C;</text>
     <path d="M208,418 H192" class="flow" marker-end="url(#m-d21)"/>
-    <text x="196" y="408" text-anchor="start" class="t-edge">&#x202B;stream של הקובץ&#x202C;</text>
+    <text x="105" y="383" text-anchor="middle" class="t-edge">&#x202B;stream של הקובץ&#x202C;</text>
 
     <rect x="510" y="390" width="170" height="56" rx="10" class="box net"/>
     <text x="595" y="414" text-anchor="middle" class="t-main">&#x202B;שירות מוניטין&#x202C;</text>
     <text x="595" y="432" text-anchor="middle" class="t-sub">&#x202B;חיצוני&#x202C;</text>
     <path d="M492,418 H508" class="flow" marker-end="url(#m-d20)"/>
-    <text x="504" y="408" class="t-edge">&#x202B;hash בלבד&#x202C;</text>
+    <text x="595" y="383" text-anchor="middle" class="t-edge">&#x202B;hash בלבד&#x202C;</text>
 
     <path d="M490,440 H595 V496" class="flow" marker-end="url(#m-d21)"/>
     <rect x="510" y="500" width="170" height="56" rx="10" class="box mine" stroke-dasharray="5 4"/>
     <text x="595" y="524" text-anchor="middle" class="t-main">&#x202B;אחסון אטום&#x202C;</text>
     <text x="595" y="542" text-anchor="middle" class="t-sub">&#x202B;לא במערכת הקבצים הגלויה&#x202C;</text>
-    <text x="500" y="470" class="t-edge">&#x202B;נכשל או נדחה&#x202C;</text>
+    <text x="603" y="474" class="t-edge">&#x202B;נכשל או נדחה&#x202C;</text>
 
     <path d="M210,440 H105 V496" class="flow" marker-end="url(#m-d21)"/>
     <rect x="20" y="500" width="170" height="56" rx="10" class="box mine"/>
     <text x="105" y="524" text-anchor="middle" class="t-main">&#x202B;שכבת ההתראות&#x202C;</text>
     <text x="105" y="542" text-anchor="middle" class="t-sub">&#x202B;רצה על המכונה&#x202C;</text>
-    <text x="200" y="470" text-anchor="start" class="t-edge">&#x202B;שורות verdict רע&#x202C;</text>
+    <text x="113" y="474" text-anchor="start" class="t-edge">&#x202B;שורות verdict רע&#x202C;</text>
 
     <path d="M350,446 V496" class="flow" marker-end="url(#m-d21)"/>
     <text x="360" y="470" class="t-edge">&#x202B;PASS, אחרי חישוב חוזר של ה-hash&#x202C;</text>
@@ -2448,8 +2449,8 @@ games.json (הרשומה שנוספה)
       <rect class="box" x="780" y="56" width="150" height="54" rx="8"/>
       <text class="t-main" x="855" y="88" text-anchor="middle">&#x202B;שורת הכרעה ב-log&#x202C;</text>
       <rect class="box crit" x="590" y="56" width="150" height="54" rx="8"/>
-      <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;רק FAIL, REVIEW, REJECT&#x202C;</text>
-      <text class="t-sub" x="665" y="97" text-anchor="middle">&#x202B;שלב קריטי&#x202C;</text>
+      <text class="t-main" x="665" y="80" text-anchor="middle">&#x202B;סינון חומרה&#x202C;</text>
+      <text class="t-sub" x="665" y="97" text-anchor="middle">FAIL, REVIEW, REJECT</text>
       <rect class="box" x="400" y="56" width="150" height="54" rx="8"/>
       <text class="t-main" x="475" y="88" text-anchor="middle">&#x202B;איחוד לשעה&#x202C;</text>
       <rect class="box crit" x="210" y="56" width="150" height="54" rx="8"/>
@@ -2740,7 +2741,7 @@ games.json (הרשומה שנוספה)
     var cap = fig.querySelector('figcaption'); if (cap) fig.insertBefore(btn, cap); else fig.appendChild(btn);
     fig.classList.add('has-m');
   }
-  function all(root){ [].slice.call((root || document).querySelectorAll('figure.fig:not(.has-m)')).forEach(function(f){ try { build(f); } catch (e) {} }); }
+  function all(root){ root = root || document; var list = [].slice.call(root.querySelectorAll('figure.fig:not(.has-m)')); if (root.matches && root.matches('figure.fig:not(.has-m)')) list.push(root); list.forEach(function(f){ try { build(f); } catch (e) {} }); }
   all();
   new MutationObserver(function(ms){ ms.forEach(function(m){ m.addedNodes.forEach(function(n){ if (n.nodeType === 1) all(n); }); }); }).observe(document.body, {childList:true, subtree:true});
 }());
