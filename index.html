@@ -1,4 +1,4 @@
-<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="King Hippopotamus × American Bully · OpenSource Lib: יותר מ-1,500 כלים חופשיים לאירוח עצמי, ממופים ומדורגים במקום אחד. השרת שלך, הנתונים שלך, הכללים שלך."><style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body><meta property="og:type" content="website"><meta property="og:title" content="ארגז הכלים לאירוח עצמי · King Hippopotamus × American Bully"><meta property="og:description" content="השרת שלך. הנתונים שלך. הכללים שלך. יותר מ-1,500 כלים חופשיים לאירוח עצמי, ממופים ומדורגים במקום אחד."><meta property="og:url" content="https://thekinghippopotamus.github.io/OpenSource-lib/"><meta property="og:image" content="https://thekinghippopotamus.github.io/OpenSource-lib/brand/og.jpg"><meta property="og:image:width" content="1500"><meta property="og:image:height" content="500"><meta name="twitter:card" content="summary_large_image"><title>ארגז הכלים לאירוח עצמי</title>
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="King Hippopotamus × American Bully · OpenSource Lib: יותר מ-1,500 כלים חופשיים לאירוח עצמי, ממופים ומדורגים במקום אחד, עם פרויקטי DIY ובונה ערכות."><style>:root{color-scheme:light dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><link rel="alternate" hreflang="he" href="https://thekinghippopotamus.github.io/OpenSource-lib/"><link rel="alternate" hreflang="en" href="https://thekinghippopotamus.github.io/OpenSource-lib/en/"><meta property="og:type" content="website"><meta property="og:title" content="ארגז הכלים לאירוח עצמי · King Hippopotamus × American Bully"><meta property="og:description" content="King Hippopotamus × American Bully · OpenSource Lib: יותר מ-1,500 כלים חופשיים לאירוח עצמי, ממופים ומדורגים במקום אחד, עם פרויקטי DIY ובונה ערכות."><meta property="og:url" content="https://thekinghippopotamus.github.io/OpenSource-lib/"><meta property="og:image" content="https://thekinghippopotamus.github.io/OpenSource-lib/brand/og.jpg"><meta property="og:image:width" content="1500"><meta property="og:image:height" content="500"><meta name="twitter:card" content="summary_large_image"></head><body><title>ארגז הכלים לאירוח עצמי</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -162,6 +162,7 @@ button[disabled]{opacity:.45;cursor:not-allowed}
 .duo img + img{margin-left:-10px;object-fit:contain;object-position:50% 90%;background:radial-gradient(80% 80% at 50% 100%,#8b5a2b,#2a1a0e 70%,#120f0c);padding:2px 1px 0}
 .duo img:first-child{object-position:57% 30%}
 .brandmark b{font-family:var(--f-display);font-weight:700;font-size:26px;line-height:1;letter-spacing:.01em;white-space:nowrap;padding-top:3px}
+.langbtn{font-family:var(--f-mono);font-size:13px;font-weight:600;letter-spacing:.04em;text-decoration:none;border-color:var(--line)}
 .iconbtn{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-m);border:1px solid transparent;background:none;color:var(--ink);cursor:pointer;flex:none}
 .iconbtn:hover{background:var(--sunk)}
 .iconbtn svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.9}
@@ -843,7 +844,7 @@ nav.tabs .nb{position:absolute;top:7px;left:calc(50% + 7px);min-width:17px;heigh
 .dy-fig{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px;overflow-x:auto}
 .dy-fig svg{display:block;width:100%;height:auto}
 .dy-fig text{font-family:var(--f-body,inherit);direction:ltr;unicode-bidi:normal}
-.dy-rowl{fill:var(--faint);font-size:11px;text-anchor:end;letter-spacing:.02em}
+.dy-rowl{fill:var(--faint);font-size:11px;paint-order:stroke;stroke:var(--surface);stroke-width:5px;stroke-linejoin:round;text-anchor:end;letter-spacing:.02em}
 .dy-sep{stroke:var(--line);stroke-dasharray:3 5}
 .dy-wire{fill:none;stroke:var(--line-strong);stroke-width:1.6}
 .dy-wire.warn{stroke:var(--warn);stroke-dasharray:5 4}
@@ -968,6 +969,7 @@ a.dy-tname{color:var(--ink)}
   <a class="brandmark" href="#map" id="homeLink" aria-label="ארגז הכלים לאירוח עצמי: לדף הבית"><span class="duo" aria-hidden="true"><img src="brand/hero-900.webp" alt="" width="32" height="32" decoding="async"><img src="brand/bully-360.webp" alt="" width="32" height="32" decoding="async"></span><b>ארגז הכלים</b></a>
   <button class="cmdk" type="button" data-cmd aria-haspopup="dialog"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>חיפוש כלי, נושא או תחום</span><kbd>/</kbd></button>
   <button class="iconbtn cmd-ico" type="button" data-cmd aria-haspopup="dialog" aria-label="חיפוש"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+  <a class="iconbtn langbtn" id="langLink" href="en/index.html" hreflang="en" lang="en" aria-label="English version">EN</a>
   <button class="iconbtn" type="button" id="themeBtn" aria-label="ערכת צבעים"></button>
 </div></header>
 
@@ -1960,16 +1962,19 @@ function dyDiagram(nodes, edges, label){
     const tw = r.length * NW + (r.length - 1) * GAP, x0 = W - LBL - (W - LBL - 4 - tw) / 2;
     r.forEach((n, j) => { pos[n.id] = {x: x0 - j * (NW + GAP) - NW, y: PADT + li * RH, n}; });
   });
+  const LTRD = document.documentElement.dir === 'ltr';
+  if (LTRD) Object.values(pos).forEach(p => { p.x = W - p.x - NW; });
   const H = PADT + lines.length * RH - RH + NH + 24;
-  let g = '';
+  let g = '', rl = '';
   lines.forEach(([r, i, first], li) => {
     const y = PADT + li * RH;
-    if (first) g += LBL ? `<text class="dy-rowl" x="${W - 6}" y="${y + NH / 2 + 4}">${svgHe(ROW_N[i])}</text>` : `<text class="dy-rowl" x="${W - 6}" y="${y - 6}">${svgHe(ROW_N[i])}</text>`;
+    const RX = LTRD ? 6 : W - 6, RA = LTRD ? ' style="text-anchor:start"' : '';
+    if (first) rl += LBL ? `<text class="dy-rowl" x="${RX}" y="${y + NH / 2 + 4}"${RA}>${svgHe(ROW_N[i])}</text>` : `<text class="dy-rowl" x="${RX}" y="${y - 6}"${RA}>${svgHe(ROW_N[i])}</text>`;
     if (li) g += `<line class="dy-sep" x1="8" x2="${W - 8}" y1="${y - (RH - NH) / 2}" y2="${y - (RH - NH) / 2}"/>`;
   });
   /* wires first, then nodes, then socket labels placed where they do not cover a node, a row label or another label */
   const obst = Object.values(pos).map(p => ({x: p.x - 3, y: p.y - 3, w: NW + 6, h: NH + 6}));
-  lines.forEach(([r, i, first], li) => { if (!first) return; const y = PADT + li * RH, tw = ROW_N[i].length * 7 + 6; obst.push(LBL ? {x: W - 6 - tw, y: y + NH / 2 - 8, w: tw, h: 16} : {x: W - 6 - tw, y: y - 18, w: tw, h: 16}); });
+  lines.forEach(([r, i, first], li) => { if (!first) return; const y = PADT + li * RH, tw = ROW_N[i].length * 7.2 + 8, rx = LTRD ? 6 : W - 6 - tw; obst.push(LBL ? {x: rx, y: y + NH / 2 - 8, w: tw, h: 16} : {x: rx, y: y - 18, w: tw, h: 16}); });
   const hit = r => r.x < 2 || r.x + r.w > W - 2 || r.y < 2 || obst.some(o => r.x < o.x + o.w && r.x + r.w > o.x && r.y < o.y + o.h && r.y + r.h > o.y);
   const bz = (p0, p1, p2, p3, t) => { const u = 1 - t; return u * u * u * p0 + 3 * u * u * t * p1 + 3 * u * t * t * p2 + t * t * t * p3; };
   const geo = [];
@@ -1985,15 +1990,21 @@ function dyDiagram(nodes, edges, label){
   Object.values(pos).forEach(({x, y, n}) => {
     g += `<g class="dy-node r-${n.role}${n.k ? ' cat' : ''}${n.warn ? ' warn' : ''}"${n.k ? ` data-dytool="${esc(n.k)}" tabindex="0" role="button" aria-label="${esc(n.name)}"` : ''}><rect x="${x}" y="${y}" width="${NW}" height="${NH}" rx="12"/><text class="n" x="${x + NW / 2}" y="${y + 19}">${svgHe(n.name.length > (NW < 120 ? 13 : 17) ? n.name.slice(0, NW < 120 ? 12 : 16) + '…' : n.name)}</text><text class="r" x="${x + NW / 2}" y="${y + 34}">${svgHe(dyRoleN(n.role))}</text></g>`;
   });
+  g += rl;
   const shown = x => x.e.s && !['http', 'files', 'dns'].includes(x.e.s);
   const grp = {};
   geo.filter(shown).forEach(x => (grp[x.e.b + '|' + x.e.s] = grp[x.e.b + '|' + x.e.s] || []).push(x));
   const put = (txt, cands) => {
     const w = Math.max(38, txt.length * 6.6 + 16), h = 18;
     let best = null;
-    for (const [cx, cy] of cands) { const r = {x: cx - w / 2, y: cy - h / 2, w, h}; if (!hit(r)) { best = r; break; } }
-    if (!best) { const [cx, cy] = cands[0]; best = {x: cx - w / 2, y: cy - h / 2, w, h}; }
-    obst.push({x: best.x - 2, y: best.y - 2, w: best.w + 4, h: best.h + 4});
+    let bestCost = Infinity;
+    const cost = r => (r.x < 2 || r.x + r.w > W - 2 || r.y < 2 ? 1e6 : 0) + obst.reduce((a, o) => a + Math.max(0, Math.min(r.x + r.w, o.x + o.w) - Math.max(r.x, o.x)) * Math.max(0, Math.min(r.y + r.h, o.y + o.h) - Math.max(r.y, o.y)), 0);
+    outer: for (const dy of [0, -20, 20, -38, 38, -56, 56]) for (const [cx, cy] of cands) {
+      const r = {x: cx - w / 2, y: cy + dy - h / 2, w, h}, c = cost(r) + Math.abs(dy) * 0.5;
+      if (c < bestCost) { bestCost = c; best = r; }
+      if (!hit(r)) { best = r; break outer; }
+    }
+    obst.push({x: best.x - 4, y: best.y - 4, w: best.w + 8, h: best.h + 8});
     g += `<g class="dy-wl"><rect x="${best.x.toFixed(1)}" y="${best.y.toFixed(1)}" width="${w.toFixed(1)}" height="${h}" rx="9"/><text x="${(best.x + w / 2).toFixed(1)}" y="${(best.y + 13).toFixed(1)}">${svgHe(txt)}</text></g>`;
   };
   Object.values(grp).forEach(list => {
@@ -2254,6 +2265,9 @@ const DY_H0 = location.hash;
 setTimeout(() => { if (/^#[pb]-/.test(DY_H0)) { dyHash(DY_H0); dyRoute(); } }, 0);
 let dyRz = 0, dyW = innerWidth;
 addEventListener('resize', () => { clearTimeout(dyRz); dyRz = setTimeout(() => { if (curView === 'diy' && Math.abs(innerWidth - dyW) > 40 && !document.activeElement.matches('#dyQ')) { dyW = innerWidth; renderDIY(); } }, 250); });
+
+/* language switch keeps the current view */
+(function(){ const l = document.getElementById('langLink'); if (l) l.addEventListener('click', e => { e.preventDefault(); location.href = l.getAttribute('href') + location.hash; }); })();
 
 
 /* ---------- routing ---------- */
