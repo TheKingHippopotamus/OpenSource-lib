@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Hebrew:wght@400;500;600;700&family=Karantina:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Hebrew:wght@400;500;600;700&family=Karantina:wght@700&family=Bebas+Neue&display=swap">
 <style>
 /* Layout: one-column mobile app — sticky header, five views, fixed bottom tab bar, tool details in a bottom sheet.
    Eighteen domains in three layers; each domain has its own hue (theme-aware saturation/lightness tokens). */
@@ -52,11 +52,13 @@ h1,h2,h3,h4{text-wrap:balance;margin:0}
 .thanks li{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
 .thanks a:first-child{font-family:var(--f-mono);font-size:14px}
 .lic-note{font-size:12px;color:var(--muted);white-space:nowrap}
-.brandhero{position:relative;margin:0 0 36px}
+.brandhero{margin:0 0 14px}
 .nm{white-space:nowrap;color:var(--ink);font-weight:600}
-@media (max-width:520px){.eb-x{display:none}}
-.bully{position:absolute;left:10px;bottom:-30px;width:clamp(96px,27%,200px);height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));transform:rotate(-4deg);pointer-events:none}
-.brandimg{margin:0;aspect-ratio:3/1;border-radius:18px;overflow:hidden;background:var(--sunk);border:1px solid var(--line)}
+.brandimg img.bully{position:absolute;left:3%;bottom:0;height:93%;width:auto;object-fit:contain;filter:drop-shadow(0 4px 10px rgba(0,0,0,.5));pointer-events:none}
+.lockup{font-family:"Bebas Neue",var(--f-display),sans-serif;font-size:clamp(23px,6.6vw,38px);line-height:1;letter-spacing:.045em;color:var(--ink);margin:0;display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:baseline;column-gap:.32em;text-transform:uppercase;margin-bottom:8px}
+.lockup .lk-x{color:var(--accent);font-size:.8em;transform:translateY(-.04em)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.brandimg{position:relative;margin:0;aspect-ratio:3/1;border-radius:18px;overflow:hidden;background:var(--sunk);border:1px solid var(--line)}
 .brandimg img{display:block;width:100%;height:100%;object-fit:cover}
 .lede{color:var(--muted);margin:10px 0 0;max-width:62ch;font-size:14.5px}
 .lede strong{display:block;color:var(--ink);font-weight:700;font-size:16.5px;margin-bottom:4px}
@@ -514,10 +516,9 @@ nav.tabs a[aria-current="page"] svg{stroke-width:2.2}
 <div class="wrap">
   <header class="top">
     <div class="brandhero">
-    <figure class="brandimg"><img src="brand/hero.webp" srcset="brand/hero-900.webp 900w, brand/hero.webp 1500w" sizes="(max-width: 800px) 100vw, 800px" width="1500" height="500" fetchpriority="high" alt="King Hippopotamus: היפופוטם במשקפיים ובחלוק מעבדה יושב ליד שולחן עבודה עם מוח בפעמון זכוכית, גלובוס, מכונות נתונים ולוחות של אסטרטגיות כמותיות"></figure>
-    <img class="bully" src="brand/bully-360.webp" srcset="brand/bully-360.webp 360w, brand/bully-720.webp 720w" sizes="200px" width="860" height="920" alt="American Bully: כלב בולי אמריקאי שרירי בצבעי שחור וחום עם שרשרת ותג כסוף">
+    <figure class="brandimg"><img src="brand/hero.webp" srcset="brand/hero-900.webp 900w, brand/hero.webp 1500w" sizes="(max-width: 800px) 100vw, 800px" width="1500" height="500" fetchpriority="high" alt="King Hippopotamus: היפופוטם במשקפיים ובחלוק מעבדה יושב ליד שולחן עבודה עם מוח בפעמון זכוכית, גלובוס, מכונות נתונים ולוחות של אסטרטגיות כמותיות"><img class="bully" src="brand/bully-360.webp" srcset="brand/bully-360.webp 360w, brand/bully-720.webp 720w" sizes="(max-width: 800px) 30vw, 240px" width="860" height="920" alt="American Bully: כלב בולי אמריקאי שרירי בצבעי שחור וחום עם שרשרת ותג כסוף"></figure>
     </div>
-    <div class="eyebrow">King Hippopotamus × American Bully<span class="eb-x"> · OpenSource Lib</span></div>
+    <p class="lockup" dir="ltr"><span>King Hippopotamus</span> <span class="lk-x" aria-hidden="true">×</span><span class="sr">בשיתוף</span> <span>American Bully</span></p>
     <h1>ארגז הכלים <span>לאירוח עצמי</span></h1>
     <p class="lede"><strong>השרת שלך. הנתונים שלך. הכללים שלך.</strong> יותר מ-1,500 כלים חופשיים לתשתית, לעסק ולבית, ממופים ומדורגים במקום אחד. <bdi class="nm">King Hippopotamus</bdi> מביא את הידע, <bdi class="nm">American Bully</bdi> את העוצמה: מוצאים את הכלי, מבינים אותו בדקה ומרימים אותו אצלך. בלי מנויים ובלי נעילה.</p>
     <div class="stats" id="stats"></div>
