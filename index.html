@@ -214,6 +214,13 @@ body:not([data-view="map"]):not([data-view="topics"]) .top{display:none}
 
 /* ---------- map (the chalkboard) ---------- */
 .mapgrid{display:grid;gap:var(--s4);margin-top:var(--s2)}
+.mapgrid.solo{grid-template-columns:minmax(0,1fr)!important;max-width:760px;margin-inline:auto}
+.mapgrid.solo .mapbox{position:relative;top:auto}
+#mapsvg .hubt{font-size:12px}
+.brandmark,.appbar .cmdk,.appbar .cmd-ico{transition:opacity .2s ease}
+.hero-on .brandmark{opacity:0;pointer-events:none}
+@media (max-width:1099px){.hero-on .appbar .cmdk,.hero-on .appbar .cmd-ico{opacity:0;pointer-events:none}}
+@media (prefers-reduced-motion:reduce){.brandmark,.appbar .cmdk,.appbar .cmd-ico{transition:none}}
 .mapbox{border-radius:var(--r-l);padding:var(--s2) var(--s2) var(--s1);position:relative;overflow:hidden;
   background:radial-gradient(120% 80% at 50% 0%,rgba(233,236,228,.07),transparent 60%),var(--board);box-shadow:inset 0 0 0 1px rgba(233,236,228,.08),0 18px 40px -28px rgba(10,16,13,.6)}
 .maptop{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);padding:6px 8px 0;min-height:44px}
@@ -1123,14 +1130,14 @@ function drawOverview(){
   DATA.edges.forEach(e => { const a = catBy[e[0]].dom, b = catBy[e[1]].dom; if (a === b) return; const k = a < b ? a+'|'+b : b+'|'+a; pair[k] = (pair[k]||0) + 1; });
   let g = '';
   Object.entries(pair).forEach(([k, n]) => { const [a, b] = k.split('|'); g += `<path class="ch" data-a="${a}" data-b="${b}" d="${curve(P[a], P[b], .12)}" style="stroke-width:${(0.6 + Math.sqrt(n)*0.9).toFixed(2)};opacity:.55"/>`; });
-  g += `<circle class="hub" r="38" cx="0" cy="0"/><text class="hubn" text-anchor="middle" y="6">${T.length.toLocaleString('en-US')}</text><text class="hubt" text-anchor="middle" y="22">${svgHe('כלים')}</text>`;
+  g += `<circle class="hub" r="38" cx="0" cy="0"/><text class="hubt" text-anchor="middle" y="4">${svgHe('בחירת תחום')}</text>`;
   const max = Math.max(...DOM.map(d => domTools[d.id]));
   DOM.forEach(d => {
     const p = P[d.id], n = domTools[d.id], r = 6 + Math.sqrt(n/max) * 11;
     g += `<g class="nd" role="button" tabindex="0" data-dom="${d.id}" aria-label="${esc(d.full)}, ${n} כלים"><circle r="${Math.min(r+12, 19).toFixed(1)}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" fill="transparent"/><circle class="dot" r="${r.toFixed(1)}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" style="fill:${col(d.id)}"/>${radialLabel(p, R + r + 6, d.n, 'lab', col(d.id))}</g>`;
   });
   $('#mapsvg').innerHTML = g;
-  $('#mapTop').innerHTML = `<b>${DOM.length} תחומים</b><span style="font-size:12.5px;color:var(--muted)">בחירת תחום</span>`;
+  $('#mapTop').innerHTML = `<b>מפת התחומים</b>`;
   $('#mapLegend').innerHTML = `<span><i></i>קשרים בין נושאים משני התחומים (עובי הקו = כמות)</span><span>גודל הנקודה = מספר הכלים</span>`;
 }
 function drawDomain(){
@@ -1150,7 +1157,7 @@ function drawDomain(){
     g += `<g class="nd${fade?' fade':''}${sel?' sel':''}" role="button" tabindex="0" data-cat="${esc(k)}" aria-label="${esc(c.he)}, ${n} כלים"><circle r="${Math.min(r+13, 22).toFixed(1)}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" fill="transparent"/><circle class="dot" r="${r.toFixed(1)}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" style="${n?`fill:${col(d.id)}`:`fill:var(--surface);stroke:${col(d.id)};stroke-width:1.6`}"/>${radialLabel(p, R + r + 6, c.s, 'lab c')}</g>`;
   });
   $('#mapsvg').innerHTML = g;
-  $('#mapTop').innerHTML = `<b><span class="cable" style="background:${col(d.id)}"></span>${esc(d.full)}</b><button class="ghost" type="button" data-alld>כל התחומים</button>`;
+  $('#mapTop').innerHTML = `<b></b><button class="ghost" type="button" data-alld>כל התחומים</button>`;
   $('#mapLegend').innerHTML = `<span><i></i>קשר שמופיע ברשימה</span><span><i class="d"></i>קשר עריכתי</span><span>עיגול ריק = נושא שמפנה לרשימה אחרת</span>`;
 }
 function linkChip(other, why){ const d = domOf(other); return `<button class="lt" type="button" data-pick="${esc(other)}"><span class="cable" style="background:${col(d.id)}"></span><span style="white-space:nowrap">${esc(catBy[other].he)}</span>${why?`<em>· ${esc(why)}</em>`:''}</button>`; }
@@ -1165,8 +1172,9 @@ function catRow(k){
 function domButton(d){ return `<button class="dbtn" type="button" data-dom="${d.id}"><span class="cable" style="background:${col(d.id)}"></span><b>${esc(d.full)}</b><span class="n">${d.cats.length} נושאים · ${domTools[d.id]}</span><span class="p">${esc(d.d)}</span></button>`; }
 function drawPanel(){
   let h = '';
+  const solo = !mapDom; $('#mapPanel').hidden = solo; const mg = $('#mapPanel').closest('.mapgrid'); if (mg) mg.classList.toggle('solo', solo);
   if (!mapDom) {
-    h = LY.map(l => `<div class="layer-h"><h3>${esc(l.n)}</h3><p>${esc(l.d)}</p></div><div class="dlist">${DOM.filter(d => d.layer === l.id).map(domButton).join('')}</div>`).join('');
+    h = '';
   } else if (!mapCat) {
     const d = domBy[mapDom];
     h = `<div class="focus"><div class="focus-h"><h3><span class="cable" style="background:${col(d.id)}"></span>${esc(d.full)}</h3><span class="mono" style="font-size:12.5px;color:var(--muted)">${domTools[d.id]} כלים</span></div><p class="d">${esc(d.d)}</p>`
@@ -1201,7 +1209,7 @@ document.addEventListener('click', e => {
 document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('g[role=button]')) { e.preventDefault(); e.target.dispatchEvent(new MouseEvent('click', {bubbles:true})); } });
 
 /* ---------- topics ---------- */
-$('#v-topics').innerHTML = `<div class="viewbar"><nav class="seg" aria-label="תצוגה"><a href="#map" data-seg="map">מפה</a><a href="#topics" data-seg="topics" aria-current="page">נושאים</a></nav></div><nav class="topics-jump" aria-label="מעבר לתחום">${DOM.map(d => `<a href="#topics" data-jump="td-${d.id}"><span class="cable" style="background:${col(d.id)}"></span>${esc(d.n)}</a>`).join('')}</nav><div class="sec-h" style="margin-top:6px"><h2>כל הנושאים</h2><small>${C.length} נושאים · ${DOM.length} תחומים · 3 שכבות</small></div>` + LY.map(l =>
+$('#v-topics').innerHTML = `<div class="viewbar"><nav class="seg" aria-label="תצוגה"><a href="#map" data-seg="map">מפה</a><a href="#topics" data-seg="topics" aria-current="page">נושאים</a></nav></div><nav class="topics-jump" aria-label="מעבר לתחום">${DOM.map(d => `<a href="#topics" data-jump="td-${d.id}"><span class="cable" style="background:${col(d.id)}"></span>${esc(d.n)}</a>`).join('')}</nav><div class="sec-h" style="margin-top:6px"><h2>כל הנושאים</h2></div>` + LY.map(l =>
   `<section class="lyr"><h2>${esc(l.n)}</h2><p>${esc(l.d)}</p>` + DOM.filter(d => d.layer === l.id).map(d =>
     `<section class="dom" id="td-${d.id}"><div class="dom-h" style="color:${col(d.id)}"><span class="cable" style="background:${col(d.id)}"></span><h2>${esc(d.full)}</h2><small>${domTools[d.id]} כלים</small></div><p>${esc(d.d)}</p>` +
     d.subs.map(s => `${d.subs.length > 1 ? `<div class="subh">${esc(s.n)}<small>${esc(s.why)}</small></div>` : ''}` + s.cats.map(k => { const c = catBy[k], n = catTools[k].length;
@@ -2265,6 +2273,9 @@ const DY_H0 = location.hash;
 setTimeout(() => { if (/^#[pb]-/.test(DY_H0)) { dyHash(DY_H0); dyRoute(); } }, 0);
 let dyRz = 0, dyW = innerWidth;
 addEventListener('resize', () => { clearTimeout(dyRz); dyRz = setTimeout(() => { if (curView === 'diy' && Math.abs(innerWidth - dyW) > 40 && !document.activeElement.matches('#dyQ')) { dyW = innerWidth; renderDIY(); } }, 250); });
+
+/* the app bar hides its brand and search while the hero (which already shows both) is on screen */
+(function(){ const top = document.querySelector('header.top'); if (!top || !('IntersectionObserver' in window)) return; new IntersectionObserver(es => document.body.classList.toggle('hero-on', es[0].isIntersecting && !top.hidden && top.offsetParent !== null), {rootMargin: '-56px 0px 0px 0px'}).observe(top); })();
 
 /* language switch keeps the current view */
 (function(){ const l = document.getElementById('langLink'); if (l) l.addEventListener('click', e => { e.preventDefault(); location.href = l.getAttribute('href') + location.hash; }); })();
